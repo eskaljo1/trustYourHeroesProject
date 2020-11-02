@@ -123,5 +123,6 @@ public class MainMenu : MonoBehaviour
                 descriptionText.text = "";
                 break;
         }
+        selectedHero.GetComponent<BoxCollider>().enabled = false;
     }
 }
