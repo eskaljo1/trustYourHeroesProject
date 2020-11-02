@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/DarkTownScene.unity
+    guid: 2a365000f530c7543bbedae6e13f58a5
+  - enabled: 1
+    path: Assets/Scenes/ChristmasScene.unity
+    guid: 6ee3b8e61023b6a48bd2fcacc378fde0
+  - enabled: 1
+    path: Assets/Scenes/DesertScene.unity
+    guid: 7ec5d93a4cc81a84c8a93a351c55028d
   m_configObjects: {}

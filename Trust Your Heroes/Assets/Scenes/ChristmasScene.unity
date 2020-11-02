@@ -10028,18 +10028,6 @@ MonoBehaviour:
   gridZ: 8
   gridSpacingOffset: 1
   gridOrigin: {x: -3.5, y: 0, z: -3.5}
---- !u!114 &1855228358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855228355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca94a68d0fcc0634eb24ca739764aa70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1855228359
 MonoBehaviour:
   m_ObjectHideFlags: 0

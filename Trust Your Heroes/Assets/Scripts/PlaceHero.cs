@@ -44,7 +44,7 @@ public class PlaceHero : MonoBehaviour
                 }
                 else
                 {
-                    GameObject hero = Instantiate(YourHeroTeam.yourHeroes[PlaceHeroButtons.heroSelected - 1], transform.position, Quaternion.identity);
+                    GameObject hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1] + "/source/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1]), transform.position, Quaternion.identity);
                     hero.GetComponent<MoveHero>().Placed(x, z);
                     PlaceHeroButtons.spawned = true;
                     PlaceHeroButtons.heroesPlaced++;

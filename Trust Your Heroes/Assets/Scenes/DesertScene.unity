@@ -13353,18 +13353,6 @@ MonoBehaviour:
   cam2: {fileID: 2118713515}
   cam3: {fileID: 856045277}
   cam4: {fileID: 844368683}
---- !u!114 &8296172668369180958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668369180956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca94a68d0fcc0634eb24ca739764aa70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &8350474649859020878
 MeshRenderer:
   m_ObjectHideFlags: 0
