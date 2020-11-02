@@ -1,0 +1,1856 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &112090251570878360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253756523603172194}
+  - component: {fileID: 1191065524426952727}
+  m_Layer: 0
+  m_Name: character
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253756523603172194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112090251570878360}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1.570825, y: 1.570825, z: 1.570825}
+  m_Children: []
+  m_Father: {fileID: 7733445660041864920}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1191065524426952727
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112090251570878360}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 743f170889b3e9340ac5e6e0faa25f5a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 2791369629923464968, guid: 3cb18a1b019a07845a891697e233faae, type: 3}
+  m_Bones:
+  - {fileID: 2404169113203014805}
+  - {fileID: 3848650829161897688}
+  - {fileID: 1040906831517324277}
+  - {fileID: 1964231321189541202}
+  - {fileID: 2736877613289098761}
+  - {fileID: 8293219308561402665}
+  - {fileID: 5082600621401072544}
+  - {fileID: 4673385959724682577}
+  - {fileID: 3599330955484712635}
+  - {fileID: 9220055189060160613}
+  - {fileID: 1000232231541096699}
+  - {fileID: 7754323240621655125}
+  - {fileID: 6020201012724238005}
+  - {fileID: 2809881562762565848}
+  - {fileID: 2921465244937758081}
+  - {fileID: 183778177717264533}
+  - {fileID: 8385037963160701603}
+  - {fileID: 2680823609368443401}
+  - {fileID: 4876447285228344886}
+  - {fileID: 8783023687660201193}
+  - {fileID: 1508393040084576674}
+  - {fileID: 1026949417994624776}
+  - {fileID: 6026816880798646798}
+  - {fileID: 7623252084856084090}
+  - {fileID: 3217419300257834743}
+  - {fileID: 2687766229734754253}
+  - {fileID: 8859294517541101710}
+  - {fileID: 5443456734992102081}
+  - {fileID: 6696725905040216732}
+  - {fileID: 15766765251579577}
+  - {fileID: 260319305840560288}
+  - {fileID: 7262086553799488048}
+  - {fileID: 2174620633977027395}
+  - {fileID: 7560909334465225146}
+  - {fileID: 8532620765788529971}
+  - {fileID: 2253660975710423423}
+  - {fileID: 276770144097001666}
+  - {fileID: 3298766536380708094}
+  - {fileID: 8515344719983131875}
+  - {fileID: 5258793050915807538}
+  - {fileID: 5689650651663673306}
+  - {fileID: 700352150315746760}
+  - {fileID: 6635197921387589267}
+  - {fileID: 5267495394860407713}
+  - {fileID: 9127869950514164596}
+  - {fileID: 8929285418337298362}
+  - {fileID: 6461856659625392247}
+  - {fileID: 3796208279668087306}
+  - {fileID: 5732275252205728644}
+  - {fileID: 2350003857660793647}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 6026816880798646798}
+  m_AABB:
+    m_Center: {x: 0.16813153, y: -0.07283735, z: -0.009208441}
+    m_Extent: {x: 1.3122516, y: 0.96107054, z: 1.032303}
+  m_DirtyAABB: 0
+--- !u!1 &134369131936105239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3599330955484712635}
+  m_Layer: 0
+  m_Name: cricket custom rigTail3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3599330955484712635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134369131936105239}
+  m_LocalRotation: {x: -0.02634306, y: 0.001849976, z: -0.07074512, w: 0.9971448}
+  m_LocalPosition: {x: -0.2934848, y: -0.000000048446655, z: -0.000000003027916}
+  m_LocalScale: {x: 1.0000005, y: 1.0000004, z: 1}
+  m_Children:
+  - {fileID: 1000232231541096699}
+  m_Father: {fileID: 8293219308561402665}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &481033357104414915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276770144097001666}
+  m_Layer: 0
+  m_Name: cricket custom rigTail4 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276770144097001666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481033357104414915}
+  m_LocalRotation: {x: 0.016235396, y: 0.025909077, z: -0.101061165, w: 0.9944103}
+  m_LocalPosition: {x: -0.24017806, y: 0.00000009689331, z: 0}
+  m_LocalScale: {x: 0.9999985, y: 1.000004, z: 0.99999887}
+  m_Children:
+  - {fileID: 2350003857660793647}
+  m_Father: {fileID: 7262086553799488048}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &498357431346608355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7733445660041864920}
+  - component: {fileID: 7063681296583381045}
+  - component: {fileID: 2881952629423558820}
+  - component: {fileID: 7742295341900509236}
+  m_Layer: 0
+  m_Name: Xavier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7733445660041864920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498357431346608355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.218, y: 0.6346202, z: -4.902}
+  m_LocalScale: {x: 0.5284919, y: 0.5284919, z: 0.5284919}
+  m_Children:
+  - {fileID: 1253756523603172194}
+  - {fileID: 6026816880798646798}
+  - {fileID: 5396654902343018317}
+  - {fileID: 1318681360134079614}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7063681296583381045
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498357431346608355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3cb18a1b019a07845a891697e233faae, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2881952629423558820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498357431346608355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893a42ae5276fd04b8172c45772b525d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: 3
+  obstacleJumper: 0
+--- !u!65 &7742295341900509236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498357431346608355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!1 &706849306931715665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4474705405474618504}
+  m_Layer: 0
+  m_Name: cricket custom rigLArmCollarbone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4474705405474618504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706849306931715665}
+  m_LocalRotation: {x: 0.0008001231, y: 0.76539737, z: 0.00786022, w: 0.64350945}
+  m_LocalPosition: {x: -0.0717588, y: -0.027008222, z: 0.08828107}
+  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+  m_Children:
+  - {fileID: 15766765251579577}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1121159246488456188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6026816880798646798}
+  m_Layer: 0
+  m_Name: cricket custom rigHub001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6026816880798646798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121159246488456188}
+  m_LocalRotation: {x: 0.5513199, y: -0.4626124, z: -0.5318557, w: 0.44627994}
+  m_LocalPosition: {x: -0.024987523, y: 0.9601446, z: 0.1632434}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Children:
+  - {fileID: 8859294517541101710}
+  - {fileID: 183778177717264533}
+  - {fileID: 8385037963160701603}
+  m_Father: {fileID: 7733445660041864920}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1160060343494797842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8783023687660201193}
+  m_Layer: 0
+  m_Name: cricket custom rigRArm2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8783023687660201193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160060343494797842}
+  m_LocalRotation: {x: -0.0013354035, y: 0.11972785, z: -0.732395, w: 0.6702694}
+  m_LocalPosition: {x: -0.2287218, y: -0.000000003027916, z: -0.000000012111664}
+  m_LocalScale: {x: 0.9999962, y: 1.0000038, z: 1}
+  m_Children:
+  - {fileID: 1508393040084576674}
+  m_Father: {fileID: 1026949417994624776}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1454176387285649322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2680823609368443401}
+  m_Layer: 0
+  m_Name: cricket custom rigSpine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2680823609368443401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454176387285649322}
+  m_LocalRotation: {x: -0.048164397, y: -0.0042163706, z: 0.0598933, w: 0.9970332}
+  m_LocalPosition: {x: -0.21165888, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.0000004, z: 1.0000004}
+  m_Children:
+  - {fileID: 4876447285228344886}
+  m_Father: {fileID: 8385037963160701603}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1490448685266202094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8929285418337298362}
+  m_Layer: 0
+  m_Name: cricket custom rigTail1 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8929285418337298362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490448685266202094}
+  m_LocalRotation: {x: 0.013470724, y: -0.031730972, z: 0.49223804, w: 0.8697778}
+  m_LocalPosition: {x: -0.060130242, y: -0.02218789, z: -0.057307746}
+  m_LocalScale: {x: 0.99999976, y: 1.0000001, z: 0.9999999}
+  m_Children:
+  - {fileID: 5732275252205728644}
+  m_Father: {fileID: 3298766536380708094}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1510283214144566908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2736877613289098761}
+  m_Layer: 0
+  m_Name: cricket custom rigTail2 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2736877613289098761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510283214144566908}
+  m_LocalRotation: {x: -0.006629326, y: -0.05531455, z: -0.10764819, w: 0.99262697}
+  m_LocalPosition: {x: -0.2112405, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 4673385959724682577}
+  m_Father: {fileID: 3848650829161897688}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1983681190024640005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4876447285228344886}
+  m_Layer: 0
+  m_Name: cricket custom rigribs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4876447285228344886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983681190024640005}
+  m_LocalRotation: {x: -0.0117047, y: 0.010249202, z: -0.10558278, w: 0.99428886}
+  m_LocalPosition: {x: -0.21173969, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 0.99999964, z: 0.9999997}
+  m_Children:
+  - {fileID: 4474705405474618504}
+  - {fileID: 700352150315746760}
+  - {fileID: 3217419300257834743}
+  - {fileID: 1040906831517324277}
+  - {fileID: 1964231321189541202}
+  - {fileID: 2404169113203014805}
+  - {fileID: 3848650829161897688}
+  m_Father: {fileID: 2680823609368443401}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2243581166828582213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700352150315746760}
+  m_Layer: 0
+  m_Name: cricket custom rigRArmCollarbone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700352150315746760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243581166828582213}
+  m_LocalRotation: {x: 0.064876445, y: -0.8292288, z: -0.062708855, w: 0.551578}
+  m_LocalPosition: {x: -0.0717588, y: 0.021137089, z: -0.08828107}
+  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1.0000005}
+  m_Children:
+  - {fileID: 1026949417994624776}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2388917701058518445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5396654902343018317}
+  m_Layer: 0
+  m_Name: cricket custom rigLLegPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5396654902343018317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2388917701058518445}
+  m_LocalRotation: {x: 0.5382849, y: -0.46165967, z: -0.49326295, w: 0.50379694}
+  m_LocalPosition: {x: -0.10786662, y: 0.020683307, z: -0.17935188}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7733445660041864920}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2412528645433953023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6635197921387589267}
+  m_Layer: 0
+  m_Name: cricket custom rigRLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6635197921387589267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2412528645433953023}
+  m_LocalRotation: {x: -0.0030205657, y: -0.0034865753, z: -0.84551877, w: 0.5339259}
+  m_LocalPosition: {x: -0.43844, y: 0, z: -0.000000006055832}
+  m_LocalScale: {x: 1.0000007, y: 0.9999993, z: 1.0000001}
+  m_Children:
+  - {fileID: 5267495394860407713}
+  m_Father: {fileID: 7560909334465225146}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2464455283055245975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8515344719983131875}
+  m_Layer: 0
+  m_Name: cricket custom rigLLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8515344719983131875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464455283055245975}
+  m_LocalRotation: {x: 0.00078036136, y: 0.0007922393, z: -0.7015601, w: 0.71260947}
+  m_LocalPosition: {x: -0.44013867, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999619, y: 1.000038, z: 1.0000001}
+  m_Children:
+  - {fileID: 5258793050915807538}
+  m_Father: {fileID: 8532620765788529971}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2532756065502315069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8385037963160701603}
+  m_Layer: 0
+  m_Name: cricket custom rigSpine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8385037963160701603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532756065502315069}
+  m_LocalRotation: {x: -0.010711052, y: 0.0020856308, z: 0.13304584, w: 0.9910498}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+  m_Children:
+  - {fileID: 2680823609368443401}
+  m_Father: {fileID: 6026816880798646798}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2923448162454841370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5258793050915807538}
+  m_Layer: 0
+  m_Name: cricket custom rigLLegDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5258793050915807538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923448162454841370}
+  m_LocalRotation: {x: -0.02525694, y: 0.023500595, z: -0.51560754, w: 0.85613006}
+  m_LocalPosition: {x: -0.16501147, y: 0.000000006055832, z: 0.000000012111664}
+  m_LocalScale: {x: 0.9999519, y: 1.0000492, z: 0.9999993}
+  m_Children: []
+  m_Father: {fileID: 8515344719983131875}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2938549101505925581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6020201012724238005}
+  m_Layer: 0
+  m_Name: cricket custom rigTail5 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6020201012724238005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938549101505925581}
+  m_LocalRotation: {x: 0.07790982, y: -0.1797838, z: -0.058403153, w: 0.97887534}
+  m_LocalPosition: {x: -0.33590493, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000008, y: 0.99999857, z: 0.9999997}
+  m_Children: []
+  m_Father: {fileID: 260319305840560288}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3085588393023110986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2350003857660793647}
+  m_Layer: 0
+  m_Name: cricket custom rigTail5 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2350003857660793647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085588393023110986}
+  m_LocalRotation: {x: 0.023893744, y: -0.029283369, z: -0.21487986, w: 0.97590894}
+  m_LocalPosition: {x: -0.11966401, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999595, y: 1.0000103, z: 0.99999595}
+  m_Children: []
+  m_Father: {fileID: 276770144097001666}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3412907750633448755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6696725905040216732}
+  m_Layer: 0
+  m_Name: cricket custom rigLArmPalm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6696725905040216732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412907750633448755}
+  m_LocalRotation: {x: 0.76786226, y: -0.006888039, z: -0.0617876, w: 0.6375911}
+  m_LocalPosition: {x: -0.32984498, y: -0.000000048446655, z: 0.000000048446655}
+  m_LocalScale: {x: 1.000007, y: 0.9999996, z: 0.9999958}
+  m_Children: []
+  m_Father: {fileID: 5443456734992102081}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3504382212323707521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260319305840560288}
+  m_Layer: 0
+  m_Name: cricket custom rigTail4 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &260319305840560288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504382212323707521}
+  m_LocalRotation: {x: -0.016071687, y: -0.0137561625, z: -0.06738556, w: 0.9975027}
+  m_LocalPosition: {x: -0.38104165, y: 0.000000024223327, z: 0}
+  m_LocalScale: {x: 1.0000008, y: 0.99999934, z: 0.99999964}
+  m_Children:
+  - {fileID: 6020201012724238005}
+  m_Father: {fileID: 4673385959724682577}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3960257762786808645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508393040084576674}
+  m_Layer: 0
+  m_Name: cricket custom rigRArmPalm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1508393040084576674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960257762786808645}
+  m_LocalRotation: {x: -0.7080554, y: -0.0019733722, z: -0.001579453, w: 0.70615244}
+  m_LocalPosition: {x: -0.26726764, y: -0.00000009689331, z: 0}
+  m_LocalScale: {x: 0.9999882, y: 1.0000037, z: 1.0000068}
+  m_Children:
+  - {fileID: 5689650651663673306}
+  m_Father: {fileID: 8783023687660201193}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3964806417711135235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5267495394860407713}
+  m_Layer: 0
+  m_Name: cricket custom rigRLegDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5267495394860407713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3964806417711135235}
+  m_LocalRotation: {x: -0.000009461138, y: 0.0012808304, z: -0.00801983, w: 0.99996704}
+  m_LocalPosition: {x: -0.16501148, y: 0, z: 0.000000003027916}
+  m_LocalScale: {x: 1.0000005, y: 0.99999976, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 6635197921387589267}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4550403585559973182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3298766536380708094}
+  m_Layer: 0
+  m_Name: cricket custom rigribs001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3298766536380708094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550403585559973182}
+  m_LocalRotation: {x: 0.030322734, y: 0.0046432954, z: 0.022116266, w: 0.9992847}
+  m_LocalPosition: {x: -0.30111486, y: -0.000000024223327, z: -0.000000003027916}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
+  m_Children:
+  - {fileID: 9127869950514164596}
+  - {fileID: 8929285418337298362}
+  m_Father: {fileID: 3217419300257834743}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4596495738850656399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5732275252205728644}
+  m_Layer: 0
+  m_Name: cricket custom rigTail2 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5732275252205728644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596495738850656399}
+  m_LocalRotation: {x: 0.045507018, y: -0.04061379, z: 0.4063788, w: 0.9116666}
+  m_LocalPosition: {x: -0.2322177, y: 0, z: 0.000000003027916}
+  m_LocalScale: {x: 0.9999996, y: 1.0000007, z: 1}
+  m_Children:
+  - {fileID: 7262086553799488048}
+  m_Father: {fileID: 8929285418337298362}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4787903527471982805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7560909334465225146}
+  m_Layer: 0
+  m_Name: cricket custom rigRLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7560909334465225146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787903527471982805}
+  m_LocalRotation: {x: -0.009374195, y: -0.002018912, z: 0.42772195, w: 0.9038595}
+  m_LocalPosition: {x: -0.5546064, y: 0.00000038757324, z: 0.00000008175373}
+  m_LocalScale: {x: 1.0000006, y: 0.9999997, z: 1.0000001}
+  m_Children:
+  - {fileID: 6635197921387589267}
+  m_Father: {fileID: 183778177717264533}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4959053430007596130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3848650829161897688}
+  m_Layer: 0
+  m_Name: cricket custom rigTail1 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3848650829161897688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4959053430007596130}
+  m_LocalRotation: {x: -0.108055, y: 0.0019905956, z: 0.97992855, w: -0.16751201}
+  m_LocalPosition: {x: 0.00000009689331, y: 0.12998053, z: 0.19100478}
+  m_LocalScale: {x: 1.0000001, y: 1.0000004, z: 1}
+  m_Children:
+  - {fileID: 2736877613289098761}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5167629209246581267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15766765251579577}
+  m_Layer: 0
+  m_Name: cricket custom rigLArm1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15766765251579577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5167629209246581267}
+  m_LocalRotation: {x: -0.06415577, y: 0.61475784, z: 0.01524554, w: 0.7859545}
+  m_LocalPosition: {x: -0.19914176, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 5443456734992102081}
+  m_Father: {fileID: 4474705405474618504}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5430049889868498492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2687766229734754253}
+  m_Layer: 0
+  m_Name: cricket custom rigTail2 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2687766229734754253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430049889868498492}
+  m_LocalRotation: {x: 0.029217236, y: -0.0062671327, z: -0.78428614, w: 0.6196792}
+  m_LocalPosition: {x: -0.1729778, y: -0.00000009689331, z: 0}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 1}
+  m_Children:
+  - {fileID: 7623252084856084090}
+  m_Father: {fileID: 2404169113203014805}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5589253559088336105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7754323240621655125}
+  m_Layer: 0
+  m_Name: cricket custom rigTail4 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7754323240621655125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589253559088336105}
+  m_LocalRotation: {x: -0.12923007, y: -0.43138897, z: -0.0075345756, w: 0.8928306}
+  m_LocalPosition: {x: -0.29628336, y: -0.000000048446655, z: 0}
+  m_LocalScale: {x: 1.0000015, y: 0.99999595, z: 1.0000045}
+  m_Children:
+  - {fileID: 2921465244937758081}
+  m_Father: {fileID: 9220055189060160613}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5955484642846801652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7623252084856084090}
+  m_Layer: 0
+  m_Name: cricket custom rigTail3 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7623252084856084090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955484642846801652}
+  m_LocalRotation: {x: 0.03710684, y: -0.002918049, z: -0.5154703, w: 0.85609865}
+  m_LocalPosition: {x: -0.14637372, y: 0.000000012111664, z: 0.000000003027916}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 2687766229734754253}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6065914050047787814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3796208279668087306}
+  m_Layer: 0
+  m_Name: cricket custom rigTail5 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3796208279668087306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6065914050047787814}
+  m_LocalRotation: {x: -0.04799815, y: 0.040583603, z: -0.1734407, w: 0.9828365}
+  m_LocalPosition: {x: -0.13674611, y: 0.00000009689331, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000045, z: 0.9999984}
+  m_Children: []
+  m_Father: {fileID: 2253660975710423423}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6183224341383103237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6461856659625392247}
+  m_Layer: 0
+  m_Name: cricket custom rigTail2 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6461856659625392247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183224341383103237}
+  m_LocalRotation: {x: -0.036419224, y: 0.04030257, z: 0.42143604, w: 0.9052298}
+  m_LocalPosition: {x: -0.23658487, y: 0.00000009689331, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 1.0000005, z: 1.0000002}
+  m_Children:
+  - {fileID: 2174620633977027395}
+  m_Father: {fileID: 9127869950514164596}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6211949023310460048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9220055189060160613}
+  m_Layer: 0
+  m_Name: cricket custom rigTail3 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9220055189060160613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211949023310460048}
+  m_LocalRotation: {x: -0.22761115, y: -0.06338288, z: -0.0015040718, w: 0.97168595}
+  m_LocalPosition: {x: -0.27904546, y: 0.000000048446655, z: -0.000000003027916}
+  m_LocalScale: {x: 0.9999996, y: 0.99999714, z: 1.0000045}
+  m_Children:
+  - {fileID: 7754323240621655125}
+  m_Father: {fileID: 5082600621401072544}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6323341396177498695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2404169113203014805}
+  m_Layer: 0
+  m_Name: cricket custom rigTail1 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2404169113203014805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6323341396177498695}
+  m_LocalRotation: {x: 0.0012710555, y: -0.002648875, z: 0.83272856, w: 0.55367374}
+  m_LocalPosition: {x: -0.01222125, y: -0.12188248, z: 0.000000012111664}
+  m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 2687766229734754253}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6485309741616895725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2253660975710423423}
+  m_Layer: 0
+  m_Name: cricket custom rigTail4 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2253660975710423423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485309741616895725}
+  m_LocalRotation: {x: -0.092499025, y: -0.0664404, z: -0.14361726, w: 0.98305833}
+  m_LocalPosition: {x: -0.23005824, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000004, y: 1.0000025, z: 0.999999}
+  m_Children:
+  - {fileID: 3796208279668087306}
+  m_Father: {fileID: 2174620633977027395}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6503613625909819122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8532620765788529971}
+  m_Layer: 0
+  m_Name: cricket custom rigLLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8532620765788529971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503613625909819122}
+  m_LocalRotation: {x: 0.0076321485, y: -0.0039290865, z: 0.5820447, w: 0.8131115}
+  m_LocalPosition: {x: -0.5552899, y: -0.000000072669984, z: 0.00000010900497}
+  m_LocalScale: {x: 0.9999808, y: 1.0000205, z: 0.9999991}
+  m_Children:
+  - {fileID: 8515344719983131875}
+  m_Father: {fileID: 8859294517541101710}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6516162268437831456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183778177717264533}
+  m_Layer: 0
+  m_Name: cricket custom rigRLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183778177717264533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516162268437831456}
+  m_LocalRotation: {x: -0.3468572, y: 0.9373235, z: -0.0311965, w: 0.0118988715}
+  m_LocalPosition: {x: -0, y: 0.000000012111664, z: -0.10082776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7560909334465225146}
+  m_Father: {fileID: 6026816880798646798}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6538203568335341485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2809881562762565848}
+  m_Layer: 0
+  m_Name: cricket custom rigTail5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2809881562762565848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6538203568335341485}
+  m_LocalRotation: {x: -0.03035809, y: 0.019582834, z: 0.31922406, w: 0.9469905}
+  m_LocalPosition: {x: -0.20197216, y: 0.000000048446655, z: 0}
+  m_LocalScale: {x: 1.0000015, y: 1.0000008, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1000232231541096699}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6989075829530497267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9127869950514164596}
+  m_Layer: 0
+  m_Name: cricket custom rigTail1 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9127869950514164596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989075829530497267}
+  m_LocalRotation: {x: -0.0117985, y: 0.018803524, z: 0.4862697, w: 0.87352675}
+  m_LocalPosition: {x: -0.06013063, y: -0.02218789, z: 0.05908551}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Children:
+  - {fileID: 6461856659625392247}
+  m_Father: {fileID: 3298766536380708094}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6992337738423638275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964231321189541202}
+  m_Layer: 0
+  m_Name: cricket custom rigTail1 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1964231321189541202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992337738423638275}
+  m_LocalRotation: {x: 0.24089253, y: -0.4751016, z: 0.80912864, w: 0.24811316}
+  m_LocalPosition: {x: 0.113127105, y: -0.09030336, z: -0.12452196}
+  m_LocalScale: {x: 1, y: 1.0000006, z: 1.0000004}
+  m_Children:
+  - {fileID: 5082600621401072544}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7180147596009999300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5082600621401072544}
+  m_Layer: 0
+  m_Name: cricket custom rigTail2 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5082600621401072544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180147596009999300}
+  m_LocalRotation: {x: -0.21803741, y: -0.06886284, z: 0.06701629, w: 0.97119844}
+  m_LocalPosition: {x: -0.20516145, y: -0.00000009689331, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999976, z: 1.0000007}
+  m_Children:
+  - {fileID: 9220055189060160613}
+  m_Father: {fileID: 1964231321189541202}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7278004542064394235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5443456734992102081}
+  m_Layer: 0
+  m_Name: cricket custom rigLArm2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5443456734992102081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278004542064394235}
+  m_LocalRotation: {x: 0.009488718, y: -0.036966942, z: -0.23088579, w: 0.9722321}
+  m_LocalPosition: {x: -0.29778492, y: 0, z: 0.000000024223327}
+  m_LocalScale: {x: 1.0000024, y: 0.9999989, z: 1.0000004}
+  m_Children:
+  - {fileID: 6696725905040216732}
+  m_Father: {fileID: 15766765251579577}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7324642773522232295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318681360134079614}
+  m_Layer: 0
+  m_Name: cricket custom rigRLegPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1318681360134079614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324642773522232295}
+  m_LocalRotation: {x: 0.4622898, y: -0.53707385, z: -0.48076546, w: 0.51643425}
+  m_LocalPosition: {x: 0.049259815, y: 0.02408467, z: 0.407251}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 7733445660041864920}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7890272240793729661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8293219308561402665}
+  m_Layer: 0
+  m_Name: cricket custom rigTail2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8293219308561402665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890272240793729661}
+  m_LocalRotation: {x: -0.012354318, y: -0.010491875, z: -0.01459772, w: 0.99976206}
+  m_LocalPosition: {x: -0.3317285, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 1}
+  m_Children:
+  - {fileID: 3599330955484712635}
+  m_Father: {fileID: 1040906831517324277}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7988172974118366794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2174620633977027395}
+  m_Layer: 0
+  m_Name: cricket custom rigTail3 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2174620633977027395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988172974118366794}
+  m_LocalRotation: {x: 0.061529834, y: 0.037169468, z: 0.4909331, w: 0.8682265}
+  m_LocalPosition: {x: -0.18748662, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000011, y: 1.0000007, z: 0.99999917}
+  m_Children:
+  - {fileID: 2253660975710423423}
+  m_Father: {fileID: 6461856659625392247}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8302399174381694341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2921465244937758081}
+  m_Layer: 0
+  m_Name: cricket custom rigTail5 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2921465244937758081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302399174381694341}
+  m_LocalRotation: {x: 0.9682652, y: 0.23490462, z: -0.031672884, w: -0.079241656}
+  m_LocalPosition: {x: -0.31134936, y: 0, z: -0.000000024223327}
+  m_LocalScale: {x: 1.0000124, y: 0.99999046, z: 1.0000018}
+  m_Children: []
+  m_Father: {fileID: 7754323240621655125}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8487556990932002126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4673385959724682577}
+  m_Layer: 0
+  m_Name: cricket custom rigTail3 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4673385959724682577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8487556990932002126}
+  m_LocalRotation: {x: -0.013284391, y: 0.00015508806, z: -0.028410712, w: 0.9995081}
+  m_LocalPosition: {x: -0.19644208, y: 0, z: 0.000000024223327}
+  m_LocalScale: {x: 1.0000004, y: 0.9999996, z: 0.99999976}
+  m_Children:
+  - {fileID: 260319305840560288}
+  m_Father: {fileID: 2736877613289098761}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8647656179092447202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026949417994624776}
+  m_Layer: 0
+  m_Name: cricket custom rigRArm1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1026949417994624776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647656179092447202}
+  m_LocalRotation: {x: -0.088259645, y: -0.602912, z: -0.017087873, w: 0.7927265}
+  m_LocalPosition: {x: -0.190985, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999976, y: 1.0000004, z: 0.9999999}
+  m_Children:
+  - {fileID: 8783023687660201193}
+  m_Father: {fileID: 700352150315746760}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8753438064789466751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3217419300257834743}
+  m_Layer: 0
+  m_Name: cricket custom rigSpine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3217419300257834743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753438064789466751}
+  m_LocalRotation: {x: 0.0121908765, y: 0.012768669, z: -0.15162575, w: 0.98828036}
+  m_LocalPosition: {x: -0, y: 0, z: 0.015213146}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000004}
+  m_Children:
+  - {fileID: 3298766536380708094}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8956580065892851946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5689650651663673306}
+  m_Layer: 0
+  m_Name: cricket custom rigRArmDigit11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5689650651663673306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956580065892851946}
+  m_LocalRotation: {x: -0.10632896, y: -0.0017251418, z: 0.00061581325, w: 0.99432933}
+  m_LocalPosition: {x: -0.06349894, y: 0.0124349, z: -0.18154687}
+  m_LocalScale: {x: 0.99997324, y: 1.0000033, z: 1.0000216}
+  m_Children: []
+  m_Father: {fileID: 1508393040084576674}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8974663705612206442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000232231541096699}
+  m_Layer: 0
+  m_Name: cricket custom rigTail4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1000232231541096699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974663705612206442}
+  m_LocalRotation: {x: -0.033856623, y: 0.025687201, z: 0.071125716, w: 0.99656165}
+  m_LocalPosition: {x: -0.23820236, y: 0.000000048446655, z: 0}
+  m_LocalScale: {x: 1.0000007, y: 1.0000006, z: 1}
+  m_Children:
+  - {fileID: 2809881562762565848}
+  m_Father: {fileID: 3599330955484712635}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9002158168770275938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8859294517541101710}
+  m_Layer: 0
+  m_Name: cricket custom rigLLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8859294517541101710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002158168770275938}
+  m_LocalRotation: {x: -0.14017545, y: 0.99009365, z: -0.0014719862, w: -0.007960727}
+  m_LocalPosition: {x: -0, y: 0.000000048446655, z: 0.11159425}
+  m_LocalScale: {x: 0.9999974, y: 1.0000025, z: 1.0000001}
+  m_Children:
+  - {fileID: 8532620765788529971}
+  m_Father: {fileID: 6026816880798646798}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9051548531955623530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7262086553799488048}
+  m_Layer: 0
+  m_Name: cricket custom rigTail3 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7262086553799488048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051548531955623530}
+  m_LocalRotation: {x: 0.047141787, y: 0.047021657, z: 0.4915583, w: 0.8682955}
+  m_LocalPosition: {x: -0.19103993, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999983, y: 1.0000027, z: 0.99999934}
+  m_Children:
+  - {fileID: 276770144097001666}
+  m_Father: {fileID: 5732275252205728644}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9182916190644284052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040906831517324277}
+  m_Layer: 0
+  m_Name: cricket custom rigTail1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040906831517324277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182916190644284052}
+  m_LocalRotation: {x: 0.0011485938, y: -0.0016685578, z: 0.981236, w: 0.19280005}
+  m_LocalPosition: {x: 0.06283696, y: -0.09015148, z: 0.00000003027916}
+  m_LocalScale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+  m_Children:
+  - {fileID: 8293219308561402665}
+  m_Father: {fileID: 4876447285228344886}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
