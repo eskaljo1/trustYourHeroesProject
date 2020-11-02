@@ -9,12 +9,14 @@ public class MainMenu : MonoBehaviour
     public GameObject heroesPanel;
     public GameObject mainPanel;
     public GameObject playPanel;
+    public GameObject optionsPanel;
     public GameObject spawnTile1;
     public GameObject spawnTile2;
     public GameObject spawnTile3;
     public GameObject spawnTile4;
     public Text nameText;
     public Text descriptionText;
+    public Text statsText;
     public RawImage mapImage;
 
     public static int teamMemberPlace = 0;
@@ -44,6 +46,12 @@ public class MainMenu : MonoBehaviour
             Destroy(selectedHeroes[2]);
             Destroy(selectedHeroes[3]);
         }
+    }
+
+    public void NavigateOptions(bool t)
+    {
+        mainPanel.SetActive(!t);
+        optionsPanel.SetActive(t);
     }
 
     public void NavigateMap(bool left)
@@ -98,6 +106,7 @@ public class MainMenu : MonoBehaviour
             Destroy(selectedHero);
             nameText.text = "";
             descriptionText.text = "";
+            statsText.text = "";
         }
     }
 
@@ -163,81 +172,97 @@ public class MainMenu : MonoBehaviour
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Alluria/source/Alluria"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Ice Queen Alluria";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 2:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Charlotte/source/Charlotte"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Charlotte Of The Web";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 3:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Creek/source/Creek"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Creek The Tricky";
                 descriptionText.text = "";
+                statsText.text = "\n\n1\n\n\n\n\n\n";
                 break;
             case 4:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Erasmo/source/Erasmo"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Erasmo The Mad";
                 descriptionText.text = "";
+                statsText.text = "\n\n1\n\n\n\n\n\n";
                 break;
             case 5:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Frederic/source/Frederic"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Frederic The Plague";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 6:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Hor/source/Hor"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Hor The Sun God";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 7:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Makas/source/Makas"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "The Great Makas";
                 descriptionText.text = "";
+                statsText.text = "\n\n1\n\n\n\n\n\n";
                 break;
             case 8:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Nazz/source/Nazz"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Nazz The Foul";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 9:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Ohm/source/Ohm"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Ohm Steel";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 10:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Pico/source/Pico"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Pico The Mantis";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 11:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Ryubi/source/Ryubi"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Ryubi The Silent";
-                descriptionText.text = "";
+                descriptionText.text = "The most skilled sharpshooter in the realm and beyond. Ryubi empowers her arrows with her tribe's dark magic, making them capable of penetrating the toughest shields and armor.\nThey say the deadliest predators are the silent ones. Who does she have her sights on today?";
+                statsText.text = "\n\n1\n\n\n\n\n\n";
                 break;
             case 12:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Santino/source/Santino"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Santino Of The Forest";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 13:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Sent/source/Sent"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Sent Steel";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 14:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/TommyApe/source/TommyApe"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Tommy Ape";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\nMonkey business - able to cross jumpable obstacles (Passive ability)";
                 break;
             case 15:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Xavier/source/Xavier"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Xavier The Cricket Warrior";
                 descriptionText.text = "";
+                statsText.text = "\n\n3\n\n\n\n\n\n";
                 break;
             case 16:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Z/source/Z"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Z";
                 descriptionText.text = "";
+                statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             default:
                 hero = null;
