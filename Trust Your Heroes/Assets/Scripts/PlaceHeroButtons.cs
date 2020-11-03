@@ -57,58 +57,7 @@ public class PlaceHeroButtons : MonoBehaviour
 
     void SetHeroIcon(GameObject button, int heroNumber)
     {
-        switch (YourHeroTeam.heroNames[heroNumber])
-        {
-            case "Alluria":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/alluriaIcon");
-                break;
-            case "Charlotte":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/charlotteIcon");
-                break;
-            case "Creek":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/creekIcon");
-                break;
-            case "Erasmo":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/erasmoIcon");
-                break;
-            case "Frederic":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/fredericIcon");
-                break;
-            case "Hor":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/horIcon");
-                break;
-            case "Makas":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/makasIcon");
-                break;
-            case "Nazz":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/nazzIcon");
-                break;
-            case "Ohm":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/oh,Icon");
-                break;
-            case "Pico":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/picoIcon");
-                break;
-            case "Ryubi":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/ryubiIcon");
-                break;
-            case "Santino":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/santinoIcon");
-                break;
-            case "Sent":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/sentIcon");
-                break;
-            case "TommyApe":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/tommyApeIcon");
-                break;
-            case "Xavier":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/xavierIcon");
-                break;
-            case "Z":
-                button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/zIcon");
-                break;
-        }
-        
+        button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/" + YourHeroTeam.heroNames[heroNumber] + "Icon");                      
     }
 
     public void ClickOnHeroIcon(int heroNumber)
