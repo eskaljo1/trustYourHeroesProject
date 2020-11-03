@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script used so the object with the YourHeroTeam script doesn't get destroyed
+
 public class DontDestroy : MonoBehaviour
 {
     void Awake()
