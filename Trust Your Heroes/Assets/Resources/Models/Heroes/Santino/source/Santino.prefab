@@ -192,8 +192,11 @@ MonoBehaviour:
   description: It is said that the woods have a guardian spirit who watches over them.
     Santino may be a carefree forest dweller, but his love for the plants and animals
     is unmatched. He is incredibly skilled in healing magic, but that doesn't mean
-    he can't fight.\nThose who wish evil upon the woods better know that Santino will
+    he can't fight. Those who wish evil upon the woods better know that Santino will
     stand in their way.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &4978170451850171463
 GameObject:
   m_ObjectHideFlags: 0

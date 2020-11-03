@@ -1648,8 +1648,11 @@ MonoBehaviour:
   heroName: Ryubi The Silent
   description: The most skilled sharpshooter in the realm and beyond. Ryubi empowers
     her arrows with her tribe's dark magic, making them capable of penetrating the
-    toughest shields and armor.\nThey say the deadliest predators are the silent ones.
+    toughest shields and armor. They say the deadliest predators are the silent ones.
     Who does she have her sights on today?
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &8261726449007295956
 GameObject:
   m_ObjectHideFlags: 0

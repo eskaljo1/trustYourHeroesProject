@@ -1815,9 +1815,9 @@ MonoBehaviour:
   description: Once an ordinary primate, Tommy was experimented on by his master Dr.
     Radon. The brutal experiments upgraded his physical and mental strength. Eventually,
     he turned on his former master, escaping and stealing his prized weapon, a hi-tech
-    machine gun.\nNow, Tommy roams free, adventuring and living a life full of mischief.
-  mainAttack: 
-  firstAbility: 
+    machine gun. Now, Tommy roams free, adventuring and living a life full of mischief.
+  mainAttack: 'Machine gun - '
+  firstAbility: 'Smokescreen - '
   secondAbility: Monkey business - able to cross jumpable obstacles (Passive ability)
 --- !u!1 &8732072238328524685
 GameObject:

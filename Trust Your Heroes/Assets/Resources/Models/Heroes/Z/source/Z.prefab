@@ -192,7 +192,7 @@ MonoBehaviour:
   heroName: Z
   description: Not much is known about the cerebral assasin Z. Those who've seen his
     swordplay say he has no equal. Guided by the sword, he ventures around the world,
-    looking for opponents worthy of tasting his blade.\nWhatever the circumstances,
+    looking for opponents worthy of tasting his blade. Whatever the circumstances,
     no matter the odds, know that Z has never lost a fight.
   mainAttack: 
   firstAbility: 
