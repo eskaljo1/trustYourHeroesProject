@@ -2000,7 +2000,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: The Great Makas
-  description: 
+  description: The trolls are a fearsome race. These giant creatures use pure strength
+    to demolish their foes and survive. One of the strongest among them is Makas.
+    Known for his fierce attitude, great combat experience and hunger for battle,
+    he is an excellent example of a troll warrior. If you ever plan to head to combat
+    with a troll, remember to bring company.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &4849984600498857735
 GameObject:
   m_ObjectHideFlags: 0
