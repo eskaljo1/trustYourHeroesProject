@@ -237,7 +237,7 @@ public class MainMenu : MonoBehaviour
             case 12:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Santino/source/Santino"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Santino Of The Forest";
-                descriptionText.text = "";
+                descriptionText.text = "It is said that the woods have a guardian spirit who watches over them. Santino may be a carefree forest dweller, but his love for the plants and animals is unmatched. He is incredibly skilled in healing magic, but that doesn't mean he can't fight.\nThose who wish evil upon the woods better know that Santino will stand in their way.";
                 statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             case 13:
@@ -249,7 +249,7 @@ public class MainMenu : MonoBehaviour
             case 14:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/TommyApe/source/TommyApe"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Tommy Ape";
-                descriptionText.text = "";
+                descriptionText.text = "Once an ordinary primate, Tommy was experimented on by his master Dr. Radon. The brutal experiments upgraded his physical and mental strength. Eventually, he turned on his former master, escaping and stealing his prized weapon, a hi-tech machine gun.\nNow, Tommy roams free, adventuring and living a life full of mischief.";
                 statsText.text = "\n\n2\n\n\n\n\n\nMonkey business - able to cross jumpable obstacles (Passive ability)";
                 break;
             case 15:
@@ -261,7 +261,7 @@ public class MainMenu : MonoBehaviour
             case 16:
                 hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/Z/source/Z"), spawnTile.transform.position, Quaternion.identity);
                 nameText.text = "Z";
-                descriptionText.text = "";
+                descriptionText.text = "Not much is known about the cerebral assasin Z. Those who've seen his swordplay say he has no equal. Guided by the sword, he ventures around the world, looking for opponents worthy of tasting his blade.\nWhatever the circumstances, no matter the odds, know that Z has never lost a fight.";
                 statsText.text = "\n\n2\n\n\n\n\n\n";
                 break;
             default:
