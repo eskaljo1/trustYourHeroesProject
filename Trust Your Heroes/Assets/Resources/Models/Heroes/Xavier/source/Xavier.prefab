@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 7063681296583381045}
   - component: {fileID: 2881952629423558820}
   - component: {fileID: 7742295341900509236}
+  - component: {fileID: 6168238819692901889}
   m_Layer: 0
   m_Name: Xavier
   m_TagString: Untagged
@@ -276,6 +277,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6168238819692901889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498357431346608355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Xavier The Cricket Warrior
+  description: 
 --- !u!1 &706849306931715665
 GameObject:
   m_ObjectHideFlags: 0

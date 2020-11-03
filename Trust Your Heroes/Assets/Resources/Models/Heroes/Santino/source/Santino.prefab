@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 4978170451824530019}
   - component: {fileID: 4978170451824530045}
   - component: {fileID: 4978170451824530018}
+  - component: {fileID: 7220856037969509420}
   m_Layer: 0
   m_Name: Santino
   m_TagString: Untagged
@@ -174,6 +175,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: 2
   obstacleJumper: 0
+--- !u!114 &7220856037969509420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978170451824530044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Santino Of The Forest
+  description: It is said that the woods have a guardian spirit who watches over them.
+    Santino may be a carefree forest dweller, but his love for the plants and animals
+    is unmatched. He is incredibly skilled in healing magic, but that doesn't mean
+    he can't fight.\nThose who wish evil upon the woods better know that Santino will
+    stand in their way.
 --- !u!1 &4978170451850171463
 GameObject:
   m_ObjectHideFlags: 0

@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7793688030303238049}
   - component: {fileID: 4869114179022501349}
   - component: {fileID: 8834519916152256707}
+  - component: {fileID: -8240501467330060368}
   m_Layer: 0
   m_Name: Z
   m_TagString: Untagged
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893a42ae5276fd04b8172c45772b525d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 3
+  movement: 2
   obstacleJumper: 0
 --- !u!65 &8834519916152256707
 BoxCollider:
@@ -175,6 +176,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 3.1, z: 2}
   m_Center: {x: 0, y: 1.8, z: 0}
+--- !u!114 &-8240501467330060368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741557985140212711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Z
+  description: Not much is known about the cerebral assasin Z. Those who've seen his
+    swordplay say he has no equal. Guided by the sword, he ventures around the world,
+    looking for opponents worthy of tasting his blade.\nWhatever the circumstances,
+    no matter the odds, know that Z has never lost a fight.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &762731180404992187
 GameObject:
   m_ObjectHideFlags: 0

@@ -2453,6 +2453,7 @@ GameObject:
   - component: {fileID: 4927883480440540351}
   - component: {fileID: 761699329263024143}
   - component: {fileID: 4936662772088158713}
+  - component: {fileID: 5760791866652248382}
   m_Layer: 0
   m_Name: Ohm
   m_TagString: Untagged
@@ -2523,6 +2524,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 70, y: 160, z: 70}
   m_Center: {x: 0, y: 85, z: 0}
+--- !u!114 &5760791866652248382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808415017999922839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Ohm Steel
+  description: 
 --- !u!1 &3903415624647351947
 GameObject:
   m_ObjectHideFlags: 0

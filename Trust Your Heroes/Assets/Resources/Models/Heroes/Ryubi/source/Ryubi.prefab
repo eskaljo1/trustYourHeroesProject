@@ -1561,6 +1561,7 @@ GameObject:
   - component: {fileID: 5282132215671357912}
   - component: {fileID: 7843773092222589401}
   - component: {fileID: 1936625852768331702}
+  - component: {fileID: -3439221858379172732}
   m_Layer: 0
   m_Name: Ryubi
   m_TagString: Untagged
@@ -1631,6 +1632,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.8, z: 0.9}
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &-3439221858379172732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145404744243924295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Ryubi The Silent
+  description: The most skilled sharpshooter in the realm and beyond. Ryubi empowers
+    her arrows with her tribe's dark magic, making them capable of penetrating the
+    toughest shields and armor.\nThey say the deadliest predators are the silent ones.
+    Who does she have her sights on today?
 --- !u!1 &8261726449007295956
 GameObject:
   m_ObjectHideFlags: 0

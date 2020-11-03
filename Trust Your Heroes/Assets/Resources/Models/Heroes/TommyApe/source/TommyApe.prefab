@@ -1728,6 +1728,7 @@ GameObject:
   - component: {fileID: 3839405749126552166}
   - component: {fileID: 324002111023803134}
   - component: {fileID: 8740058781145209986}
+  - component: {fileID: 5059533786303925245}
   m_Layer: 0
   m_Name: TommyApe
   m_TagString: Untagged
@@ -1797,6 +1798,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.8, z: 0.7}
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &5059533786303925245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709794989928855704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Tommy Ape
+  description: Once an ordinary primate, Tommy was experimented on by his master Dr.
+    Radon. The brutal experiments upgraded his physical and mental strength. Eventually,
+    he turned on his former master, escaping and stealing his prized weapon, a hi-tech
+    machine gun.\nNow, Tommy roams free, adventuring and living a life full of mischief.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: Monkey business - able to cross jumpable obstacles (Passive ability)
 --- !u!1 &8732072238328524685
 GameObject:
   m_ObjectHideFlags: 0

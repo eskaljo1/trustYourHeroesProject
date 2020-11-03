@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 6124152333260143073}
   - component: {fileID: 5389742118969964661}
   - component: {fileID: 5933038037225352222}
+  - component: {fileID: -211996124618869155}
   m_Layer: 0
   m_Name: Sent
   m_TagString: Untagged
@@ -669,6 +670,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 50, y: 170, z: 50}
   m_Center: {x: 0, y: 80, z: 0}
+--- !u!114 &-211996124618869155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124152333260143072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Sent Steel
+  description: 
 --- !u!1 &6124152333264410941
 GameObject:
   m_ObjectHideFlags: 0

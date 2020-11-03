@@ -1951,6 +1951,7 @@ GameObject:
   - component: {fileID: 2163214647205285557}
   - component: {fileID: 249558321129362536}
   - component: {fileID: 4421297089609996607}
+  - component: {fileID: 3638731951591939269}
   m_Layer: 0
   m_Name: Hor
   m_TagString: Untagged
@@ -2020,6 +2021,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.7, z: 0.8}
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &3638731951591939269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453869847074249221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Hor The Sun God
+  description: 
 --- !u!1 &6511635717732607430
 GameObject:
   m_ObjectHideFlags: 0

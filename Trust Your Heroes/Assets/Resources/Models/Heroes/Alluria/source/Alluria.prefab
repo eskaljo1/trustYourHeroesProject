@@ -4405,6 +4405,7 @@ GameObject:
   - component: {fileID: 1261272746248170543}
   - component: {fileID: 1261272746248170542}
   - component: {fileID: 1261272746248170541}
+  - component: {fileID: -2220575077897511297}
   m_Layer: 0
   m_Name: Alluria
   m_TagString: Untagged
@@ -4475,6 +4476,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.05, z: 0.02}
   m_Center: {x: 0, y: 0.025, z: 0}
+--- !u!114 &-2220575077897511297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261272746248170540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Ice Queen Alluria
+  description: 
 --- !u!1 &1261272746254870384
 GameObject:
   m_ObjectHideFlags: 0

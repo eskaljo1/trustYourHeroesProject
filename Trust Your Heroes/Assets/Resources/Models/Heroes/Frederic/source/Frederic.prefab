@@ -4357,6 +4357,7 @@ GameObject:
   - component: {fileID: 2449992039475108230}
   - component: {fileID: 5681615687618694734}
   - component: {fileID: 2925175879209262474}
+  - component: {fileID: -5789809550584088051}
   m_Layer: 0
   m_Name: Frederic
   m_TagString: Untagged
@@ -4427,6 +4428,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 60, y: 165, z: 60}
   m_Center: {x: 0, y: 85, z: 0}
+--- !u!114 &-5789809550584088051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753250574724535421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  heroName: Frederic The Plague
+  description: 
 --- !u!1 &7788455883333767700
 GameObject:
   m_ObjectHideFlags: 0

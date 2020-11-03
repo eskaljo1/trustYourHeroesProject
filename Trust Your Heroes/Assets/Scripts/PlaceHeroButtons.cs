@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Used for the hero buttons that spawn each hero at the beginning of the game
+
 public class PlaceHeroButtons : MonoBehaviour
 {
-    public static int heroSelected;
-    public static bool spawned = false;
-    public static int heroesPlaced = 0;
+    //Static variables
+    public static int heroSelected; //Remember what button was pushed, used for disabling buttons
+    public static bool spawned = false; //true if spawn happened, used for disabling buttons
+    public static int heroesPlaced = 0; //Number of heroes placed
 
+    //Buttons
     public GameObject readyButton;
     public Button button1;
     public Button button2;
@@ -17,6 +21,7 @@ public class PlaceHeroButtons : MonoBehaviour
 
     void Start()
     {
+        //Set icons of chosen heroes
         SetHeroIcon(button1.gameObject, 0);
         SetHeroIcon(button2.gameObject, 1);
         SetHeroIcon(button3.gameObject, 2);
@@ -29,7 +34,7 @@ public class PlaceHeroButtons : MonoBehaviour
 
     void Update()
     {
-        if (spawned)
+        if (spawned) //If spawn happened disable the button of the spawned hero
         {
             switch (heroSelected)
             {
@@ -55,23 +60,24 @@ public class PlaceHeroButtons : MonoBehaviour
         }
     }
 
-    void SetHeroIcon(GameObject button, int heroNumber)
+    void SetHeroIcon(GameObject button, int heroNumber) //Gets icon from resources
     {
         button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/" + YourHeroTeam.heroNames[heroNumber] + "Icon");                      
     }
 
-    public void ClickOnHeroIcon(int heroNumber)
+    public void ClickOnHeroIcon(int heroNumber) //Click on hero icons
     {
         PlaceHero.heroIsSelected = true;
-        GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
         heroSelected = heroNumber;
+        //Light up every first row cell
+        GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
         for (int i = 0; i < firstRowCells.Length; i++)
         {
             firstRowCells[i].GetComponentInChildren<Light>().intensity = 15;
         }
     }
 
-    public void Ready()
+    public void Ready() //Ready button, starts game, enables movement
     {
         if (heroesPlaced == 4)
         {

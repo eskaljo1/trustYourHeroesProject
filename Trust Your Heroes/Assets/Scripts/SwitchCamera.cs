@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script for changing camera view, Q for left, E for right
+
 public class SwitchCamera : MonoBehaviour
 {
     public Camera cam1;
