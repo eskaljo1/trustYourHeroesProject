@@ -558,7 +558,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Pico The Mantis
-  description: 
+  description: The mantodea are a vicious race. Their sharp scythes can cut down any
+    prey, combined with their agility they are a terrifying predator. Pico is no exception.
+    She travelled the land, combining her skills with the knowledge she learned from
+    fighting various blademasters and warriors. After traveling for so long she has
+    become a deadly weapon of death. It is said that the mantodea females devour their
+    life partners, imagine what they do to their enemies.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &4047692415804388845
 GameObject:
   m_ObjectHideFlags: 0

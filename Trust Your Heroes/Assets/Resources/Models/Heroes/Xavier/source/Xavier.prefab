@@ -291,7 +291,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Xavier The Cricket Warrior
-  description: 
+  description: Growing up with his people, the orthoptera tribe, Xavier never got
+    used to the traditional way of life. Most orthoptera never leave their homeland,
+    but Xavier was different, he desired adventure. One day he ventured on into the
+    unknown. He survived using the skills he learned with his tribe, hunting, foraging,
+    crafting as well as fighting. He is also extremely fast and agile. However, Xavier
+    is a pacifist, never engaging in a battle, unless he is prompted of course.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &706849306931715665
 GameObject:
   m_ObjectHideFlags: 0

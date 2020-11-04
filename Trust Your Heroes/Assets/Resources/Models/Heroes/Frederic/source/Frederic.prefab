@@ -4442,7 +4442,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Frederic The Plague
-  description: 
+  description: Frederic is the Soulstein kingdom's secret agent and an expert in chemistry.
+    He loves creating new interesting weapons loaded with deadly gases that he makes
+    himself. Because he always works with poisonous gas, he wears a gas mask which
+    he grew accustomed to, so he wears it all the time. The reason he works for the
+    kingdom is because he can easily aquire any material he needs and he can freely
+    test his weapons on his missions without repercussions.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &7788455883333767700
 GameObject:
   m_ObjectHideFlags: 0

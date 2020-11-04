@@ -2035,7 +2035,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Hor The Sun God
-  description: 
+  description: There was a time when people worshipped the Sun, Hor was at the peak
+    of his power. Alas, many abandoned their belief because their prayers were not
+    answered. Some found another deity they can rely on. Hor lost most of his power,
+    so he came down from the heavens in order to convert all the heretics. Travelling
+    across the realm, smiting down all those who opose him with divine wrath. The
+    Sun is your friend if you respect it, if you don't it might burn you.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &6511635717732607430
 GameObject:
   m_ObjectHideFlags: 0

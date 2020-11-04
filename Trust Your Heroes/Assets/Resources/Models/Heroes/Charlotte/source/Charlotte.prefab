@@ -2225,7 +2225,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Charlotte Of The Web
-  description: 
+  description: As a member of the araneae race, one of the most hated races in the
+    realm, Charlotte's life was full of despair. She was hunted since she was a child.
+    All that fear fueled her rage, thus she truly became a monster. Her body is equipped
+    with sticky web she uses to entangle her opponent and deadly venom that finishes
+    off her prey. Any victim that gets caught in her nest better pray to Hor to burn
+    the web.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &4978002589821449862
 GameObject:
   m_ObjectHideFlags: 0

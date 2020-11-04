@@ -553,7 +553,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Erasmo The Mad
-  description: 
+  description: Erasmo is known for his infamous experiments that he conducted on living
+    beings of every race. His goal was to see how every race reacted to different
+    spells and effects. Eventually he was put on the Soulstein kingdom's wanted list
+    as one of the most dangerous people in the land. Always accompanied by his crow
+    Karasu, he is looking for new myterious magic that he may use in his arsenal.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &2930135671094712424
 GameObject:
   m_ObjectHideFlags: 0

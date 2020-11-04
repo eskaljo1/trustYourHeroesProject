@@ -2538,7 +2538,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   heroName: Ohm Steel
-  description: 
+  description: Together with his younger brother Sent, Ohm was recruited to the Soulstein
+    kingdom army. Training was brutal, but the two brothers managed to climb up to
+    the top of the ranks. He is a fierce fighter, unmatched in physical strength.
+    The armor he wears was custom made from the strongest metals available to the
+    kingdom. He is considered the kingdom's dog and will complete every mission with
+    ease.
+  mainAttack: 
+  firstAbility: 
+  secondAbility: 
 --- !u!1 &3903415624647351947
 GameObject:
   m_ObjectHideFlags: 0
