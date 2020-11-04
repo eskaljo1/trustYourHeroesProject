@@ -81,8 +81,13 @@ public class PlaceHeroButtons : MonoBehaviour
     {
         if (heroesPlaced == 4)
         {
+            PlaceHero.heroIsSelected = false;
             PlaceHero.gameBegun = true;
             readyButton.SetActive(false);
+            //Turn off lights if hero is selected
+            for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
+                for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
+                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 0;
         }
     }
 }
