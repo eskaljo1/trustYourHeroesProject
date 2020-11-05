@@ -11,12 +11,12 @@ public class MoveHero : MonoBehaviour
     private int z = 0;
 
     public int movement = 2; //Movement distance
-    public bool obstacleJumper = false; //Can he jump over jumpable obstacles
+    public bool obstacleJumper = false; //Can he jump over obstacles
 
     void CheckCell(int i, int j) //Check if cell is available to move to
     {
-        //True if the cell is not occupied and not an obstacle and not a jumpable obstacle unless the hero can jump over them
-        if (SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0 && SpawnGrid.cells[i, j].tag != "Obstacle" && (SpawnGrid.cells[i, j].tag != "JumpableObstacle" || obstacleJumper))
+        //True if the cell is not occupied and not a obstacle unless the hero can jump over them
+        if (SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0  && (SpawnGrid.cells[i, j].tag != "Obstacle" || obstacleJumper))
         { 
             //Checks if the distance of the cell is 1
             if ((Mathf.Abs(x - i) + Mathf.Abs(z - j)) == 1)
@@ -142,7 +142,7 @@ public class MoveHero : MonoBehaviour
                 for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
                     if (SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance != 0)
                     {
-                        if(SpawnGrid.cells[i, j].tag != "JumpableObstacle")
+                        if(SpawnGrid.cells[i, j].tag != "Obstacle")
                             SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
                         //Reset distance for next click
                         SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(0);

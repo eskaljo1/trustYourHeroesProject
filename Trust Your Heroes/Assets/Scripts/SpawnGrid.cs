@@ -43,8 +43,8 @@ public class SpawnGrid : MonoBehaviour
         switch (mapNumber)
         {
             case 1:
-                cells[6, 2].tag = "JumpableObstacle";
-                cells[6, 5].tag = "JumpableObstacle";
+                cells[6, 2].tag = "Obstacle";
+                cells[6, 5].tag = "Obstacle";
                 cells[3, 4].tag = "Obstacle";
                 cells[2, 4].tag = "Obstacle";
                 cells[3, 3].tag = "Obstacle";
@@ -55,10 +55,10 @@ public class SpawnGrid : MonoBehaviour
                 cells[3, 4].tag = "Obstacle";
                 cells[4, 4].tag = "Obstacle";
                 cells[4, 3].tag = "Obstacle";
-                cells[1, 3].tag = "JumpableObstacle";
-                cells[1, 4].tag = "JumpableObstacle";
-                cells[6, 4].tag = "JumpableObstacle";
-                cells[6, 3].tag = "JumpableObstacle";
+                cells[1, 3].tag = "Obstacle";
+                cells[1, 4].tag = "Obstacle";
+                cells[6, 4].tag = "Obstacle";
+                cells[6, 3].tag = "Obstacle";
                 cells[4, 0].tag = "Obstacle";
                 cells[3, 7].tag = "Obstacle";
                 break;
@@ -73,14 +73,14 @@ public class SpawnGrid : MonoBehaviour
                 cells[9, 3].tag = "Obstacle";
                 cells[9, 7].tag = "Obstacle";
                 cells[9, 2].tag = "Obstacle";
-                cells[2, 5].tag = "JumpableObstacle";
-                cells[2, 4].tag = "JumpableObstacle";
-                cells[3, 3].tag = "JumpableObstacle";
-                cells[5, 3].tag = "JumpableObstacle";
-                cells[3, 6].tag = "JumpableObstacle";
-                cells[5, 6].tag = "JumpableObstacle";
-                cells[6, 5].tag = "JumpableObstacle";
-                cells[6, 4].tag = "JumpableObstacle";
+                cells[2, 5].tag = "Obstacle";
+                cells[2, 4].tag = "Obstacle";
+                cells[3, 3].tag = "Obstacle";
+                cells[5, 3].tag = "Obstacle";
+                cells[3, 6].tag = "Obstacle";
+                cells[5, 6].tag = "Obstacle";
+                cells[6, 5].tag = "Obstacle";
+                cells[6, 4].tag = "Obstacle";
                 break;
         }
     }

@@ -29,8 +29,8 @@ public class PlaceHero : MonoBehaviour
     {
         if (gameBegun) //When game starts there is no need for FirstRowCell tag
         {
-            if(gameObject.tag == "FirstRowCell")
-                gameObject.tag = "Cell";
+            if(tag == "FirstRowCell")
+                tag = "Cell";
         }
     }
 
@@ -38,7 +38,7 @@ public class PlaceHero : MonoBehaviour
     {
         if (heroIsSelected)
         {
-            if (gameObject.tag == "FirstRowCell") //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
+            if (tag == "FirstRowCell") //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
             {
                 heroIsSelected = false;
                 if (heroSelected) //If a hero is selected on the board, move him from his current cell
@@ -74,19 +74,87 @@ public class PlaceHero : MonoBehaviour
         }
     }
 
-    void MoveSelectedHero() //Move hero
+    //Moves hero over time
+    public IEnumerator MoveToPosition(Vector3 target, float timeToMove)
     {
+        //Turns off all the cell lights
+        heroSelected.GetComponent<MoveHero>().TurnOffLights();
+        var currentPos = heroSelected.transform.position;
+        var t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / timeToMove;
+            heroSelected.transform.position = Vector3.Lerp(currentPos, target, t);
+            yield return null;
+        }
+        heroSelected.GetComponent<Animator>().SetBool("Walking", false);
         //Changes the tag of the cell the hero is currently on
-        if(SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag == "OccupiedCell")
+        if (SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag == "OccupiedCell")
         {
             SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag = "Cell";
         }
-        //Moves hero and changes the coordinates in MoveHero
-        heroSelected.transform.position = transform.position;
+        //Changes the coordinates in MoveHero
         heroSelected.GetComponent<MoveHero>().SetCoordinates(x, z);
-        //Turns off all the cell lights
-        heroSelected.GetComponent<MoveHero>().TurnOffLights();
         heroSelected = null;
+    }
+
+    void MoveSelectedHero() //Move hero
+    {
+        if (tag != "FirstRowCell")
+        {
+            ChangeRotationOfHero();
+            //Play animation for walking
+            heroSelected.GetComponent<Animator>().SetBool("Walking", true);
+            StartCoroutine(MoveToPosition(transform.position, 2.0f));
+        }
+        else //If the game has not begun there is no need for animation
+            StartCoroutine(MoveToPosition(transform.position, 0.0f));
+    }
+
+    //Change heros rotation so he is facing the cell he needs to move to
+    void ChangeRotationOfHero()
+    {
+        if(x < heroSelected.GetComponent<MoveHero>().GetX())
+        {
+            if (z < heroSelected.GetComponent<MoveHero>().GetZ())
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, -135.0f, 0.0f);
+            }
+            else if (z > heroSelected.GetComponent<MoveHero>().GetZ())
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, -45.0f, 0.0f);
+            }
+            else
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+            }
+        }
+        else if(x > heroSelected.GetComponent<MoveHero>().GetX())
+        {
+            if (z < heroSelected.GetComponent<MoveHero>().GetZ())
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, 135.0f, 0.0f);
+            }
+            else if (z > heroSelected.GetComponent<MoveHero>().GetZ())
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, 45.0f, 0.0f);
+            }
+            else
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+        }
+        else
+        {
+            if (z < heroSelected.GetComponent<MoveHero>().GetZ())
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            }
+            else if (z > heroSelected.GetComponent<MoveHero>().GetZ())
+            {
+                heroSelected.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            }
+        }
     }
 
     public void SetPosition(int xx, int zz) //Set coordinates
