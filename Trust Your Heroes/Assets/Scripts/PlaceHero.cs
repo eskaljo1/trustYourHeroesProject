@@ -111,6 +111,8 @@ public class PlaceHero : MonoBehaviour
             //Animation speed set
             if ((Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ())) == 1 && heroSelected.GetComponent<MoveHero>().movement != 1)
                 StartCoroutine(MoveToPosition(transform.position, 1.0f));
+            else if (Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) == 1 && Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ()) == 1)
+                StartCoroutine(MoveToPosition(transform.position, 1.2f));
             else
                 StartCoroutine(MoveToPosition(transform.position, 2.0f));
         }
