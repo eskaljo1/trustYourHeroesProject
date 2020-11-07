@@ -77,6 +77,9 @@ public class PlaceHero : MonoBehaviour
     //Moves hero over time
     public IEnumerator MoveToPosition(Vector3 target, float timeToMove)
     {
+        //Erasmo's grass needs to disappear below
+        if (heroSelected.gameObject.name == "Erasmo(Clone)") 
+                  target = new Vector3(target.x, target.y - 0.05f, target.z);
         //Turns off all the cell lights
         heroSelected.GetComponent<MoveHero>().TurnOffLights();
         var currentPos = heroSelected.transform.position;
@@ -105,7 +108,11 @@ public class PlaceHero : MonoBehaviour
             ChangeRotationOfHero();
             //Play animation for walking
             heroSelected.GetComponent<Animator>().SetBool("Walking", true);
-            StartCoroutine(MoveToPosition(transform.position, 2.0f));
+            //Animation speed set
+            if ((Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ())) == 1 && heroSelected.GetComponent<MoveHero>().movement != 1)
+                StartCoroutine(MoveToPosition(transform.position, 1.0f));
+            else
+                StartCoroutine(MoveToPosition(transform.position, 2.0f));
         }
         else //If the game has not begun there is no need for animation
             StartCoroutine(MoveToPosition(transform.position, 0.0f));

@@ -13,6 +13,13 @@ public class MoveHero : MonoBehaviour
     public int movement = 2; //Movement distance
     public bool obstacleJumper = false; //Can he jump over obstacles
 
+    //Erasmo's grass needs to dissapear below
+    void Start()
+    {
+        if (name == "Erasmo(Clone)")
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.045f, transform.position.z);
+    }
+
     void CheckCell(int i, int j) //Check if cell is available to move to
     {
         //True if the cell is not occupied and not a obstacle unless the hero can jump over them
