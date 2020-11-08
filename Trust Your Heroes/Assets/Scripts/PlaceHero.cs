@@ -78,7 +78,7 @@ public class PlaceHero : MonoBehaviour
     public IEnumerator MoveToPosition(Vector3 target, float timeToMove)
     {
         //Erasmo's grass needs to disappear below
-        if (heroSelected.gameObject.name == "Erasmo(Clone)") 
+        if (heroSelected.name == "Erasmo(Clone)") 
                   target = new Vector3(target.x, target.y - 0.05f, target.z);
         //Turns off all the cell lights
         heroSelected.GetComponent<MoveHero>().TurnOffLights();
@@ -108,8 +108,8 @@ public class PlaceHero : MonoBehaviour
             ChangeRotationOfHero();
             //Play animation for walking
             heroSelected.GetComponent<Animator>().SetBool("Walking", true);
-            //Animation speed set
-            if ((Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ())) == 1 && heroSelected.GetComponent<MoveHero>().movement != 1)
+            //Animation speed set, if Tommy then all animations are 1s, the rest is dependable on distance
+            if (heroSelected.name == "TommyApe(Clone)" || (Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ())) == 1 && heroSelected.GetComponent<MoveHero>().movement != 1)
                 StartCoroutine(MoveToPosition(transform.position, 1.0f));
             else if (Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) == 1 && Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ()) == 1)
                 StartCoroutine(MoveToPosition(transform.position, 1.2f));

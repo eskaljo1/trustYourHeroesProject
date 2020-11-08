@@ -36,6 +36,7 @@ public class MainMenu : MonoBehaviour
     private GameObject selectedHero;
     //*Play Panel
     private GameObject[] selectedHeroes;
+    private int[] selectedHeroNumbers; //Used so you can't pick two same heroes
 
     //Selected map in the Play Panel
     private int mapNumber = 1;
@@ -43,6 +44,11 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         selectedHeroes = new GameObject[4];
+        selectedHeroNumbers = new int[4];
+        selectedHeroNumbers[0] = -1;
+        selectedHeroNumbers[1] = -1;
+        selectedHeroNumbers[2] = -1;
+        selectedHeroNumbers[3] = -1;
     }
 
     public void Exit() //Exit button
@@ -60,6 +66,10 @@ public class MainMenu : MonoBehaviour
             Destroy(selectedHeroes[1]);
             Destroy(selectedHeroes[2]);
             Destroy(selectedHeroes[3]);
+            selectedHeroNumbers[0] = -1;
+            selectedHeroNumbers[1] = -1;
+            selectedHeroNumbers[2] = -1;
+            selectedHeroNumbers[3] = -1;
         }
     }
 
@@ -157,26 +167,33 @@ public class MainMenu : MonoBehaviour
 
     public void ChooseHero(int heroNumber) //Spawns hero prefab, Play Panel
     {
-        switch(teamMemberPlace) //Checks which spawn tile is chosen
-        {
-            case 1:
-                if (selectedHeroes[0]) Destroy(selectedHeroes[0]);
-                selectedHeroes[0] = SpawnNewHero(heroNumber, spawnTile1, false);
-                break;
-            case 2:
-                if (selectedHeroes[1]) Destroy(selectedHeroes[1]);
-                selectedHeroes[1] = SpawnNewHero(heroNumber, spawnTile2, false);
-                break;
-            case 3:
-                if (selectedHeroes[2]) Destroy(selectedHeroes[2]);
-                selectedHeroes[2] = SpawnNewHero(heroNumber, spawnTile3, false);
-                break;
-            case 4:
-                if (selectedHeroes[3]) Destroy(selectedHeroes[3]);
-                selectedHeroes[3] = SpawnNewHero(heroNumber, spawnTile4, false);
-                break;
-            default:
-                break;
+        //Used so you can't pick two same heroes
+        if (heroNumber != selectedHeroNumbers[0] && heroNumber != selectedHeroNumbers[1] &&
+            heroNumber != selectedHeroNumbers[2] && heroNumber != selectedHeroNumbers[3])
+            switch (teamMemberPlace) //Checks which spawn tile is chosen
+            {
+                case 1:
+                    if (selectedHeroes[0]) Destroy(selectedHeroes[0]);
+                    selectedHeroes[0] = SpawnNewHero(heroNumber, spawnTile1, false);
+                    selectedHeroNumbers[0] = heroNumber;
+                    break;
+                case 2:
+                    if (selectedHeroes[1]) Destroy(selectedHeroes[1]);
+                    selectedHeroes[1] = SpawnNewHero(heroNumber, spawnTile2, false);
+                    selectedHeroNumbers[1] = heroNumber;
+                    break;
+                case 3:
+                    if (selectedHeroes[2]) Destroy(selectedHeroes[2]);
+                    selectedHeroes[2] = SpawnNewHero(heroNumber, spawnTile3, false);
+                    selectedHeroNumbers[2] = heroNumber;
+                    break;
+                case 4:
+                    if (selectedHeroes[3]) Destroy(selectedHeroes[3]);
+                    selectedHeroes[3] = SpawnNewHero(heroNumber, spawnTile4, false);
+                    selectedHeroNumbers[3] = heroNumber;
+                    break;
+                default:
+                    break;
         }
     }
 
