@@ -1818,8 +1818,8 @@ MonoBehaviour:
     he turned on his former master, escaping and stealing his prized weapon, a machine
     gun that fires magical bullets. Now, Tommy roams free, adventuring and living
     a life full of mischief.
-  mainAttack: 'Machine gun - '
-  firstAbility: 'Smokescreen - '
+  mainAttack: Machine gun - 25 dmg
+  firstAbility: Smokescreen - evasiveness +50% for 2 turns
   secondAbility: Monkey business - able to cross jumpable obstacles (Passive ability)
 --- !u!82 &-2425654121179605604
 AudioSource:

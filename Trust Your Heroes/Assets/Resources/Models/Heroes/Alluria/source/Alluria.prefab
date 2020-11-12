@@ -4489,15 +4489,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 75
   heroName: Ice Queen Alluria
   description: The Ice Queen rules over the cold frozen wastelands with an iron fist.
     Whoever dares disobey her will feel her anger and wrath. Being a frost archmage,
     there are not many who are equal to her in power. Using her magic, Alluria expands
     her land, freezing everything in her path.
-  mainAttack: 
-  firstAbility: 
-  secondAbility: 
+  mainAttack: Ice staff - 10 dmg
+  firstAbility: 'Frostbolt - '
+  secondAbility: 'Blizzard - '
 --- !u!82 &-2452651058500802780
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2232,9 +2232,9 @@ MonoBehaviour:
     with sticky web she uses to entangle her opponent and deadly venom that finishes
     off her prey. Any victim that gets caught in her nest better pray to Hor to burn
     the web.
-  mainAttack: 
-  firstAbility: 
-  secondAbility: 
+  mainAttack: 'Spider bite - '
+  firstAbility: 'Splash jump - '
+  secondAbility: 'Entangle - '
 --- !u!82 &322269319688617250
 AudioSource:
   m_ObjectHideFlags: 0

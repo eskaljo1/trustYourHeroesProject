@@ -299,7 +299,7 @@ MonoBehaviour:
     crafting as well as fighting. He is also extremely fast and agile. However, Xavier
     is a pacifist, never engaging in a battle, unless he is prompted of course.
   mainAttack: 
-  firstAbility: 
+  firstAbility: 'Flare - '
   secondAbility: 
 --- !u!82 &-2179734815749015837
 AudioSource:
