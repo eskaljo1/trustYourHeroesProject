@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 318725397399783640}
   m_Layer: 0
   m_Name: Z
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 20
+  mainAttackRange: 1
+  ability1Range: 2
+  ability2Range: 2
+  ability2Passive: 0
   heroName: Z
   description: Not much is known about the cerebral assasin Z. Those who've seen his
     swordplay say he has no equal. Guided by the sword, he ventures around the world,

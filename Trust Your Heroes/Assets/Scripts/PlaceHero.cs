@@ -16,8 +16,9 @@ public class PlaceHero : MonoBehaviour
     //Static variables
     public static bool gameBegun = false; //When Ready button is clicked the game starts
     public static bool heroIsSelected = false; //true if a hero is selected
+    public static bool movement = true; //true if movement, false if attack
     public static GameObject heroSelected = null; //The selected hero
-
+    
     void Start()
     {
         heroSelected = null;
@@ -38,38 +39,45 @@ public class PlaceHero : MonoBehaviour
     {
         if (heroIsSelected)
         {
-            if (tag == "FirstRowCell") //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
+            if (movement) //if movement, else attack
             {
-                heroIsSelected = false;
-                if (heroSelected) //If a hero is selected on the board, move him from his current cell
+                if (tag == "FirstRowCell") //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
                 {
-                    //Change tag from OccupiedCell to FirstRowCell
-                    SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag = "FirstRowCell";
-                    //Move
-                    MoveSelectedHero();
-                }
-                else //else spawn hero of the selected hero icon
-                {
-                    GameObject hero = Instantiate(Resources.Load<GameObject>("Models/Heroes/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1] + "/source/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1]), transform.position, Quaternion.identity);
-                    hero.GetComponent<MoveHero>().SetCoordinates(x, z);
-                    PlaceHeroButtons.spawned = true;
-                    PlaceHeroButtons.heroesPlaced++;
-                }
-                //Turn off lights
-                GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
-                for (int i = 0; i < firstRowCells.Length; i++)
-                {
-                    firstRowCells[i].GetComponentInChildren<Light>().intensity = 0;
-                }
-                tag = "OccupiedCell";
-            }
-            if (gameBegun) //If game has begun, move hero to cell if it is available
-            {
-                if (GetComponentInChildren<Light>().intensity == 15) //Checks if cell is available
-                {
-                    MoveSelectedHero();
+                    heroIsSelected = false;
+                    if (heroSelected) //If a hero is selected on the board, move him from his current cell
+                    {
+                        //Change tag from OccupiedCell to FirstRowCell
+                        SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag = "FirstRowCell";
+                        //Move
+                        MoveSelectedHero();
+                    }
+                    else //else spawn hero of the selected hero icon
+                    {
+                        heroSelected = Instantiate(Resources.Load<GameObject>("Models/Heroes/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1] + "/source/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1]), transform.position, Quaternion.identity);
+                        heroSelected.GetComponent<MoveHero>().SetCoordinates(x, z);
+                        PlaceHeroButtons.spawned = true;
+                        PlaceHeroButtons.heroesPlaced++;
+                    }
+                    //Turn off lights
+                    GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
+                    for (int i = 0; i < firstRowCells.Length; i++)
+                    {
+                        firstRowCells[i].GetComponentInChildren<Light>().intensity = 0;
+                    }
                     tag = "OccupiedCell";
                 }
+                if (gameBegun) //If game has begun, move hero to cell if it is available
+                {
+                    if (GetComponentInChildren<Light>().intensity == 15) //Checks if cell is available
+                    {
+                        MoveSelectedHero();
+                        tag = "OccupiedCell";
+                    }
+                }
+            }
+            else //for attacks
+            {
+
             }
         }
     }

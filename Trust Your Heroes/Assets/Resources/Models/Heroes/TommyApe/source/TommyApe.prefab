@@ -1732,7 +1732,7 @@ GameObject:
   - component: {fileID: -2425654121179605604}
   m_Layer: 0
   m_Name: TommyApe
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1812,6 +1812,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 25
+  ability1Dmg: 0
+  ability2Dmg: 0
+  mainAttackRange: 1
+  ability1Range: 0
+  ability2Range: 0
+  ability2Passive: 1
   heroName: Tommy Ape
   description: Once an ordinary primate, Tommy was experimented on by his master Dr.
     Radon. The brutal experiments upgraded his physical and mental strength. Eventually,

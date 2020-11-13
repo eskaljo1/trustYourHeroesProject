@@ -49,6 +49,9 @@ public class SpawnGrid : MonoBehaviour
                 cells[2, 4].tag = "Obstacle";
                 cells[3, 3].tag = "Obstacle";
                 cells[2, 3].tag = "Obstacle";
+
+                cells[0, 1].tag = "EnemyCell";
+                cells[4, 2].tag = "EnemyCell";
                 break;
             case 2:
                 cells[3, 3].tag = "Obstacle";

@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 5502112487482411087}
   m_Layer: 0
   m_Name: Creek
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,6 +379,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 0
+  mainAttackRange: 1
+  ability1Range: 2
+  ability2Range: 0
+  ability2Passive: 1
   heroName: Creek The Tricky
   description: The arbor race are sentient trees, varying size and type. Most of them
     live in forests and rarely make contact with the outside world. Creek was a cheerful
@@ -388,7 +395,7 @@ MonoBehaviour:
     kingdom army. Creek was furious and swore to get his revenge.
   mainAttack: 
   firstAbility: 
-  secondAbility: 
+  secondAbility: 'Vines - '
 --- !u!82 &5502112487482411087
 AudioSource:
   m_ObjectHideFlags: 0

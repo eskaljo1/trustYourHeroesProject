@@ -1908,7 +1908,7 @@ GameObject:
   - component: {fileID: 2869950589006190341}
   m_Layer: 0
   m_Name: Makas
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2000,6 +2000,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 20
+  mainAttackRange: 1
+  ability1Range: 2
+  ability2Range: 2
+  ability2Passive: 0
   heroName: The Great Makas
   description: The trolls are a fearsome race. These giant creatures use pure strength
     to demolish their foes and survive. One of the strongest among them is Makas.

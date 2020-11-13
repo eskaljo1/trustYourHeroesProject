@@ -2137,7 +2137,7 @@ GameObject:
   - component: {fileID: 322269319688617250}
   m_Layer: 0
   m_Name: Charlotte
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2225,6 +2225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 0
+  mainAttackRange: 1
+  ability1Range: 0
+  ability2Range: 0
+  ability2Passive: 1
   heroName: Charlotte Of The Web
   description: As a member of the araneae race, one of the most hated races in the
     realm, Charlotte's life was full of despair. She was hunted since she was a child.

@@ -10,6 +10,7 @@ public class SwitchCamera : MonoBehaviour
     public Camera cam2;
     public Camera cam3;
     public Camera cam4;
+    public Canvas canvas;
 
     private int active = 1;
 
@@ -19,7 +20,7 @@ public class SwitchCamera : MonoBehaviour
         cam3.enabled = false;
         cam4.enabled = false;
     }
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -81,11 +82,12 @@ public class SwitchCamera : MonoBehaviour
                 }
                 break;
         }
+    }
 
-        void EnableCamera(Camera camera, int new_active)
-        {
-            camera.enabled = true;
-            active = new_active;
-        }
+    void EnableCamera(Camera camera, int new_active)
+    {
+        camera.enabled = true;
+        active = new_active;
+        canvas.worldCamera = camera;
     }
 }

@@ -1955,7 +1955,7 @@ GameObject:
   - component: {fileID: -205764874885355143}
   m_Layer: 0
   m_Name: Hor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2035,6 +2035,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 20
+  mainAttackRange: 1
+  ability1Range: 2
+  ability2Range: 2
+  ability2Passive: 0
   heroName: Hor The Sun God
   description: There was a time when people worshipped the Sun, Hor was at the peak
     of his power. Alas, many abandoned their belief because their prayers were not

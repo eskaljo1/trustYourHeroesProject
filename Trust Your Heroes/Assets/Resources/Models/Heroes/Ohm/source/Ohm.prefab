@@ -2457,7 +2457,7 @@ GameObject:
   - component: {fileID: 9156247682216998237}
   m_Layer: 0
   m_Name: Ohm
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2538,6 +2538,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 20
+  mainAttackRange: 1
+  ability1Range: 2
+  ability2Range: 2
+  ability2Passive: 0
   heroName: Ohm Steel
   description: Together with his younger brother Sent, Ohm was recruited to the Soulstein
     kingdom army. Training was brutal, but the two brothers managed to climb up to

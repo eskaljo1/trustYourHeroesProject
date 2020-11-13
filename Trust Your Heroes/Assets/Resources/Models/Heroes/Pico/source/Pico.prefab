@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: -6120951609696173870}
   m_Layer: 0
   m_Name: Pico
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -558,6 +558,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mainAttackDmg: 20
+  ability1Dmg: 20
+  ability2Dmg: 20
+  mainAttackRange: 1
+  ability1Range: 2
+  ability2Range: 2
+  ability2Passive: 0
   heroName: Pico The Mantis
   description: The mantodea are a vicious race. Their sharp scythes can cut down any
     prey, combined with their agility they are a terrifying predator. Pico is no exception.

@@ -23,7 +23,7 @@ public class MoveHero : MonoBehaviour
     void CheckCell(int i, int j) //Check if cell is available to move to
     {
         //True if the cell is not occupied and not a obstacle unless the hero can jump over them
-        if (SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0  && (SpawnGrid.cells[i, j].tag != "Obstacle" || obstacleJumper))
+        if (SpawnGrid.cells[i, j].tag != "EnemyCell" && SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0  && (SpawnGrid.cells[i, j].tag != "Obstacle" || obstacleJumper))
         { 
             //Checks if the distance of the cell is 1
             if ((Mathf.Abs(x - i) + Mathf.Abs(z - j)) == 1)
@@ -63,6 +63,7 @@ public class MoveHero : MonoBehaviour
 
     void OnMouseDown() //When hero is clicked, check all available cells and light their lights on
     {
+        PlaceHero.movement = true;
         if (PlaceHero.heroIsSelected) //If there was a selected hero, turn off lights of his available cells
         {
             TurnOffLights();
