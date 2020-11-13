@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RyubiStanding
+  m_Name: XavierHit
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -17,26 +17,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.008983554, y: 0.03262663, z: -0.06803958, w: 0.9971085}
+        value: {x: -0.04816439, y: -0.004216371, z: 0.0598933, w: 0.99703324}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.030252881, y: -0.07003546, z: 0.046628553, w: 0.005767152}
+        outSlope: {x: 0.017903745, y: -0.019501895, z: 0.00011175871, w: 0.00071525574}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: 0.020429177, y: 0.0386074, z: -0.06680113, w: 0.9968097}
-        inSlope: {x: 0.000065444285, y: 0.00008457416, z: -0.00004832809, w: -0.000032218726}
-        outSlope: {x: 0.0000053859617, y: 0.000053859618, z: -0.000053859618, w: 0}
+        time: 0.16666667
+        value: {x: -0.02378693, y: -0.010660441, z: 0.1052575, w: 0.99410325}
+        inSlope: {x: 0.0003799796, y: -0.00012293458, z: 0.00071525574, w: 0}
+        outSlope: {x: -0.0002346933, y: 0.00009220094, z: -0.00037997964, w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 3.2333333
-        value: {x: 0.008983554, y: 0.03262663, z: -0.06803958, w: 0.9971085}
-        inSlope: {x: -0.030289304, y: -0.0700579, z: 0.046620887, w: 0.005773751}
+        time: 0.5
+        value: {x: -0.04816439, y: -0.004216371, z: 0.0598933, w: 0.99703324}
+        inSlope: {x: 0.017255547, y: -0.019353816, z: -0.0010728837, w: 0.0010728837}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -45,32 +45,32 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.45657372, y: 0.061763324, z: 0.14495766, w: 0.87562144}
+        value: {x: 0.064876445, y: -0.8292289, z: -0.06270885, w: 0.5515779}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.16697355, y: -0.13918087, z: -0.26441908, w: -0.033539694}
+        outSlope: {x: 0.027000904, y: -0.01180172, z: 0.0075548887, w: -0.020742416}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: 0.4476321, y: 0.0584983, z: 0.14619532, w: 0.8802445}
-        inSlope: {x: -0.00019331236, y: 0.00014498427, z: 0.0002738592, w: 0.000032218726}
-        outSlope: {x: -0.00013245476, y: 0.00015453056, z: 0.00026490953, w: 0.000044151588}
+        time: 0.16666667
+        value: {x: -0.051605258, y: -0.81321865, z: 0.11429329, w: 0.56828636}
+        inSlope: {x: -0.0017881393, y: 0.00035762787, z: 0.0031292439, w: 0}
+        outSlope: {x: 0.0009834768, y: -0.00017881395, z: -0.0016093255, w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
-        value: {x: 0.45657372, y: 0.061763324, z: 0.14495766, w: 0.87562144}
-        inSlope: {x: 0.1668047, y: -0.13941967, z: -0.26471084, w: -0.033290297}
+        time: 0.5
+        value: {x: 0.064876445, y: -0.8292289, z: -0.06270885, w: 0.5515779}
+        inSlope: {x: 0.030286612, y: -0.01269579, z: 0.0029057267, w: -0.021994116}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -79,33 +79,33 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.0000000040830415, y: 0.000000046944386, z: 0.39724094, w: 0.91771436}
+        value: {x: 0.030322736, y: 0.0046432954, z: 0.02211627, w: 0.9992847}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: 0.0000893416, y: -0.00002736643, z: 0.057027146, w: -0.024679545}
+        outSlope: {x: -0.010572374, y: 0.023446977, z: 0.0021904707, w: -0.00035762787}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: 0.05427587, y: -0.01788884, z: 0.43458152, w: 0.89881754}
-        inSlope: {x: 0.000094642506, y: -0.000032218726, z: 0, w: 0}
-        outSlope: {x: -0.00011579818, y: 0.000045780675, z: -0.00012926309, w: 0.00008617539}
+        time: 0.16666667
+        value: {x: 0.028158462, y: 0.0053610364, z: 0.13447237, w: 0.9905027}
+        inSlope: {x: -0.000022351742, y: -0.000008381903, z: 0.0017881393, w: -0.00035762787}
+        outSlope: {x: 0.000022351744, y: -0.000033527616, z: -0.0009387732, w: 0.00017881395}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 3.2333333
-        value: {x: -0.0000000040830415, y: 0.000000046944386, z: 0.39724094, w: 0.91771436}
-        inSlope: {x: -0.0001216002, y: 0.00003242909, z: 0.056918845, w: -0.024646161}
+        time: 0.5
+        value: {x: 0.030322736, y: 0.0046432954, z: 0.02211627, w: 0.9992847}
+        inSlope: {x: -0.010516495, y: 0.023438597, z: -0.0009331853, w: 0.0003576279}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -114,33 +114,33 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.000000045529468, y: 0.000000016504965, z: 0.340809, w: 0.94013256}
+        value: {x: -0.08825964, y: -0.60291195, z: -0.017087877, w: 0.79272646}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
-        outSlope: {x: -0.000038780003, y: -0.000022818427, z: 0.1672313, w: -0.060635645}
+        outSlope: {x: -0.043451786, y: 0.02682209, z: 0.0017881393, w: 0.016450882}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: -0.023248304, y: -0.013490799, z: 0.3518975, w: 0.9356525}
-        inSlope: {x: -0.0000342324, y: -0.000024667463, z: -0.0001288749, w: 0.000032218726}
-        outSlope: {x: 0.00005380975, y: 0.000026904874, z: -0.00019868214, w: 0.000088303175}
+        time: 0.16666667
+        value: {x: -0.046949822, y: -0.6155965, z: -0.084334604, w: 0.78212816}
+        inSlope: {x: 0.00087171793, y: -0.0010728836, z: -0.0013411045, w: -0.00035762787}
+        outSlope: {x: -0.00034645203, y: 0, z: 0.00058114534, w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
-        value: {x: 0.000000045529468, y: 0.000000016504965, z: 0.340809, w: 0.94013256}
-        inSlope: {x: 0.00005016762, y: 0.000025940082, z: 0.16720207, w: -0.060575977}
+        time: 0.5
+        value: {x: -0.08825964, y: -0.60291195, z: -0.017087877, w: 0.79272646}
+        inSlope: {x: -0.04459173, y: 0.02807379, z: 0.0036098065, w: 0.015914442}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
         tangentMode: 0
         weightedMode: 0
@@ -149,61 +149,17 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
   m_CompressedRotationCurves: []
-  m_EulerCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: -79.679985, y: 88.31045, z: -87.88021}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 1.8333334
-        value: {x: -79.679985, y: 88.31045, z: -90}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 3.2
-        value: {x: -79.679985, y: 88.31045, z: -87.88021}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
+  m_EulerCurves: []
   m_PositionCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.15481922, y: 0.036713567, z: 0.08479854}
-        inSlope: {x: 0.0028672628, y: -0.009648206, z: 0.029632417}
-        outSlope: {x: 0.0028672628, y: -0.009648206, z: 0.029632417}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 1.85
-        value: {x: 0.164, y: 0.038, z: 0.085}
+        value: {x: -0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -211,10 +167,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
-        value: {x: 0.15481922, y: 0.036713567, z: 0.08479854}
-        inSlope: {x: 0.0028672628, y: -0.009648206, z: 0.029632417}
-        outSlope: {x: 0.0028672628, y: -0.009648206, z: 0.029632417}
+        time: 0.5
+        value: {x: -0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -222,22 +178,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 L Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.15905455, y: 0.036464494, z: -0.08295678}
-        inSlope: {x: 0.00030071527, y: -0.0062859873, z: 0.02956422}
-        outSlope: {x: 0.00030071527, y: -0.0062859873, z: 0.02956422}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 1.85
-        value: {x: 0.169, y: 0.038, z: -0.083}
+        value: {x: -0.21165888, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -245,10 +192,19 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
-        value: {x: 0.15905455, y: 0.036464494, z: -0.08295678}
-        inSlope: {x: 0.00030071527, y: -0.0062859873, z: 0.02956422}
-        outSlope: {x: 0.00030071527, y: -0.0062859873, z: 0.02956422}
+        time: 0.16666667
+        value: {x: -0.21165897, y: 0.00000038743005, z: 0.0000000669388}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5
+        value: {x: -0.21165888, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -256,22 +212,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.13798894, y: -0.0001224247, z: -0.0000016774654}
-        inSlope: {x: 0.000009222165, y: -0.0000029046191, z: 0.000006358633}
-        outSlope: {x: 0.000009222165, y: -0.0000029046191, z: 0.000006358633}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 1.85
-        value: {x: -0.14327703, y: 0.012316221, z: -0.0020251824}
+        value: {x: -0.0717588, y: -0.027008222, z: 0.08828107}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -279,10 +226,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
-        value: {x: -0.13798894, y: -0.0001224247, z: -0.0000016774654}
-        inSlope: {x: 0.000009222165, y: -0.0000029046191, z: 0.000006358633}
-        outSlope: {x: 0.000009222165, y: -0.0000029046191, z: 0.000006358633}
+        time: 0.5
+        value: {x: -0.0717588, y: -0.027008222, z: 0.08828107}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -290,33 +237,25 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.15683664, y: 0.00000523224, z: 0.0000000030279164}
-        inSlope: {x: 0.0000012976783, y: -0.0000014534986, z: -4.9889234e-14}
-        outSlope: {x: 0.0000012976783, y: -0.0000014534986, z: -4.9889234e-14}
+        value: {x: -0.19914176, y: 0, z: 0}
+        inSlope: {x: 0.0000015053068, y: -0.00000018167493, z: -0.0000029067994}
+        outSlope: {x: 0.0000015053068, y: -0.00000018167493, z: -0.0000029067994}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: -0.15683722, y: 0.0000050969247, z: -0.0000004087924}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 3.2
-        value: {x: -0.15683664, y: 0.00000523224, z: 0.0000000030279164}
-        inSlope: {x: 0.0000012976783, y: -0.0000014534986, z: -4.9889234e-14}
-        outSlope: {x: 0.0000012976783, y: -0.0000014534986, z: -4.9889234e-14}
+        time: 0.5
+        value: {x: -0.19914176, y: 0, z: 0}
+        inSlope: {x: 0.0000015053068, y: -0.00000018167493, z: -0.0000029067994}
+        outSlope: {x: 0.0000015053068, y: -0.00000018167493, z: -0.0000029067994}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -324,14 +263,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone/cricket custom rigLArm1
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.19115753, y: 0.0000000060558327, z: 0}
+        value: {x: -0.0717588, y: 0.021137089, z: -0.08828107}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -339,8 +278,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: -0.196, y: 0.004, z: 0.006}
+        time: 0.16666667
+        value: {x: -0.07175887, y: 0.021137377, z: -0.088281155}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -348,8 +287,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2333333
-        value: {x: -0.19115753, y: 0.0000000060558327, z: 0}
+        time: 0.5
+        value: {x: -0.0717588, y: 0.021137089, z: -0.08828107}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -359,23 +298,23 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.18986845, y: 0, z: 0}
-        inSlope: {x: -0.0000032701485, y: -0.0000058136, z: 5.9815515e-14}
-        outSlope: {x: -0.0000032701485, y: -0.0000058136, z: 5.9815515e-14}
+        value: {x: -0.190985, y: 0, z: 0}
+        inSlope: {x: 0.0000012976783, y: 0.00000072669985, z: -1.1963103e-13}
+        outSlope: {x: 0.0000012976783, y: 0.00000072669985, z: -1.1963103e-13}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1.85
-        value: {x: -0.1898686, y: 0.00000020861626, z: -0.00000023469329}
+        time: 0.16666667
+        value: {x: -0.19098532, y: -0.000000048428763, z: 0.0000005960462}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -383,10 +322,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
-        value: {x: -0.18986845, y: 0, z: 0}
-        inSlope: {x: -0.0000032701485, y: -0.0000058136, z: 5.9815515e-14}
-        outSlope: {x: -0.0000032701485, y: -0.0000058136, z: 5.9815515e-14}
+        time: 0.5
+        value: {x: -0.190985, y: 0, z: 0}
+        inSlope: {x: 0.0000012976783, y: 0.00000072669985, z: -1.1963103e-13}
+        outSlope: {x: 0.0000012976783, y: 0.00000072669985, z: -1.1963103e-13}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -394,8 +333,43 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.30111486, y: -0.000000024223327, z: -0.000000003027916}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.16666667
+        value: {x: -0.30111533, y: -0.0000002039596, z: -0.000000034226094}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5
+        value: {x: -0.30111486, y: -0.000000024223327, z: -0.000000003027916}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -407,81 +381,81 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2953557598
+      path: 2268241850
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2280280525
+      path: 3252797292
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4053967270
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1221127731
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 681434670
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 915171350
-      attribute: 1
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 4053967270
+      path: 439453261
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1221127731
+      path: 2147825630
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 681434670
+      path: 1957720758
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 915171350
+      path: 3252797292
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2562897062
-      attribute: 4
+      path: 2554578408
+      attribute: 1
       script: {fileID: 0}
       typeID: 4
-      customType: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 439453261
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 757882418
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2147825630
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1957720758
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -489,12 +463,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.2333333
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -510,16 +484,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.15481922
-        inSlope: 0.0028672628
-        outSlope: 0.0028672628
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.164
+        value: -0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -527,10 +492,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.15481922
-        inSlope: 0.0028672628
-        outSlope: 0.0028672628
+        time: 0.5
+        value: -0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -539,7 +504,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 L Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -547,16 +512,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.036713567
-        inSlope: -0.009648206
-        outSlope: -0.009648206
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.038
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -564,10 +520,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.036713567
-        inSlope: -0.009648206
-        outSlope: -0.009648206
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -576,7 +532,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 L Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -584,16 +540,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.08479854
-        inSlope: 0.029632417
-        outSlope: 0.029632417
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.085
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -601,10 +548,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.08479854
-        inSlope: 0.029632417
-        outSlope: 0.029632417
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -613,7 +560,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 L Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -621,16 +568,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.15905455
-        inSlope: 0.00030071527
-        outSlope: 0.00030071527
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.169
+        value: -0.21165888
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -638,10 +576,19 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.15905455
-        inSlope: 0.00030071527
-        outSlope: 0.00030071527
+        time: 0.16666667
+        value: -0.21165897
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: -0.21165888
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -650,7 +597,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -658,16 +605,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.036464494
-        inSlope: -0.0062859873
-        outSlope: -0.0062859873
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.038
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -675,10 +613,19 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.036464494
-        inSlope: -0.0062859873
-        outSlope: -0.0062859873
+        time: 0.16666667
+        value: 0.00000038743005
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -687,7 +634,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -695,16 +642,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.08295678
-        inSlope: 0.02956422
-        outSlope: 0.02956422
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: -0.083
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -712,10 +650,19 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: -0.08295678
-        inSlope: 0.02956422
-        outSlope: 0.02956422
+        time: 0.16666667
+        value: 0.0000000669388
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -724,7 +671,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 R Thigh
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -732,16 +679,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.13798894
-        inSlope: 0.000009222165
-        outSlope: 0.000009222165
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: -0.14327703
+        value: -0.0717588
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -749,10 +687,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: -0.13798894
-        inSlope: 0.000009222165
-        outSlope: 0.000009222165
+        time: 0.5
+        value: -0.0717588
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -761,7 +699,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -769,16 +708,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0001224247
-        inSlope: -0.0000029046191
-        outSlope: -0.0000029046191
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.012316221
+        value: -0.027008222
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -786,10 +716,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: -0.0001224247
-        inSlope: -0.0000029046191
-        outSlope: -0.0000029046191
+        time: 0.5
+        value: -0.027008222
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -798,7 +728,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -806,16 +737,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0000016774654
-        inSlope: 0.000006358633
-        outSlope: 0.000006358633
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: -0.0020251824
+        value: 0.08828107
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -823,10 +745,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: -0.0000016774654
-        inSlope: 0.000006358633
-        outSlope: 0.000006358633
+        time: 0.5
+        value: 0.08828107
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -835,7 +757,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -843,26 +766,113 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.008983554
+        value: -0.19914176
+        inSlope: 0.0000015053068
+        outSlope: 0.0000015053068
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: -0.19914176
+        inSlope: 0.0000015053068
+        outSlope: 0.0000015053068
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone/cricket custom rigLArm1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0.00000018167493
+        outSlope: -0.00000018167493
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: -0.00000018167493
+        outSlope: -0.00000018167493
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone/cricket custom rigLArm1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0.0000029067994
+        outSlope: -0.0000029067994
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: -0.0000029067994
+        outSlope: -0.0000029067994
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigLArmCollarbone/cricket custom rigLArm1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0717588
         inSlope: 0
-        outSlope: -0.030252881
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.020429177
-        inSlope: 0.000065444285
-        outSlope: 0.0000053859617
+        time: 0.16666667
+        value: -0.07175887
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.008983554
-        inSlope: -0.030289304
+        time: 0.5
+        value: -0.0717588
+        inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -871,8 +881,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    attribute: m_LocalPosition.x
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -880,26 +891,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.03262663
+        value: 0.021137089
         inSlope: 0
-        outSlope: -0.07003546
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.0386074
-        inSlope: 0.00008457416
-        outSlope: 0.000053859618
+        time: 0.16666667
+        value: 0.021137377
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.03262663
-        inSlope: -0.0700579
+        time: 0.5
+        value: 0.021137089
+        inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -908,8 +919,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    attribute: m_LocalPosition.y
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -917,26 +929,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.06803958
+        value: -0.08828107
         inSlope: 0
-        outSlope: 0.046628553
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -0.06680113
-        inSlope: -0.00004832809
-        outSlope: -0.000053859618
+        time: 0.16666667
+        value: -0.088281155
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: -0.06803958
-        inSlope: 0.046620887
+        time: 0.5
+        value: -0.08828107
+        inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -945,8 +957,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    attribute: m_LocalPosition.z
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -954,44 +967,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.9971085
-        inSlope: 0
-        outSlope: 0.005767152
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.9968097
-        inSlope: -0.000032218726
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2333333
-        value: 0.9971085
-        inSlope: 0.005773751
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.15683664
+        value: -0.190985
         inSlope: 0.0000012976783
         outSlope: 0.0000012976783
         tangentMode: 0
@@ -999,8 +975,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -0.15683722
+        time: 0.16666667
+        value: -0.19098532
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1008,8 +984,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: -0.15683664
+        time: 0.5
+        value: -0.190985
         inSlope: 0.0000012976783
         outSlope: 0.0000012976783
         tangentMode: 0
@@ -1020,8 +996,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1029,16 +1005,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00000523224
-        inSlope: -0.0000014534986
-        outSlope: -0.0000014534986
+        value: 0
+        inSlope: 0.00000072669985
+        outSlope: 0.00000072669985
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.0000050969247
+        time: 0.16666667
+        value: -0.000000048428763
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1046,10 +1022,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.00000523224
-        inSlope: -0.0000014534986
-        outSlope: -0.0000014534986
+        time: 0.5
+        value: 0
+        inSlope: 0.00000072669985
+        outSlope: 0.00000072669985
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -1058,8 +1034,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1067,16 +1043,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0000000030279164
-        inSlope: -4.9889234e-14
-        outSlope: -4.9889234e-14
+        value: 0
+        inSlope: -1.1963103e-13
+        outSlope: -1.1963103e-13
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -0.0000004087924
+        time: 0.16666667
+        value: 0.0000005960462
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1084,10 +1060,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.0000000030279164
-        inSlope: -4.9889234e-14
-        outSlope: -4.9889234e-14
+        time: 0.5
+        value: 0
+        inSlope: -1.1963103e-13
+        outSlope: -1.1963103e-13
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -1096,8 +1072,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1105,159 +1081,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.45657372
-        inSlope: 0
-        outSlope: 0.16697355
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.4476321
-        inSlope: -0.00019331236
-        outSlope: -0.00013245476
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0.45657372
-        inSlope: 0.1668047
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.061763324
-        inSlope: 0
-        outSlope: -0.13918087
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.0584983
-        inSlope: 0.00014498427
-        outSlope: 0.00015453056
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0.061763324
-        inSlope: -0.13941967
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.14495766
-        inSlope: 0
-        outSlope: -0.26441908
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.14619532
-        inSlope: 0.0002738592
-        outSlope: 0.00026490953
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0.14495766
-        inSlope: -0.26471084
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.87562144
-        inSlope: 0
-        outSlope: -0.033539694
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.8802445
-        inSlope: 0.000032218726
-        outSlope: 0.000044151588
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0.87562144
-        inSlope: -0.033290297
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.19115753
+        value: -0.30111486
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1265,8 +1089,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -0.196
+        time: 0.16666667
+        value: -0.30111533
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1274,8 +1098,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: -0.19115753
+        time: 0.5
+        value: -0.30111486
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1286,8 +1110,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1295,7 +1119,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0000000060558327
+        value: -0.000000024223327
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1303,8 +1127,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.004
+        time: 0.16666667
+        value: -0.0000002039596
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1312,8 +1136,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.0000000060558327
+        time: 0.5
+        value: -0.000000024223327
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1324,8 +1148,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1333,7 +1157,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0.000000003027916
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1341,8 +1165,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.006
+        time: 0.16666667
+        value: -0.000000034226094
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1350,8 +1174,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0
+        time: 0.5
+        value: -0.000000003027916
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1362,8 +1186,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1371,26 +1195,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0000000040830415
+        value: -0.04816439
         inSlope: 0
-        outSlope: 0.0000893416
+        outSlope: 0.017903745
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.05427587
-        inSlope: 0.000094642506
-        outSlope: -0.00011579818
+        time: 0.16666667
+        value: -0.02378693
+        inSlope: 0.0003799796
+        outSlope: -0.0002346933
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: -0.0000000040830415
-        inSlope: -0.0001216002
+        time: 0.5
+        value: -0.04816439
+        inSlope: 0.017255547
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1400,8 +1224,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1409,26 +1232,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.000000046944386
+        value: -0.004216371
         inSlope: 0
-        outSlope: -0.00002736643
+        outSlope: -0.019501895
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -0.01788884
-        inSlope: -0.000032218726
-        outSlope: 0.000045780675
+        time: 0.16666667
+        value: -0.010660441
+        inSlope: -0.00012293458
+        outSlope: 0.00009220094
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.000000046944386
-        inSlope: 0.00003242909
+        time: 0.5
+        value: -0.004216371
+        inSlope: -0.019353816
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1438,8 +1261,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1447,26 +1269,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.39724094
+        value: 0.0598933
         inSlope: 0
-        outSlope: 0.057027146
+        outSlope: 0.00011175871
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.43458152
-        inSlope: 0
-        outSlope: -0.00012926309
+        time: 0.16666667
+        value: 0.1052575
+        inSlope: 0.00071525574
+        outSlope: -0.00037997964
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.39724094
-        inSlope: 0.056918845
+        time: 0.5
+        value: 0.0598933
+        inSlope: -0.0010728837
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1476,8 +1298,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1485,26 +1306,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.91771436
+        value: 0.99703324
         inSlope: 0
-        outSlope: -0.024679545
+        outSlope: 0.00071525574
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.89881754
+        time: 0.16666667
+        value: 0.99410325
         inSlope: 0
-        outSlope: 0.00008617539
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.91771436
-        inSlope: -0.024646161
+        time: 0.5
+        value: 0.99703324
+        inSlope: 0.0010728837
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1514,8 +1335,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1523,236 +1343,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -79.679985
+        value: 0.064876445
         inSlope: 0
-        outSlope: 0
+        outSlope: 0.027000904
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: -79.679985
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 88.31045
-        inSlope: 0
-        outSlope: 0
+        time: 0.16666667
+        value: -0.051605258
+        inSlope: -0.0017881393
+        outSlope: 0.0009834768
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 88.31045
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -87.88021
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.8333334
-        value: -90
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: -87.88021
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.18986845
-        inSlope: -0.0000032701485
-        outSlope: -0.0000032701485
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: -0.1898686
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: -0.18986845
-        inSlope: -0.0000032701485
-        outSlope: -0.0000032701485
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: -0.0000058136
-        outSlope: -0.0000058136
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: 0.00000020861626
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0
-        inSlope: -0.0000058136
-        outSlope: -0.0000058136
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 5.9815515e-14
-        outSlope: 5.9815515e-14
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: -0.00000023469329
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0
-        inSlope: 5.9815515e-14
-        outSlope: 5.9815515e-14
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.000000045529468
-        inSlope: 0
-        outSlope: -0.000038780003
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.85
-        value: -0.023248304
-        inSlope: -0.0000342324
-        outSlope: 0.00005380975
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.2
-        value: 0.000000045529468
-        inSlope: 0.00005016762
+        time: 0.5
+        value: 0.064876445
+        inSlope: 0.030286612
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1762,8 +1372,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1771,26 +1381,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.000000016504965
+        value: -0.8292289
         inSlope: 0
-        outSlope: -0.000022818427
+        outSlope: -0.01180172
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -0.013490799
-        inSlope: -0.000024667463
-        outSlope: 0.000026904874
+        time: 0.16666667
+        value: -0.81321865
+        inSlope: 0.00035762787
+        outSlope: -0.00017881395
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.000000016504965
-        inSlope: 0.000025940082
+        time: 0.5
+        value: -0.8292289
+        inSlope: -0.01269579
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1800,8 +1410,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1809,26 +1419,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.340809
+        value: -0.06270885
         inSlope: 0
-        outSlope: 0.1672313
+        outSlope: 0.0075548887
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.3518975
-        inSlope: -0.0001288749
-        outSlope: -0.00019868214
+        time: 0.16666667
+        value: 0.11429329
+        inSlope: 0.0031292439
+        outSlope: -0.0016093255
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.340809
-        inSlope: 0.16720207
+        time: 0.5
+        value: -0.06270885
+        inSlope: 0.0029057267
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1838,8 +1448,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1847,26 +1457,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.94013256
+        value: 0.5515779
         inSlope: 0
-        outSlope: -0.060635645
+        outSlope: -0.020742416
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.9356525
-        inSlope: 0.000032218726
-        outSlope: 0.000088303175
+        time: 0.16666667
+        value: 0.56828636
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.94013256
-        inSlope: -0.060575977
+        time: 0.5
+        value: 0.5515779
+        inSlope: -0.021994116
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
@@ -1876,8 +1486,312 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.030322736
+        inSlope: 0
+        outSlope: -0.010572374
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 0.028158462
+        inSlope: -0.000022351742
+        outSlope: 0.000022351744
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.030322736
+        inSlope: -0.010516495
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0046432954
+        inSlope: 0
+        outSlope: 0.023446977
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 0.0053610364
+        inSlope: -0.000008381903
+        outSlope: -0.000033527616
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.0046432954
+        inSlope: 0.023438597
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.02211627
+        inSlope: 0
+        outSlope: 0.0021904707
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 0.13447237
+        inSlope: 0.0017881393
+        outSlope: -0.0009387732
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.02211627
+        inSlope: -0.0009331853
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9992847
+        inSlope: 0
+        outSlope: -0.00035762787
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 0.9905027
+        inSlope: -0.00035762787
+        outSlope: 0.00017881395
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.9992847
+        inSlope: 0.0003576279
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.08825964
+        inSlope: 0
+        outSlope: -0.043451786
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: -0.046949822
+        inSlope: 0.00087171793
+        outSlope: -0.00034645203
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: -0.08825964
+        inSlope: -0.04459173
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.60291195
+        inSlope: 0
+        outSlope: 0.02682209
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: -0.6155965
+        inSlope: -0.0010728836
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: -0.60291195
+        inSlope: 0.02807379
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.017087877
+        inSlope: 0
+        outSlope: 0.0017881393
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: -0.084334604
+        inSlope: -0.0013411045
+        outSlope: 0.00058114534
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: -0.017087877
+        inSlope: 0.0036098065
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.79272646
+        inSlope: 0
+        outSlope: 0.016450882
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 0.78212816
+        inSlope: -0.00035762787
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.79272646
+        inSlope: 0.015914442
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -1886,16 +1800,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.2809516
-        inSlope: -4.1822305
-        outSlope: -4.1822305
+        value: -5.482281
+        inSlope: 2.1390963
+        outSlope: 2.1390963
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 2.63
+        time: 0.16666667
+        value: -2.582
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1903,10 +1817,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 1.2809516
-        inSlope: -4.1822305
-        outSlope: -4.1822305
+        time: 0.5
+        value: -5.482281
+        inSlope: 2.1390963
+        outSlope: 2.1390963
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -1915,7 +1829,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1923,16 +1837,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.6612885
-        inSlope: -7.7373962
-        outSlope: -7.7373962
+        value: -0.8160523
+        inSlope: -2.1043694
+        outSlope: -2.1043694
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 4.262
+        time: 0.16666667
+        value: -1.503
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1940,10 +1854,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 3.6612885
-        inSlope: -7.7373962
-        outSlope: -7.7373962
+        time: 0.5
+        value: -0.8160523
+        inSlope: -2.1043694
+        outSlope: -2.1043694
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -1952,7 +1866,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1960,16 +1874,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -7.766324
-        inSlope: 5.169253
-        outSlope: 5.169253
+        value: 6.914498
+        inSlope: 0.0025129318
+        outSlope: 0.0025129318
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -7.57
+        time: 0.16666667
+        value: 12.122001
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1977,10 +1891,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: -7.766324
-        inSlope: 5.169253
-        outSlope: 5.169253
+        time: 0.5
+        value: 6.914498
+        inSlope: 0.0025129318
+        outSlope: 0.0025129318
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -1989,7 +1903,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1997,16 +1911,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 51.413307
-        inSlope: 30.820082
-        outSlope: 30.820082
+        value: -1.8584933
+        inSlope: 2.0286493
+        outSlope: 2.0286493
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 50.439003
+        time: 0.16666667
+        value: 7.3100004
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2014,10 +1928,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 51.413307
-        inSlope: 30.820082
-        outSlope: 30.820082
+        time: 0.5
+        value: -1.8584933
+        inSlope: 2.0286493
+        outSlope: 2.0286493
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2026,8 +1940,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2035,16 +1949,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 22.684216
-        inSlope: -27.884558
-        outSlope: -27.884558
+        value: -112.57302
+        inSlope: -3.0134008
+        outSlope: -3.0134008
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 21.543001
+        time: 0.16666667
+        value: -109.309006
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2052,10 +1966,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 22.684216
-        inSlope: -27.884558
-        outSlope: -27.884558
+        time: 0.5
+        value: -112.57302
+        inSlope: -3.0134008
+        outSlope: -3.0134008
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2064,8 +1978,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2073,16 +1987,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 29.831072
-        inSlope: -39.352623
-        outSlope: -39.352623
+        value: -10.187237
+        inSlope: -2.4614666
+        outSlope: -2.4614666
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 29.100002
+        time: 0.16666667
+        value: 12.450001
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2090,10 +2004,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 29.831072
-        inSlope: -39.352623
-        outSlope: -39.352623
+        time: 0.5
+        value: -10.187237
+        inSlope: -2.4614666
+        outSlope: -2.4614666
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2102,8 +2016,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      Head
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2111,16 +2025,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0000025663119
-        inSlope: 0.00011548403
-        outSlope: 0.00011548403
+        value: -9.238036
+        inSlope: -3.9791212
+        outSlope: -3.9791212
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 6.4950004
+        time: 0.16666667
+        value: -10.211
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2128,10 +2042,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: -0.0000025663119
-        inSlope: 0.00011548403
-        outSlope: 0.00011548403
+        time: 0.5
+        value: -9.238036
+        inSlope: -3.9791212
+        outSlope: -3.9791212
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2140,8 +2054,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2149,16 +2063,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.000004750918
-        inSlope: -0.00021379128
-        outSlope: -0.00021379128
+        value: -74.88262
+        inSlope: 3.2543561
+        outSlope: 3.2543561
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 0.86600006
+        time: 0.16666667
+        value: -76.025
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2166,10 +2080,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 0.000004750918
-        inSlope: -0.00021379128
-        outSlope: -0.00021379128
+        time: 0.5
+        value: -74.88262
+        inSlope: 3.2543561
+        outSlope: 3.2543561
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2178,8 +2092,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2187,16 +2101,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 46.81161
-        inSlope: 7.1275516
-        outSlope: 7.1275516
+        value: 4.6101813
+        inSlope: 3.1182556
+        outSlope: 3.1182556
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 51.657
+        time: 0.16666667
+        value: -4.3190002
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2204,10 +2118,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2333333
-        value: 46.81161
-        inSlope: 7.1275516
-        outSlope: 7.1275516
+        time: 0.5
+        value: 4.6101813
+        inSlope: 3.1182556
+        outSlope: 3.1182556
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2216,41 +2130,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      L Clavicle/Bip001 L UpperArm/Bip001 L Forearm/Bip001 L Hand
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigRArmCollarbone/cricket custom rigRArm1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2258,16 +2139,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.000004260364
-        inSlope: -0.00012781091
-        outSlope: -0.00012781091
+        value: 3.4625833
+        inSlope: -1.2695098
+        outSlope: -1.2695098
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -1.9490001
+        time: 0.16666667
+        value: 3.1150002
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2275,10 +2156,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.000004260364
-        inSlope: -0.00012781091
-        outSlope: -0.00012781091
+        time: 0.5
+        value: 3.4625833
+        inSlope: -1.2695098
+        outSlope: -1.2695098
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2287,8 +2168,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.x
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2296,16 +2177,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0000035562007
-        inSlope: -0.00010668601
-        outSlope: -0.00010668601
+        value: 0.60967433
+        inSlope: 2.6674473
+        outSlope: 2.6674473
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: -2.3860002
+        time: 0.16666667
+        value: 1.044
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2313,10 +2194,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 0.0000035562007
-        inSlope: -0.00010668601
-        outSlope: -0.00010668601
+        time: 0.5
+        value: 0.60967433
+        inSlope: 2.6674473
+        outSlope: 2.6674473
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2325,8 +2206,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.y
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2334,16 +2215,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 39.852337
-        inSlope: 20.421865
-        outSlope: 20.421865
+        value: 2.5541658
+        inSlope: 0.0934124
+        outSlope: 0.0934124
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.85
-        value: 41.263
+        time: 0.16666667
+        value: 15.491001
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2351,10 +2232,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
-        value: 39.852337
-        inSlope: 20.421865
-        outSlope: 20.421865
+        time: 0.5
+        value: 2.5541658
+        inSlope: 0.0934124
+        outSlope: 0.0934124
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -2363,8 +2244,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAngles.z
-    path: Bip001/Bip001 Pelvis/Bip001 Spine/Bip001 Spine1/Bip001 Spine2/Bip001 Neck/Bip001
-      R Clavicle/Bip001 R UpperArm/Bip001 R Forearm
+    path: cricket custom rigHub001/cricket custom rigSpine1/cricket custom rigSpine2/cricket
+      custom rigribs/cricket custom rigSpine/cricket custom rigribs001
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
