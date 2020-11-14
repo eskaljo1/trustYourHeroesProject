@@ -3704,7 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
   armor: 0
   magicResistance: 0
   mainAttackDmg: 20

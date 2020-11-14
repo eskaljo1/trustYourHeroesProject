@@ -2537,13 +2537,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
+  armor: 0
+  magicResistance: 0
   mainAttackDmg: 20
   ability1Dmg: 20
   ability2Dmg: 20
   mainAttackRange: 1
   ability1Range: 2
   ability2Range: 2
+  mainAttackType: 0
+  ability1Type: 0
+  ability2Type: 0
+  mainAttackEffects: []
+  ability1Effects: []
+  ability2Effects: []
   ability2Passive: 0
   heroName: Ohm Steel
   description: Together with his younger brother Sent, Ohm was recruited to the Soulstein

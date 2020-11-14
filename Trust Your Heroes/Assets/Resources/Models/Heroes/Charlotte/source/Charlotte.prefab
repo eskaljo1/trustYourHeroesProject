@@ -2197,7 +2197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893a42ae5276fd04b8172c45772b525d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 2
+  movement: 3
   obstacleJumper: 0
 --- !u!65 &1305592445946652448
 BoxCollider:
@@ -2224,13 +2224,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
+  armor: 0
+  magicResistance: 0
   mainAttackDmg: 20
-  ability1Dmg: 20
+  ability1Dmg: 35
   ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 0
   ability2Range: 0
+  mainAttackType: 0
+  ability1Type: 0
+  ability2Type: 0
+  mainAttackEffects: []
+  ability1Effects: []
+  ability2Effects: []
   ability2Passive: 1
   heroName: Charlotte Of The Web
   description: As a member of the araneae race, one of the most hated races in the
@@ -2239,9 +2247,10 @@ MonoBehaviour:
     with sticky web she uses to entangle her opponent and deadly venom that finishes
     off her prey. Any victim that gets caught in her nest better pray to Hor to burn
     the web.
-  mainAttack: 'Spider bite - '
-  firstAbility: 'Splash jump - '
-  secondAbility: 'Entangle - '
+  mainAttack: Spider bite - 20dmg
+  firstAbility: Splash jump - 35dmg on every adjacent tile
+  secondAbility: Entangle - every attack has 20% chance of stunning the opponent (Passive
+    ability)
 --- !u!82 &322269319688617250
 AudioSource:
   m_ObjectHideFlags: 0

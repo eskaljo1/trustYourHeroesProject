@@ -1811,13 +1811,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
+  armor: 0
+  magicResistance: 0
   mainAttackDmg: 25
   ability1Dmg: 0
   ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 0
   ability2Range: 0
+  mainAttackType: 0
+  ability1Type: 0
+  ability2Type: 0
+  mainAttackEffects: []
+  ability1Effects: []
+  ability2Effects: []
   ability2Passive: 1
   heroName: Tommy Ape
   description: Once an ordinary primate, Tommy was experimented on by his master Dr.

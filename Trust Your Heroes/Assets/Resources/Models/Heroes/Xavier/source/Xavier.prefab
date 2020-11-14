@@ -290,13 +290,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf002d0a66b6241873ed14383891c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  mainAttackDmg: 20
+  health: 80
+  armor: 0
+  magicResistance: 0
+  mainAttackDmg: 15
   ability1Dmg: 20
-  ability2Dmg: 20
+  ability2Dmg: 0
   mainAttackRange: 1
-  ability1Range: 2
-  ability2Range: 2
+  ability1Range: 3
+  ability2Range: 0
+  mainAttackType: 0
+  ability1Type: 0
+  ability2Type: 0
+  mainAttackEffects: []
+  ability1Effects: []
+  ability2Effects: []
   ability2Passive: 0
   heroName: Xavier The Cricket Warrior
   description: Growing up with his people, the orthoptera tribe, Xavier never got
@@ -305,9 +313,9 @@ MonoBehaviour:
     unknown. He survived using the skills he learned with his tribe, hunting, foraging,
     crafting as well as fighting. He is also extremely fast and agile. However, Xavier
     is a pacifist, never engaging in a battle, unless he is prompted of course.
-  mainAttack: 
-  firstAbility: 'Flare - '
-  secondAbility: 
+  mainAttack: Bo staff - 15 dmg
+  firstAbility: Flare - 20dmg, range 3, reveal enemies adjacent to tile
+  secondAbility: Insect shield - 50% dmg reduction for 2 turns
 --- !u!82 &-2179734815749015837
 AudioSource:
   m_ObjectHideFlags: 0

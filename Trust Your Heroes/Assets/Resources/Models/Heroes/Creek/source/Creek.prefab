@@ -401,9 +401,9 @@ MonoBehaviour:
     powder on them. One day, Creek went to the fairies to get some more powder. When
     he came back he found that his part of the forest was burned down by the Soulstein
     kingdom army. Creek was furious and swore to get his revenge.
-  mainAttack: 
-  firstAbility: 
-  secondAbility: 'Vines - '
+  mainAttack: Razor leaves - 15
+  firstAbility: Sleep powder - stun opponent for 2 turns, range 2
+  secondAbility: Vines - adjacent enemies have -1 movement (Passive ability)
 --- !u!82 &5502112487482411087
 AudioSource:
   m_ObjectHideFlags: 0
