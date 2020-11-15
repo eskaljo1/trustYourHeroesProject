@@ -192,8 +192,8 @@ MonoBehaviour:
   armor: 0
   magicResistance: 0
   mainAttackDmg: 10
-  ability1Dmg: 20
-  ability2Dmg: 20
+  ability1Dmg: 0
+  ability2Dmg: 10
   mainAttackRange: 1
   ability1Range: 2
   ability2Range: 2
@@ -212,8 +212,8 @@ MonoBehaviour:
     he can't fight. Those who wish evil upon the woods better know that Santino will
     stand in their way.
   mainAttack: Forest staff - 10 dmg
-  firstAbility: 
-  secondAbility: 
+  firstAbility: Nature's gift - heal ally for 35, range 2
+  secondAbility: Nature's wrath - 10 dmg, range 2, stun for 2 turns
 --- !u!82 &2878946946877962809
 AudioSource:
   m_ObjectHideFlags: 0

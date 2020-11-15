@@ -687,10 +687,10 @@ MonoBehaviour:
   armor: 0
   magicResistance: 0
   mainAttackDmg: 20
-  ability1Dmg: 20
+  ability1Dmg: 50
   ability2Dmg: 20
   mainAttackRange: 1
-  ability1Range: 2
+  ability1Range: 1
   ability2Range: 2
   mainAttackType: 0
   ability1Type: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
     still very strong .He is the kingdom's number one assasin, with a 100% succession
     rate.
   mainAttack: Jump punch - 20 dmg
-  firstAbility: 
+  firstAbility: Steel fist barrage - 50 dmg
   secondAbility: 
 --- !u!82 &-3190139489919037295
 AudioSource:

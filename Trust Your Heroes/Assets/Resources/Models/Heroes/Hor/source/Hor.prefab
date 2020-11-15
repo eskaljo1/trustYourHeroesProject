@@ -2038,11 +2038,11 @@ MonoBehaviour:
   armor: 0
   magicResistance: 0
   mainAttackDmg: 20
-  ability1Dmg: 20
+  ability1Dmg: 0
   ability2Dmg: 20
   mainAttackRange: 1
-  ability1Range: 2
-  ability2Range: 2
+  ability1Range: 15
+  ability2Range: 0
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
@@ -2059,8 +2059,8 @@ MonoBehaviour:
     across the realm, smiting down all those who opose him with divine wrath. The
     Sun is your friend if you respect it, if you don't it might burn you.
   mainAttack: Fan scythe - 20 dmg
-  firstAbility: 
-  secondAbility: 
+  firstAbility: Eye of Hor - reveal 5 tiles ("+" shape)
+  secondAbility: Sunlight - +100% dmg buff for 3 turns
 --- !u!82 &-205764874885355143
 AudioSource:
   m_ObjectHideFlags: 0

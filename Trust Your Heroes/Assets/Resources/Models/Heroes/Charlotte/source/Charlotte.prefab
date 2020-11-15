@@ -2252,7 +2252,7 @@ MonoBehaviour:
     off her prey. Any victim that gets caught in her nest better pray to Hor to burn
     the web.
   mainAttack: Spider bite - 15 dmg
-  firstAbility: Splash jump - 35 dmg on every adjacent tile
+  firstAbility: Splash jump - 35 dmg to adjacent tiles
   secondAbility: Entangle - every attack has 20% chance of stunning the opponent (Passive
     ability)
 --- !u!82 &322269319688617250

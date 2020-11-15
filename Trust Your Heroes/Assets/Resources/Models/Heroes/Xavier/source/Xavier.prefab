@@ -315,8 +315,8 @@ MonoBehaviour:
     crafting as well as fighting. He is also extremely fast and agile. However, Xavier
     is a pacifist, never engaging in a battle, unless he is prompted of course.
   mainAttack: Bo staff - 15 dmg
-  firstAbility: Flare - 20dmg, range 3, reveal enemies adjacent to tile
-  secondAbility: Insect shield - 50% dmg reduction for 2 turns
+  firstAbility: Flare - 20 dmg, range 3, reveal enemies adjacent to tile
+  secondAbility: Insect shield - +50% dmg reduction for 2 turns
 --- !u!82 &-2179734815749015837
 AudioSource:
   m_ObjectHideFlags: 0

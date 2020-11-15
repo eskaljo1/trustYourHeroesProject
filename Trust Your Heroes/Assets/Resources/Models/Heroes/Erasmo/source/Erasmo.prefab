@@ -557,7 +557,7 @@ MonoBehaviour:
   magicResistance: 0
   mainAttackDmg: 10
   ability1Dmg: 0
-  ability2Dmg: 20
+  ability2Dmg: 30
   mainAttackRange: 1
   ability1Range: 4
   ability2Range: 2
@@ -577,7 +577,7 @@ MonoBehaviour:
     Karasu, he is looking for new myterious magic that he may use in his arsenal.
   mainAttack: Warlock staff - 10 dmg
   firstAbility: Crow - reveal 3x3 tiles
-  secondAbility: 
+  secondAbility: Forbidden spell - 30 dmg, range 2, 50% dmg debuff for 2 turns
 --- !u!82 &-7054387137185425075
 AudioSource:
   m_ObjectHideFlags: 0

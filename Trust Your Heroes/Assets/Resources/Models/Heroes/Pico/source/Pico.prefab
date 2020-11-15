@@ -561,11 +561,11 @@ MonoBehaviour:
   armor: 0
   magicResistance: 0
   mainAttackDmg: 20
-  ability1Dmg: 20
-  ability2Dmg: 20
+  ability1Dmg: 30
+  ability2Dmg: 45
   mainAttackRange: 1
   ability1Range: 2
-  ability2Range: 2
+  ability2Range: 0
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
@@ -582,8 +582,8 @@ MonoBehaviour:
     become a deadly weapon of death. It is said that the mantodea females devour their
     life partners, imagine what they do to their enemies.
   mainAttack: Scythe scissors - 20 dmg
-  firstAbility: 
-  secondAbility: 
+  firstAbility: Mantis slice - 30 dmg, range 2
+  secondAbility: Blade cycle - 45 area dmg to adjacent tiles
 --- !u!82 &-6120951609696173870
 AudioSource:
   m_ObjectHideFlags: 0
