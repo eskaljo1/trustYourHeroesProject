@@ -12,8 +12,8 @@ public class YourHeroTeam : MonoBehaviour
     {
         heroNames = new string[4];
         heroNames[0] = "Z";
-        heroNames[1] = "Xavier";
-        heroNames[2] = "Hor";
-        heroNames[3] = "Erasmo";
+        heroNames[1] = "Nazz";
+        heroNames[2] = "Frederic";
+        heroNames[3] = "Sent";
     }
 }
