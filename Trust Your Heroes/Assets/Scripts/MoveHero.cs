@@ -16,6 +16,16 @@ public class MoveHero : MonoBehaviour
     //Erasmo's grass needs to dissapear below
     void Start()
     {
+        //for testing
+        if (gameObject.name == "Nazz" && transform.position.x < 0 && transform.position.z > -3.5)
+        {
+            SetCoordinates(0, 1);
+        }
+        if(gameObject.name == "Charlotte" && transform.position.x > 0 && transform.position.z > -3.5)
+        {
+            SetCoordinates(4, 2);
+        }
+        //
         if (name == "Erasmo(Clone)")
             transform.position = new Vector3(transform.position.x, transform.position.y - 0.045f, transform.position.z);
     }

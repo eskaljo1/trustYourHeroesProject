@@ -30,19 +30,23 @@ public class Hero : MonoBehaviour
     //True if ability2 is passive
     public bool ability2Passive = false;
 
+    //Which ability is being used
+    public static int abilityType = -1;
+
     //Description
     public string heroName = "";
     public string description = "";
     public string mainAttack = "";
     public string firstAbility = "";
     public string secondAbility = "";
-    
+
     private Slider healthBar;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
     void Start()
     {
+        abilityType = -1;
         //Find health bar
         string s = name + "(Clone)";
         if (YourHeroTeam.heroNames[0] == s)
@@ -65,18 +69,37 @@ public class Hero : MonoBehaviour
             healthBar = GameObject.Find("HealthBar4").GetComponent<Slider>();
             game = true;
         }
-        if(game)
+        if (game)
             healthBar.maxValue = health;
     }
 
+    void Update()
+    {
+        //Death
+        if(health <= 0)
+        {
+            SpawnGrid.cells[GetComponent<MoveHero>().GetX(), GetComponent<MoveHero>().GetZ()].tag = "Cell";
+            GetComponent<Animator>().SetBool("Death", true);
+            StartCoroutine(Death());
+        }
+    }
+
+    //Destroy hero after animation ends
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
+    }
+
+    //Update healthbar
     void FixedUpdate()
     {
-        if(game)
+        if (game)
             healthBar.value = health;
     }
 
     //Done before every attack
-    void ReadyForAttack()
+    void ReadyForAttack(int a)
     {
         PlaceHero.movement = false;
         if (PlaceHero.heroIsSelected) //If there was a selected hero, turn off lights of his available cells
@@ -85,20 +108,21 @@ public class Hero : MonoBehaviour
         }
         else
             PlaceHero.heroIsSelected = true;
+        PlaceHero.heroSelected = gameObject;
+        abilityType = a;
     }
 
     //Main attack
     public void MainAttack()
     {
-        ReadyForAttack();
+        ReadyForAttack(0);
         FindEnemies(mainAttackRange);
     }
 
     //Ability1
     public void Ability1()
     {
-        ReadyForAttack();
-
+        ReadyForAttack(1);
     }
 
     //Ability2
@@ -106,14 +130,22 @@ public class Hero : MonoBehaviour
     {
         if (!ability2Passive)
         {
-            ReadyForAttack();
-
+            ReadyForAttack(2);
         }
     }
 
     //Find enemies and light up available cells
     void FindEnemies(int range)
     {
-
+        for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
+        {
+            for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
+            {
+                if(SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                {
+                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                }
+            }
+        }
     }
 }

@@ -2236,8 +2236,12 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
-  mainAttackEffects: []
-  ability1Effects: []
+  mainAttackEffects:
+  - Direct
+  - Entangle
+  ability1Effects:
+  - Area
+  - Entangle
   ability2Effects: []
   ability2Passive: 1
   heroName: Charlotte Of The Web

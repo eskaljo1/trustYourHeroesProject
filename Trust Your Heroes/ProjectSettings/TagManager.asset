@@ -7,7 +7,6 @@ TagManager:
   - FirstRowCell
   - OccupiedCell
   - Obstacle
-  - JumpableObstacle
   - Cell
   - EnemyCell
   layers:

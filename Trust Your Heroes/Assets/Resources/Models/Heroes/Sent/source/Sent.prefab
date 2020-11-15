@@ -684,12 +684,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  armor: 0
+  magicResistance: 0
   mainAttackDmg: 20
   ability1Dmg: 20
   ability2Dmg: 20
   mainAttackRange: 1
   ability1Range: 2
   ability2Range: 2
+  mainAttackType: 0
+  ability1Type: 0
+  ability2Type: 0
+  mainAttackEffects:
+  - Direct
+  ability1Effects: []
+  ability2Effects: []
   ability2Passive: 0
   heroName: Sent Steel
   description: When they were recruited, the two brothers faced each other multiple

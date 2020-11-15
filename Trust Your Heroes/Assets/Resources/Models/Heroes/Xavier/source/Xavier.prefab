@@ -302,7 +302,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
-  mainAttackEffects: []
+  mainAttackEffects:
+  - Direct
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0

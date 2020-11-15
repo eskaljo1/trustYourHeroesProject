@@ -77,7 +77,47 @@ public class PlaceHero : MonoBehaviour
             }
             else //for attacks
             {
+                heroSelected.GetComponent<MoveHero>().TurnOffLights();
+                ChangeRotationOfHero();
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                GameObject enemy = null;
+                for (int i = 0; i < enemies.Length; i++)
+                    if (enemies[i].GetComponent<MoveHero>().GetX() == x && enemies[i].GetComponent<MoveHero>().GetZ() == z)
+                    {
+                        enemy = enemies[i];
+                        break;
+                    }
+                if(Hero.abilityType == 0)
+                {
+                    heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
+                    StartCoroutine(MainAttack(enemy));
+                }
+                else if(Hero.abilityType == 1)
+                {
+                    heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
 
+                }
+                else if (Hero.abilityType == 2)
+                {
+                    heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
+
+                }
+            }
+        }
+    }
+
+    IEnumerator MainAttack(GameObject enemy)
+    {
+        yield return new WaitForSeconds(2.0f);
+        for (int i = 0; i < heroSelected.GetComponent<Hero>().mainAttackEffects.Length; i++)
+        {
+            switch (heroSelected.GetComponent<Hero>().mainAttackEffects[i])
+            {
+                case "Direct":
+                    enemy.GetComponent<Animator>().SetTrigger("Hit");
+                    yield return new WaitForSeconds(0.5f);
+                    enemy.GetComponent<Hero>().health -= heroSelected.GetComponent<Hero>().mainAttackDmg;
+                    break;
             }
         }
     }
