@@ -1836,7 +1836,7 @@ MonoBehaviour:
     a life full of mischief.
   mainAttack: Machine gun - 25 dmg
   firstAbility: Smokescreen - evasiveness +50% for 2 turns
-  secondAbility: Monkey business - able to cross jumpable obstacles (Passive ability)
+  secondAbility: Monkey business - able to jump over obstacles (Passive ability)
 --- !u!82 &-2425654121179605604
 AudioSource:
   m_ObjectHideFlags: 0

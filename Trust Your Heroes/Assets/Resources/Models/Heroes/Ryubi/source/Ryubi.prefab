@@ -1648,10 +1648,10 @@ MonoBehaviour:
   health: 80
   armor: 0
   magicResistance: 0
-  mainAttackDmg: 20
+  mainAttackDmg: 25
   ability1Dmg: 20
   ability2Dmg: 20
-  mainAttackRange: 1
+  mainAttackRange: 3
   ability1Range: 2
   ability2Range: 2
   mainAttackType: 0
@@ -1667,7 +1667,7 @@ MonoBehaviour:
     her arrows with her tribe's dark magic, making them capable of penetrating the
     toughest shields and armor. They say the deadliest predators are the silent ones.
     Who does she have her sights on today?
-  mainAttack: 
+  mainAttack: Dark arrow - 25 dmg, range 3
   firstAbility: 
   secondAbility: 
 --- !u!82 &7934626227453824619

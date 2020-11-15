@@ -4465,8 +4465,8 @@ MonoBehaviour:
     he grew accustomed to, so he wears it all the time. The reason he works for the
     kingdom is because he can easily aquire any material he needs and he can freely
     test his weapons on his missions without repercussions.
-  mainAttack: 
-  firstAbility: 
+  mainAttack: Poison sting - 20 dmg
+  firstAbility: 'Gas bomb - '
   secondAbility: 
 --- !u!82 &-7834169564241466913
 AudioSource:

@@ -77,30 +77,33 @@ public class PlaceHero : MonoBehaviour
             }
             else //for attacks
             {
-                heroSelected.GetComponent<MoveHero>().TurnOffLights();
-                ChangeRotationOfHero();
-                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
-                GameObject enemy = null;
-                for (int i = 0; i < enemies.Length; i++)
-                    if (enemies[i].GetComponent<MoveHero>().GetX() == x && enemies[i].GetComponent<MoveHero>().GetZ() == z)
+                if (GetComponentInChildren<Light>().intensity == 15)
+                {
+                    heroSelected.GetComponent<MoveHero>().TurnOffLights();
+                    ChangeRotationOfHero();
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject enemy = null;
+                    for (int i = 0; i < enemies.Length; i++)
+                        if (enemies[i].GetComponent<MoveHero>().GetX() == x && enemies[i].GetComponent<MoveHero>().GetZ() == z)
+                        {
+                            enemy = enemies[i];
+                            break;
+                        }
+                    if (Hero.abilityType == 0)
                     {
-                        enemy = enemies[i];
-                        break;
+                        heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
+                        StartCoroutine(MainAttack(enemy));
                     }
-                if(Hero.abilityType == 0)
-                {
-                    heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
-                    StartCoroutine(MainAttack(enemy));
-                }
-                else if(Hero.abilityType == 1)
-                {
-                    heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
+                    else if (Hero.abilityType == 1)
+                    {
+                        heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
 
-                }
-                else if (Hero.abilityType == 2)
-                {
-                    heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
+                    }
+                    else if (Hero.abilityType == 2)
+                    {
+                        heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
 
+                    }
                 }
             }
         }
@@ -120,6 +123,8 @@ public class PlaceHero : MonoBehaviour
                     break;
             }
         }
+        heroSelected = null;
+        heroIsSelected = false;
     }
 
     //Moves hero over time

@@ -2540,7 +2540,7 @@ MonoBehaviour:
   health: 150
   armor: 0
   magicResistance: 0
-  mainAttackDmg: 20
+  mainAttackDmg: 15
   ability1Dmg: 20
   ability2Dmg: 20
   mainAttackRange: 1
@@ -2561,7 +2561,7 @@ MonoBehaviour:
     The armor he wears was custom made from the strongest metals available to the
     kingdom. He is considered the kingdom's dog and will complete every mission with
     ease.
-  mainAttack: 
+  mainAttack: Steel punch - 15 dmg
   firstAbility: 
   secondAbility: 
 --- !u!82 &9156247682216998237

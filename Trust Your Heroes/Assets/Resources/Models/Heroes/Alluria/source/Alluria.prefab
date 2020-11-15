@@ -4492,7 +4492,7 @@ MonoBehaviour:
   health: 100
   armor: 0
   magicResistance: 0
-  mainAttackDmg: 20
+  mainAttackDmg: 10
   ability1Dmg: 20
   ability2Dmg: 20
   mainAttackRange: 1

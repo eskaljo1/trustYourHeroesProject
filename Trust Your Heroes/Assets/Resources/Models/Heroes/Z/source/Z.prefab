@@ -211,7 +211,7 @@ MonoBehaviour:
     swordplay say he has no equal. Guided by the sword, he ventures around the world,
     looking for opponents worthy of tasting his blade. Whatever the circumstances,
     no matter the odds, know that Z has never lost a fight.
-  mainAttack: 
+  mainAttack: Katana blade - 20 dmg
   firstAbility: 
   secondAbility: 
 --- !u!82 &318725397399783640

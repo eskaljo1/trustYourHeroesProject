@@ -3707,7 +3707,7 @@ MonoBehaviour:
   health: 80
   armor: 0
   magicResistance: 0
-  mainAttackDmg: 20
+  mainAttackDmg: 10
   ability1Dmg: 0
   ability2Dmg: 0
   mainAttackRange: 1
@@ -3728,7 +3728,7 @@ MonoBehaviour:
     position so the other goblins rebelled and he was exiled from his home. Now he
     seeks a new home, where he can settle and enjoy his life the best way he knows,
     commanding others.
-  mainAttack: 
+  mainAttack: Goblin dagger - 10 dmg
   firstAbility: 'Heal totem - '
   secondAbility: 'Trap totem - '
 --- !u!82 &6076739163058872602

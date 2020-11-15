@@ -381,8 +381,8 @@ MonoBehaviour:
   health: 150
   armor: 0
   magicResistance: 0
-  mainAttackDmg: 20
-  ability1Dmg: 20
+  mainAttackDmg: 15
+  ability1Dmg: 15
   ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 2
@@ -403,7 +403,7 @@ MonoBehaviour:
     he came back he found that his part of the forest was burned down by the Soulstein
     kingdom army. Creek was furious and swore to get his revenge.
   mainAttack: Razor leaves - 15
-  firstAbility: Sleep powder - stun opponent for 2 turns, range 2
+  firstAbility: Sleep powder - 15 dmg, stun opponent for 2 turns, range 2
   secondAbility: Vines - adjacent enemies have -1 movement (Passive ability)
 --- !u!82 &5502112487482411087
 AudioSource:

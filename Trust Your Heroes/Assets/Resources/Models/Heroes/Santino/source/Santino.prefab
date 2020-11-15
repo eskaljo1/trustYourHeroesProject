@@ -191,7 +191,7 @@ MonoBehaviour:
   health: 80
   armor: 0
   magicResistance: 0
-  mainAttackDmg: 20
+  mainAttackDmg: 10
   ability1Dmg: 20
   ability2Dmg: 20
   mainAttackRange: 1
@@ -211,7 +211,7 @@ MonoBehaviour:
     is unmatched. He is incredibly skilled in healing magic, but that doesn't mean
     he can't fight. Those who wish evil upon the woods better know that Santino will
     stand in their way.
-  mainAttack: 
+  mainAttack: Forest staff - 10 dmg
   firstAbility: 
   secondAbility: 
 --- !u!82 &2878946946877962809
