@@ -32,7 +32,8 @@ public class HeroAbilityButtonsShowPanel : MonoBehaviour, IPointerEnterHandler, 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.GetChild(0).gameObject.SetActive(true);
+        if(PlaceHero.gameBegun)
+            transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
