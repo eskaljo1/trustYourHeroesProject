@@ -395,6 +395,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 1
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 1
+  isTargetingAbility2: 0
+  mainAttackName: Razor leaves
+  ability1Name: Sleep powder
+  ability2Name: Vines
   heroName: Creek The Tricky
   description: The arbor race are sentient trees, varying size and type. Most of them
     live in forests and rarely make contact with the outside world. Creek was a cheerful

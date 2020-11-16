@@ -2244,6 +2244,13 @@ MonoBehaviour:
   - Entangle
   ability2Effects: []
   ability2Passive: 1
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Spider bite
+  ability1Name: Splash jump
+  ability2Name: Entangle
   heroName: Charlotte Of The Web
   description: As a member of the araneae race, one of the most hated races in the
     realm, Charlotte's life was full of despair. She was hunted since she was a child.

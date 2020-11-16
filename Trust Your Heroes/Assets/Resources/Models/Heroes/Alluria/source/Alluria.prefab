@@ -4506,6 +4506,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 1
+  isTargetingAbility2: 0
+  mainAttackName: Ice staff
+  ability1Name: Frostbolt
+  ability2Name: Blizzard
   heroName: Ice Queen Alluria
   description: The Ice Queen rules over the cold frozen wastelands with an iron fist.
     Whoever dares disobey her will feel her anger and wrath. Being a frost archmage,

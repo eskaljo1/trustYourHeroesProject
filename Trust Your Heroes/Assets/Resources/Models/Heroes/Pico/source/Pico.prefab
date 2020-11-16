@@ -574,6 +574,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 1
+  isTargetingAbility2: 0
+  mainAttackName: Scythe scissors
+  ability1Name: Mantis slice
+  ability2Name: Blade cycle
   heroName: Pico The Mantis
   description: The mantodea are a vicious race. Their sharp scythes can cut down any
     prey, combined with their agility they are a terrifying predator. Pico is no exception.

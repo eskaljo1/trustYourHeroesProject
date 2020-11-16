@@ -2016,6 +2016,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Club
+  ability1Name: Earthquake
+  ability2Name: Warcry
   heroName: The Great Makas
   description: The trolls are a fearsome race. These giant creatures use pure strength
     to demolish their foes and survive. One of the strongest among them is Makas.

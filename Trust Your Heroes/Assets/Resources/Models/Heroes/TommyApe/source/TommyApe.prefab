@@ -1828,6 +1828,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 1
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Machine gun
+  ability1Name: Smokescreen
+  ability2Name: Monkey business
   heroName: Tommy Ape
   description: Once an ordinary primate, Tommy was experimented on by his master Dr.
     Radon. The brutal experiments upgraded his physical and mental strength. Eventually,

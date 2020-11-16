@@ -29,10 +29,21 @@ public class Hero : MonoBehaviour
     public string[] ability2Effects;
     //True if ability2 is passive
     public bool ability2Passive = false;
+    //Status
+    public string status = "";
+    public int statusDuration = 0;
+    //Targets enemy or cell
+    public bool isTargetingAbility1 = true;
+    public bool isTargetingAbility2 = true;
+
 
     //Which ability is being used
     public static int abilityType = -1;
 
+    //Name of ability
+    public string mainAttackName = "";
+    public string ability1Name = "";
+    public string ability2Name = "";
     //Description
     public string heroName = "";
     public string description = "";
@@ -48,23 +59,22 @@ public class Hero : MonoBehaviour
     {
         abilityType = -1;
         //Find health bar
-        string s = name + "(Clone)";
-        if (YourHeroTeam.heroNames[0] == s)
+        if (YourHeroTeam.heroNames[0] + "(Clone)" == name)
         {
             healthBar = GameObject.Find("HealthBar1").GetComponent<Slider>();
             game = true;
         }
-        else if (YourHeroTeam.heroNames[1] == s)
+        else if (YourHeroTeam.heroNames[1] + "(Clone)" == name)
         {
             healthBar = GameObject.Find("HealthBar2").GetComponent<Slider>();
             game = true;
         }
-        else if (YourHeroTeam.heroNames[2] == s)
+        else if (YourHeroTeam.heroNames[2] + "(Clone)" == name)
         {
             healthBar = GameObject.Find("HealthBar3").GetComponent<Slider>();
             game = true;
         }
-        else if (YourHeroTeam.heroNames[3] == s)
+        else if (YourHeroTeam.heroNames[3] + "(Clone)" == name)
         {
             healthBar = GameObject.Find("HealthBar4").GetComponent<Slider>();
             game = true;
@@ -116,13 +126,17 @@ public class Hero : MonoBehaviour
     public void MainAttack()
     {
         ReadyForAttack(0);
-        FindEnemies(mainAttackRange);
+        FindEnemies(mainAttackRange, true);
     }
 
     //Ability1
     public void Ability1()
     {
         ReadyForAttack(1);
+        if (ability1Range > 0)
+            FindEnemies(ability1Range, isTargetingAbility1);
+        else
+            ZeroRangeAbility(true);
     }
 
     //Ability2
@@ -135,17 +149,33 @@ public class Hero : MonoBehaviour
     }
 
     //Find enemies and light up available cells
-    void FindEnemies(int range)
+    void FindEnemies(int range, bool isTargeting)
     {
         for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
         {
             for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
             {
-                if(SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                if (isTargeting)
                 {
-                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                    if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                    {
+                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                    }
+                }
+                else
+                {
+                    if ((Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                    {
+                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                    }
                 }
             }
         }
+    }
+
+    //For zero range abilities
+    void ZeroRangeAbility(bool isAbility1)
+    {
+
     }
 }

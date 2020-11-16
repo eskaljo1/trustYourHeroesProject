@@ -116,6 +116,14 @@ public class PlaceHero : MonoBehaviour
         {
             switch (heroSelected.GetComponent<Hero>().mainAttackEffects[i])
             {
+                case "Entangle":
+                    int a = Random.Range(1, 6);
+                    if (a == 1)
+                    {
+                        enemy.GetComponent<Hero>().status = "Entangled";
+                        enemy.GetComponent<Hero>().statusDuration = 1;
+                    }
+                    break;
                 case "Direct":
                     enemy.GetComponent<Animator>().SetTrigger("Hit");
                     yield return new WaitForSeconds(0.5f);

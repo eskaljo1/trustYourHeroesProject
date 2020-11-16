@@ -700,6 +700,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 1
+  isTargetingAbility2: 1
+  mainAttackName: Jump punch
+  ability1Name: Steel fist barrage
+  ability2Name: 
   heroName: Sent Steel
   description: When they were recruited, the two brothers faced each other multiple
     times, but Ohm had the upper hand at most occasions. This did not discourage Sent.

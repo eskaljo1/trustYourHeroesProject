@@ -569,6 +569,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 1
+  mainAttackName: Warlock staff
+  ability1Name: Crow
+  ability2Name: Forbidden spell
   heroName: Erasmo The Mad
   description: Erasmo is known for his infamous experiments that he conducted on living
     beings of every race. His goal was to see how every race reacted to different

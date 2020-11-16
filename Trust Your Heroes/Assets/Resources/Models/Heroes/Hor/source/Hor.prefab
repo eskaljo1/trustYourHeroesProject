@@ -2051,6 +2051,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Fan scythe
+  ability1Name: Eye of Hor
+  ability2Name: Sunlight
   heroName: Hor The Sun God
   description: There was a time when people worshipped the Sun, Hor was at the peak
     of his power. Alas, many abandoned their belief because their prayers were not

@@ -3721,6 +3721,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Goblin dagger
+  ability1Name: Heal totem
+  ability2Name: Trap totem
   heroName: Nazz The Foul
   description: Ever for a goblin, Nazz is quite troublesome. As a shaman, he is skilled
     in magic which he applies to his totems. While he was with his tribe, he became

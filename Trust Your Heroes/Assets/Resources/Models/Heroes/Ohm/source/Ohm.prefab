@@ -2554,6 +2554,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Steel punch
+  ability1Name: Taunt
+  ability2Name: King's shield
   heroName: Ohm Steel
   description: Together with his younger brother Sent, Ohm was recruited to the Soulstein
     kingdom army. Training was brutal, but the two brothers managed to climb up to

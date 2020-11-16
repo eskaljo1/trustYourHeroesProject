@@ -82,98 +82,100 @@ public class MoveHero : MonoBehaviour
             PlaceHero.heroIsSelected = true;
 
         PlaceHero.heroSelected = gameObject;
-
-        if (PlaceHero.gameBegun) //If game has begun, lights up every available cell
+        if (PlaceHero.heroSelected.GetComponent<Hero>().status == "")
         {
-            //Checks four quadrants from the hero for available cells
-            //++
-            for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
+            if (PlaceHero.gameBegun) //If game has begun, lights up every available cell
             {
-                for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
+                //Checks four quadrants from the hero for available cells
+                //++
+                for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
                 {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            //+-
-            for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
-            {
-                for (int j = z; j >= 0; j--)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            //-+
-            for (int i = x; i >= 0; i--)
-            {
-                for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            //--
-            for (int i = x; i >= 0; i--)
-            {
-                for (int j = z; j >= 0; j--)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            //Does the code above again, doesn't work if it doesn't repeat it, some cells get left out
-            for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
-            {
-                for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
-            {
-                for (int j = z; j >= 0; j--)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            for (int i = x; i >= 0; i--)
-            {
-                for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            for (int i = x; i >= 0; i--)
-            {
-                for (int j = z; j >= 0; j--)
-                {
-                    if (i == x && j == z) continue;
-                    CheckCell(i, j);
-                }
-            }
-            //Light up all cells that have distance != 0 and are not JumpableObstacles
-            for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
-                for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
-                    if (SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance != 0)
+                    for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
                     {
-                        if(SpawnGrid.cells[i, j].tag != "Obstacle")
-                            SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
-                        //Reset distance for next click
-                        SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(0);
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
                     }
-        }
-        else //else turn on first row cell lights
-        {
-            GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
-            for (int i = 0; i < firstRowCells.Length; i++)
-            {
-                firstRowCells[i].GetComponentInChildren<Light>().intensity = 15;
+                }
+                //+-
+                for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
+                {
+                    for (int j = z; j >= 0; j--)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                //-+
+                for (int i = x; i >= 0; i--)
+                {
+                    for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                //--
+                for (int i = x; i >= 0; i--)
+                {
+                    for (int j = z; j >= 0; j--)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                //Does the code above again, doesn't work if it doesn't repeat it, some cells get left out
+                for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
+                {
+                    for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
+                {
+                    for (int j = z; j >= 0; j--)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                for (int i = x; i >= 0; i--)
+                {
+                    for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                for (int i = x; i >= 0; i--)
+                {
+                    for (int j = z; j >= 0; j--)
+                    {
+                        if (i == x && j == z) continue;
+                        CheckCell(i, j);
+                    }
+                }
+                //Light up all cells that have distance != 0 and are not JumpableObstacles
+                for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
+                    for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
+                        if (SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance != 0)
+                        {
+                            if (SpawnGrid.cells[i, j].tag != "Obstacle")
+                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                            //Reset distance for next click
+                            SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(0);
+                        }
             }
-        }         
+            else //else turn on first row cell lights
+            {
+                GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
+                for (int i = 0; i < firstRowCells.Length; i++)
+                {
+                    firstRowCells[i].GetComponentInChildren<Light>().intensity = 15;
+                }
+            }
+        }
     }
 
     public void SetCoordinates(int xx, int zz) //Change coordinates

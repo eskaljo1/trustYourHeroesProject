@@ -1662,6 +1662,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Dark arrow
+  ability1Name: Zone
+  ability2Name: Volley
   heroName: Ryubi The Silent
   description: The most skilled sharpshooter in the realm and beyond. Ryubi empowers
     her arrows with her tribe's dark magic, making them capable of penetrating the

@@ -307,6 +307,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 0
+  mainAttackName: Bo staff
+  ability1Name: Flare
+  ability2Name: Insect shield
   heroName: Xavier The Cricket Warrior
   description: Growing up with his people, the orthoptera tribe, Xavier never got
     used to the traditional way of life. Most orthoptera never leave their homeland,

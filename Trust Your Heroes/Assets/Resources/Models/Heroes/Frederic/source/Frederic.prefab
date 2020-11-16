@@ -4458,6 +4458,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 0
+  isTargetingAbility2: 1
+  mainAttackName: Poison sting
+  ability1Name: Gas bomb
+  ability2Name: 
   heroName: Frederic The Plague
   description: Frederic is the Soulstein kingdom's secret agent and an expert in chemistry.
     He loves creating new interesting weapons loaded with deadly gases that he makes

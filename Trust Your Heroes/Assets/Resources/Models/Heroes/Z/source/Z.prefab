@@ -206,6 +206,13 @@ MonoBehaviour:
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 1
+  isTargetingAbility2: 1
+  mainAttackName: Katana blade
+  ability1Name: 
+  ability2Name: 
   heroName: Z
   description: Not much is known about the cerebral assasin Z. Those who've seen his
     swordplay say he has no equal. Guided by the sword, he ventures around the world,

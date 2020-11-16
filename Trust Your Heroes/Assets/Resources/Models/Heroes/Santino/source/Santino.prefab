@@ -202,9 +202,19 @@ MonoBehaviour:
   ability2Type: 0
   mainAttackEffects:
   - Direct
-  ability1Effects: []
-  ability2Effects: []
+  ability1Effects:
+  - Heal
+  ability2Effects:
+  - Direct
+  - Stun
   ability2Passive: 0
+  status: 
+  statusDuration: 0
+  isTargetingAbility1: 1
+  isTargetingAbility2: 1
+  mainAttackName: Forest staff
+  ability1Name: Nature's gift
+  ability2Name: Nature's wrath
   heroName: Santino Of The Forest
   description: It is said that the woods have a guardian spirit who watches over them.
     Santino may be a carefree forest dweller, but his love for the plants and animals
