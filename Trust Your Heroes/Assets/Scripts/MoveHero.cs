@@ -32,40 +32,43 @@ public class MoveHero : MonoBehaviour
 
     void CheckCell(int i, int j) //Check if cell is available to move to
     {
-        //True if the cell is not occupied and not a obstacle unless the hero can jump over them
-        if (SpawnGrid.cells[i, j].tag != "EnemyCell" && SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0  && (SpawnGrid.cells[i, j].tag != "Obstacle" || obstacleJumper))
+        if (PlaceHero.heroSelected.GetComponent<Hero>().status == "")
         { 
-            //Checks if the distance of the cell is 1
-            if ((Mathf.Abs(x - i) + Mathf.Abs(z - j)) == 1)
-            {
-                SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(1);
-            }
-            else
-            {
-                //Checks if any adjacent cell is marked as available, if so marks the current cell as available if the distance is within movement 
-                if (i - 1 >= 0) //used so no index exceptions happen
+            //True if the cell is not occupied and not a obstacle unless the hero can jump over them
+            if (SpawnGrid.cells[i, j].tag != "EnemyCell" && SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0  && (SpawnGrid.cells[i, j].tag != "Obstacle" || obstacleJumper))
+            { 
+                //Checks if the distance of the cell is 1
+                if ((Mathf.Abs(x - i) + Mathf.Abs(z - j)) == 1)
                 {
-                    if (SpawnGrid.cells[i - 1, j].GetComponent<PlaceHero>().distance != 0 &&
-                        (SpawnGrid.cells[i - 1, j].GetComponent<PlaceHero>().distance + 1 <= movement))
-                        SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i - 1, j].GetComponent<PlaceHero>().distance + 1);
+                    SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(1);
                 }
-                if (j - 1 >= 0)
+                else
                 {
-                    if (SpawnGrid.cells[i, j - 1].GetComponent<PlaceHero>().distance != 0 &&
-                        (SpawnGrid.cells[i, j - 1].GetComponent<PlaceHero>().distance + 1 <= movement))
-                        SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i, j - 1].GetComponent<PlaceHero>().distance + 1);
-                }
-                if (i + 1 < SpawnGrid.cells.GetLength(0))
-                {
-                    if (SpawnGrid.cells[i + 1, j].GetComponent<PlaceHero>().distance != 0 &&
-                        (SpawnGrid.cells[i + 1, j].GetComponent<PlaceHero>().distance + 1 <= movement))
-                        SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i + 1, j].GetComponent<PlaceHero>().distance + 1);
-                }
-                if (j + 1 < SpawnGrid.cells.GetLength(1))
-                {
-                    if (SpawnGrid.cells[i, j + 1].GetComponent<PlaceHero>().distance != 0 &&
-                        (SpawnGrid.cells[i, j + 1].GetComponent<PlaceHero>().distance + 1 <= movement))
-                        SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i, j + 1].GetComponent<PlaceHero>().distance + 1);
+                    //Checks if any adjacent cell is marked as available, if so marks the current cell as available if the distance is within movement 
+                    if (i - 1 >= 0) //used so no index exceptions happen
+                    {
+                        if (SpawnGrid.cells[i - 1, j].GetComponent<PlaceHero>().distance != 0 &&
+                            (SpawnGrid.cells[i - 1, j].GetComponent<PlaceHero>().distance + 1 <= movement))
+                            SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i - 1, j].GetComponent<PlaceHero>().distance + 1);
+                    }
+                    if (j - 1 >= 0)
+                    {
+                        if (SpawnGrid.cells[i, j - 1].GetComponent<PlaceHero>().distance != 0 &&
+                            (SpawnGrid.cells[i, j - 1].GetComponent<PlaceHero>().distance + 1 <= movement))
+                            SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i, j - 1].GetComponent<PlaceHero>().distance + 1);
+                    }
+                    if (i + 1 < SpawnGrid.cells.GetLength(0))
+                    {
+                        if (SpawnGrid.cells[i + 1, j].GetComponent<PlaceHero>().distance != 0 &&
+                            (SpawnGrid.cells[i + 1, j].GetComponent<PlaceHero>().distance + 1 <= movement))
+                            SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i + 1, j].GetComponent<PlaceHero>().distance + 1);
+                    }
+                    if (j + 1 < SpawnGrid.cells.GetLength(1))
+                    {
+                        if (SpawnGrid.cells[i, j + 1].GetComponent<PlaceHero>().distance != 0 &&
+                            (SpawnGrid.cells[i, j + 1].GetComponent<PlaceHero>().distance + 1 <= movement))
+                            SpawnGrid.cells[i, j].GetComponent<PlaceHero>().ChangeDistance(SpawnGrid.cells[i, j + 1].GetComponent<PlaceHero>().distance + 1);
+                    }
                 }
             }
         }

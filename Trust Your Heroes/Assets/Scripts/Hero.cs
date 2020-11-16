@@ -44,6 +44,13 @@ public class Hero : MonoBehaviour
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
+    //Nek bude da samo jedan status može u jedno vrijeme imat(jedna vrsta disejbla)
+    public string status = "";
+    public int statusDuration = 0;
+
+    private bool isTargetingAb1 = false;
+    private bool isTargetingAb2 = false;
+
     void Start()
     {
         abilityType = -1;
@@ -116,13 +123,14 @@ public class Hero : MonoBehaviour
     public void MainAttack()
     {
         ReadyForAttack(0);
-        FindEnemies(mainAttackRange);
+        FindEnemies(mainAttackRange, true);
     }
 
     //Ability1
     public void Ability1()
     {
         ReadyForAttack(1);
+        FindEnemies(ability1Range, isTargetingAb1);
     }
 
     //Ability2
@@ -131,19 +139,29 @@ public class Hero : MonoBehaviour
         if (!ability2Passive)
         {
             ReadyForAttack(2);
+            FindEnemies(ability2Range, isTargetingAb2);
         }
     }
 
     //Find enemies and light up available cells
-    void FindEnemies(int range)
+    void FindEnemies(int range, bool isTargeting)
     {
         for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
         {
             for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
             {
-                if(SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                if (isTargeting)
+                { 
+                    if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                    {
+                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                    }
+                } else
                 {
-                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                    if ((Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                    {
+                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                    }
                 }
             }
         }
