@@ -8461,7 +8461,6 @@ MonoBehaviour:
   mainAttackName: {fileID: 1282578173}
   mainAttackDmg: {fileID: 434573245}
   mainAttackRange: {fileID: 809985409}
-  mainAttackEffectText: {fileID: 0}
   ability1Icon: {fileID: 1449798338}
   ability1Name: {fileID: 1168004481}
   ability1Dmg: {fileID: 1700558520}
