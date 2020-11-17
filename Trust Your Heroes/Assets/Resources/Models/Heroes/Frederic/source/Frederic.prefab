@@ -4449,22 +4449,25 @@ MonoBehaviour:
   ability2Dmg: 20
   mainAttackRange: 1
   ability1Range: 2
-  ability2Range: 2
+  ability2Range: 0
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
   mainAttackEffects:
   - Direct
-  ability1Effects: []
+  - Poison
+  ability1Effects:
+  - Area
+  - Poison
   ability2Effects: []
-  ability2Passive: 0
+  ability2Passive: 1
   status: 
   statusDuration: 0
   isTargetingAbility1: 0
-  isTargetingAbility2: 1
+  isTargetingAbility2: 0
   mainAttackName: Poison sting
   ability1Name: Gas bomb
-  ability2Name: 
+  ability2Name: Malevolence
   heroName: Frederic The Plague
   description: Frederic is the Soulstein kingdom's secret agent and an expert in chemistry.
     He loves creating new interesting weapons loaded with deadly gases that he makes
@@ -4474,7 +4477,8 @@ MonoBehaviour:
     test his weapons on his missions without repercussions.
   mainAttack: Poison sting - 20 dmg
   firstAbility: 'Gas bomb - '
-  secondAbility: 
+  secondAbility: Malevolence - every attack has 25% chance of poisoning the opponent
+    (Passive ability)
 --- !u!82 &-7834169564241466913
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2041,7 +2041,7 @@ MonoBehaviour:
   ability1Dmg: 0
   ability2Dmg: 20
   mainAttackRange: 1
-  ability1Range: 15
+  ability1Range: 5
   ability2Range: 0
   mainAttackType: 0
   ability1Type: 0

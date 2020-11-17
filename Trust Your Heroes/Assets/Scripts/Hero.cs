@@ -51,7 +51,7 @@ public class Hero : MonoBehaviour
     public string firstAbility = "";
     public string secondAbility = "";
 
-    private Slider healthBar;
+    private Slider healthBar = null;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
@@ -60,27 +60,22 @@ public class Hero : MonoBehaviour
         abilityType = -1;
         //Find health bar
         if (YourHeroTeam.heroNames[0] + "(Clone)" == name)
-        {
-            healthBar = GameObject.Find("HealthBar1").GetComponent<Slider>();
-            game = true;
-        }
+            if (GameObject.Find("HealthBar1"))
+                healthBar = GameObject.Find("HealthBar1").GetComponent<Slider>();
         else if (YourHeroTeam.heroNames[1] + "(Clone)" == name)
-        {
-            healthBar = GameObject.Find("HealthBar2").GetComponent<Slider>();
-            game = true;
-        }
+            if (GameObject.Find("HealthBar2"))
+                healthBar = GameObject.Find("HealthBar2").GetComponent<Slider>();
         else if (YourHeroTeam.heroNames[2] + "(Clone)" == name)
-        {
-            healthBar = GameObject.Find("HealthBar3").GetComponent<Slider>();
-            game = true;
-        }
+            if (GameObject.Find("HealthBar3"))
+                healthBar = GameObject.Find("HealthBar3").GetComponent<Slider>();
         else if (YourHeroTeam.heroNames[3] + "(Clone)" == name)
+            if (GameObject.Find("HealthBar4"))
+                healthBar = GameObject.Find("HealthBar4").GetComponent<Slider>();
+        if (healthBar != null)
         {
-            healthBar = GameObject.Find("HealthBar4").GetComponent<Slider>();
+            healthBar.maxValue = health;
             game = true;
         }
-        if (game)
-            healthBar.maxValue = health;
     }
 
     void Update()
@@ -145,6 +140,10 @@ public class Hero : MonoBehaviour
         if (!ability2Passive)
         {
             ReadyForAttack(2);
+            if (ability2Range > 0)
+                FindEnemies(ability2Range, isTargetingAbility2);
+            else
+                ZeroRangeAbility(true);
         }
     }
 
@@ -176,6 +175,49 @@ public class Hero : MonoBehaviour
     //For zero range abilities
     void ZeroRangeAbility(bool isAbility1)
     {
+        if (abilityType == 1)
+        {
+            GetComponent<Animator>().SetTrigger("Ability1");
+            for (int i = 0; i < ability1Effects.Length; i++)
+            {
+                switch (ability1Effects[i])
+                {
+                    case "Area":
+                        
+                        break;
+                    case "Evasiveness":
 
+                        break;
+                    case "Taunt":
+
+                        break;
+                    case "Totem":
+
+                        break;
+                }
+            }
+        }
+        else if (abilityType == 2)
+        {
+            GetComponent<Animator>().SetTrigger("Ability2");
+            for (int i = 0; i < ability2Effects.Length; i++)
+            {
+                switch (ability2Effects[i])
+                {
+                    case "Area":
+
+                        break;
+                    case "Shield":
+
+                        break;
+                    case "Buff":
+
+                        break;
+                    case "Totem":
+
+                        break;
+                }
+            }
+        }
     }
 }

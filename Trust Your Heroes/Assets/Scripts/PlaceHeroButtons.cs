@@ -69,7 +69,7 @@ public class PlaceHeroButtons : MonoBehaviour
                     if (PlaceHero.heroSelected.GetComponent<Hero>().ability2Passive)
                         hero1Button3.interactable = false;
                     else
-                        hero1Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().MainAttack);
+                        hero1Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().Ability2);
                     hero1Button3.gameObject.GetComponent<HeroAbilityButtonsShowPanel>().UpdateText(PlaceHero.heroSelected);
                     break;
                 case 2:
@@ -82,7 +82,7 @@ public class PlaceHeroButtons : MonoBehaviour
                     if (PlaceHero.heroSelected.GetComponent<Hero>().ability2Passive)
                         hero2Button3.interactable = false;
                     else
-                        hero2Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().MainAttack);
+                        hero2Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().Ability2);
                     hero2Button3.gameObject.GetComponent<HeroAbilityButtonsShowPanel>().UpdateText(PlaceHero.heroSelected);
                     break;
                 case 3:
@@ -95,7 +95,7 @@ public class PlaceHeroButtons : MonoBehaviour
                     if (PlaceHero.heroSelected.GetComponent<Hero>().ability2Passive)
                         hero3Button3.interactable = false;
                     else
-                        hero3Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().MainAttack);
+                        hero3Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().Ability2);
                     hero3Button3.gameObject.GetComponent<HeroAbilityButtonsShowPanel>().UpdateText(PlaceHero.heroSelected);
                     break;
                 case 4:
@@ -108,7 +108,7 @@ public class PlaceHeroButtons : MonoBehaviour
                     if (PlaceHero.heroSelected.GetComponent<Hero>().ability2Passive)
                         hero4Button3.interactable = false;
                     else
-                        hero4Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().MainAttack); hero1Button1.gameObject.GetComponent<HeroAbilityButtonsShowPanel>().UpdateText(PlaceHero.heroSelected);
+                        hero4Button3.onClick.AddListener(PlaceHero.heroSelected.GetComponent<Hero>().Ability2); hero1Button1.gameObject.GetComponent<HeroAbilityButtonsShowPanel>().UpdateText(PlaceHero.heroSelected);
                     hero4Button3.gameObject.GetComponent<HeroAbilityButtonsShowPanel>().UpdateText(PlaceHero.heroSelected);
                     break;
             }

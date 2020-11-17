@@ -97,12 +97,12 @@ public class PlaceHero : MonoBehaviour
                     else if (Hero.abilityType == 1)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
-
+                        StartCoroutine(Ability1(enemy));
                     }
                     else if (Hero.abilityType == 2)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
-
+                        StartCoroutine(Ability2(enemy));
                     }
                 }
             }
@@ -111,14 +111,22 @@ public class PlaceHero : MonoBehaviour
 
     IEnumerator MainAttack(GameObject enemy)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.5f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().mainAttackEffects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().mainAttackEffects[i])
             {
+                case "Poison":
+                    int p = Random.Range(1, 5);
+                    if (enemy.GetComponent<Hero>().status == "" && p == 1)
+                    {
+                        enemy.GetComponent<Hero>().status = "Poisoned";
+                        enemy.GetComponent<Hero>().statusDuration = 2;
+                    }
+                    break;
                 case "Entangle":
                     int a = Random.Range(1, 6);
-                    if (a == 1)
+                    if (enemy.GetComponent<Hero>().status == "" && a == 1)
                     {
                         enemy.GetComponent<Hero>().status = "Entangled";
                         enemy.GetComponent<Hero>().statusDuration = 1;
@@ -131,6 +139,22 @@ public class PlaceHero : MonoBehaviour
                     break;
             }
         }
+        heroSelected = null;
+        heroIsSelected = false;
+    }
+
+    IEnumerator Ability1(GameObject enemy)
+    {
+        yield return new WaitForSeconds(2.0f);
+        
+        heroSelected = null;
+        heroIsSelected = false;
+    }
+
+    IEnumerator Ability2(GameObject enemy)
+    {
+        yield return new WaitForSeconds(2.0f);
+
         heroSelected = null;
         heroIsSelected = false;
     }
