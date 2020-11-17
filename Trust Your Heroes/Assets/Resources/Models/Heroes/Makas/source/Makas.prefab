@@ -2011,6 +2011,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -2029,9 +2031,8 @@ MonoBehaviour:
     Known for his fierce attitude, great combat experience and hunger for battle,
     he is an excellent example of a troll warrior. If you ever plan to head to combat
     with a troll, remember to bring company.
-  mainAttack: Club - 15 dmg
-  firstAbility: 'Earthquake - '
-  secondAbility: 'Warcry - '
+  firstAbility: Area dmg
+  secondAbility: 
 --- !u!82 &2869950589006190341
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2236,6 +2236,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   - Entangle
@@ -2258,10 +2260,8 @@ MonoBehaviour:
     with sticky web she uses to entangle her opponent and deadly venom that finishes
     off her prey. Any victim that gets caught in her nest better pray to Hor to burn
     the web.
-  mainAttack: Spider bite - 15 dmg
-  firstAbility: Splash jump - 35 dmg to adjacent tiles
-  secondAbility: Entangle - every attack has 20% chance of stunning the opponent (Passive
-    ability)
+  firstAbility: Area dmg to adjacent tiles
+  secondAbility: Every attack has 20% chance of stunning the opponent
 --- !u!82 &322269319688617250
 AudioSource:
   m_ObjectHideFlags: 0

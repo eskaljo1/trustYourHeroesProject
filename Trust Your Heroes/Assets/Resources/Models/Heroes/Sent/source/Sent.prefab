@@ -695,6 +695,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -714,8 +716,7 @@ MonoBehaviour:
     instead of pure strength. Even his armor was made to be lighter than Ohm's, but
     still very strong .He is the kingdom's number one assasin, with a 100% succession
     rate.
-  mainAttack: Jump punch - 20 dmg
-  firstAbility: Steel fist barrage - 50 dmg
+  firstAbility: 
   secondAbility: 
 --- !u!82 &-3190139489919037295
 AudioSource:

@@ -4453,6 +4453,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   - Poison
@@ -4475,10 +4477,8 @@ MonoBehaviour:
     he grew accustomed to, so he wears it all the time. The reason he works for the
     kingdom is because he can easily aquire any material he needs and he can freely
     test his weapons on his missions without repercussions.
-  mainAttack: Poison sting - 20 dmg
-  firstAbility: 'Gas bomb - '
-  secondAbility: Malevolence - every attack has 25% chance of poisoning the opponent
-    (Passive ability)
+  firstAbility: Area dmg
+  secondAbility: Every attack has 25% chance of poisoning the opponent
 --- !u!82 &-7834169564241466913
 AudioSource:
   m_ObjectHideFlags: 0

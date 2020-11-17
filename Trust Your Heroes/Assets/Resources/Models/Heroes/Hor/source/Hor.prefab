@@ -2046,6 +2046,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -2065,9 +2067,8 @@ MonoBehaviour:
     so he came down from the heavens in order to convert all the heretics. Travelling
     across the realm, smiting down all those who opose him with divine wrath. The
     Sun is your friend if you respect it, if you don't it might burn you.
-  mainAttack: Fan scythe - 20 dmg
-  firstAbility: Eye of Hor - reveal 5 tiles ("+" shape)
-  secondAbility: Sunlight - +100% dmg buff for 3 turns
+  firstAbility: Reveal 5 tiles in the "+" shape, selected tile represents the center
+  secondAbility: +100% dmg buff for 3 turns
 --- !u!82 &-205764874885355143
 AudioSource:
   m_ObjectHideFlags: 0

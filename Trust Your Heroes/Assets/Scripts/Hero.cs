@@ -23,6 +23,9 @@ public class Hero : MonoBehaviour
     public bool mainAttackType = false;
     public bool ability1Type = false;
     public bool ability2Type = false;
+    //Cooldowns
+    public int ability1Cooldown = 0;
+    public int ability2Cooldown = 0;
     //Effects
     public string[] mainAttackEffects;
     public string[] ability1Effects;
@@ -47,7 +50,6 @@ public class Hero : MonoBehaviour
     //Description
     public string heroName = "";
     public string description = "";
-    public string mainAttack = "";
     public string firstAbility = "";
     public string secondAbility = "";
 

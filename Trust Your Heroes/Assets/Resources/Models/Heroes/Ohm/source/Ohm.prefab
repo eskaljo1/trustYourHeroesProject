@@ -2549,6 +2549,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -2568,9 +2570,8 @@ MonoBehaviour:
     The armor he wears was custom made from the strongest metals available to the
     kingdom. He is considered the kingdom's dog and will complete every mission with
     ease.
-  mainAttack: Steel punch - 15 dmg
-  firstAbility: Taunt - enemies can only attack him for 2 turns
-  secondAbility: King's shield - +50% dmg reduction for 2 turns
+  firstAbility: Enemies can only attack Ohm, lasts for 2 turns
+  secondAbility: +50% dmg reduction for 2 turns
 --- !u!82 &9156247682216998237
 AudioSource:
   m_ObjectHideFlags: 0

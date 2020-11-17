@@ -569,6 +569,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -588,9 +590,8 @@ MonoBehaviour:
     fighting various blademasters and warriors. After traveling for so long she has
     become a deadly weapon of death. It is said that the mantodea females devour their
     life partners, imagine what they do to their enemies.
-  mainAttack: Scythe scissors - 20 dmg
-  firstAbility: Mantis slice - 30 dmg, range 2
-  secondAbility: Blade cycle - 45 area dmg to adjacent tiles
+  firstAbility: 
+  secondAbility: Area dmg to adjacent tiles
 --- !u!82 &-6120951609696173870
 AudioSource:
   m_ObjectHideFlags: 0

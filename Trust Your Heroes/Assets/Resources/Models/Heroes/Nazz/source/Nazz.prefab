@@ -3716,6 +3716,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -3735,9 +3737,8 @@ MonoBehaviour:
     position so the other goblins rebelled and he was exiled from his home. Now he
     seeks a new home, where he can settle and enjoy his life the best way he knows,
     commanding others.
-  mainAttack: Goblin dagger - 10 dmg
-  firstAbility: 'Heal totem - '
-  secondAbility: 'Trap totem - '
+  firstAbility: 
+  secondAbility: 
 --- !u!82 &6076739163058872602
 AudioSource:
   m_ObjectHideFlags: 0

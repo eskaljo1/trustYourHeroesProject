@@ -1657,6 +1657,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -1674,10 +1676,9 @@ MonoBehaviour:
     her arrows with her tribe's dark magic, making them capable of penetrating the
     toughest shields and armor. They say the deadliest predators are the silent ones.
     Who does she have her sights on today?
-  mainAttack: Dark arrow - 25 dmg, range 3
-  firstAbility: Zone - 50 dmg if enemy enters patrolled tile, can be cancelled, range
-    5
-  secondAbility: 'Volley - '
+  firstAbility: Dmg is done if enemy enters selected tile, ability is active until
+    dmg is done, can be cancelled
+  secondAbility: Area dmg
 --- !u!82 &7934626227453824619
 AudioSource:
   m_ObjectHideFlags: 0

@@ -564,6 +564,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -582,9 +584,8 @@ MonoBehaviour:
     spells and effects. Eventually he was put on the Soulstein kingdom's wanted list
     as one of the most dangerous people in the land. Always accompanied by his crow
     Karasu, he is looking for new myterious magic that he may use in his arsenal.
-  mainAttack: Warlock staff - 10 dmg
-  firstAbility: Crow - reveal 3x3 tiles
-  secondAbility: Forbidden spell - 30 dmg, range 2, 50% dmg debuff for 2 turns
+  firstAbility: Reveal 3x3 tiles, selected tile represents the center
+  secondAbility: Enemy receives 50% dmg debuff for 2 turns
 --- !u!82 &-7054387137185425075
 AudioSource:
   m_ObjectHideFlags: 0

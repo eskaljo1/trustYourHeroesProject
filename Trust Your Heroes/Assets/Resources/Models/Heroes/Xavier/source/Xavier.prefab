@@ -302,6 +302,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -321,9 +323,9 @@ MonoBehaviour:
     unknown. He survived using the skills he learned with his tribe, hunting, foraging,
     crafting as well as fighting. He is also extremely fast and agile. However, Xavier
     is a pacifist, never engaging in a battle, unless he is prompted of course.
-  mainAttack: Bo staff - 15 dmg
-  firstAbility: Flare - 20 dmg, range 3, reveal enemies adjacent to tile
-  secondAbility: Insect shield - +50% dmg reduction for 2 turns
+  firstAbility: Reveal enemies on adjacent tiles, dmg is done to enemy on selected
+    tile
+  secondAbility: +50% dmg reduction for 2 turns
 --- !u!82 &-2179734815749015837
 AudioSource:
   m_ObjectHideFlags: 0

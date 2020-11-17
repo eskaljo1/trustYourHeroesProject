@@ -24,7 +24,24 @@ public class MainMenu : MonoBehaviour
     //*Heroes Panel
     public Text nameText;
     public Text descriptionText;
-    public Text statsText;
+    public Text healthText;
+    public Text movementText;
+    public RawImage mainAttackIcon;
+    public Text mainAttackName;
+    public Text mainAttackDmg;
+    public Text mainAttackRange;
+    public RawImage ability1Icon;
+    public Text ability1Name;
+    public Text ability1Dmg;
+    public Text ability1Range;
+    public Text ability1Cooldown;
+    public Text ability1EffectText;
+    public RawImage ability2Icon;
+    public Text ability2Name;
+    public Text ability2Dmg;
+    public Text ability2Range;
+    public Text ability2Cooldown;
+    public Text ability2EffectText;
     //*Play Panel
     public RawImage mapImage;
 
@@ -131,7 +148,24 @@ public class MainMenu : MonoBehaviour
             Destroy(selectedHero);
             nameText.text = "";
             descriptionText.text = "";
-            statsText.text = "";
+            healthText.text = "";
+            movementText.text = "";
+            mainAttackIcon.texture = null;
+            ability1Icon.texture = null;
+            ability2Icon.texture = null;
+            mainAttackName.text = "";
+            mainAttackDmg.text = "";
+            mainAttackRange.text = "";
+            ability1Name.text = "";
+            ability1Dmg.text = "";
+            ability1Range.text = "";
+            ability1Cooldown.text = "";
+            ability1EffectText.text = "";
+            ability2Name.text = "";
+            ability2Dmg.text = "";
+            ability2Range.text = "";
+            ability2Cooldown.text = "";
+            ability2EffectText.text = "";
         }
     }
 
@@ -256,9 +290,36 @@ public class MainMenu : MonoBehaviour
         }
         if (heroesPanel) //If spawning in heroes panel also edit the description and stats
         {
+            string n = hero.name.Remove(hero.name.Length - 7);
             nameText.text = hero.GetComponent<Hero>().heroName;
             descriptionText.text = hero.GetComponent<Hero>().description;
-            statsText.text = hero.GetComponent<Hero>().health.ToString() + "\n\n" + hero.GetComponent<MoveHero>().movement.ToString() + "\n\n" + hero.GetComponent<Hero>().mainAttack + "\n\n" + hero.GetComponent<Hero>().firstAbility + "\n\n" + hero.GetComponent<Hero>().secondAbility;
+            healthText.text = "Health: " + hero.GetComponent<Hero>().health.ToString();
+            movementText.text = "Movement: " + hero.GetComponent<MoveHero>().movement.ToString();
+            mainAttackName.text = hero.GetComponent<Hero>().mainAttackName;
+            mainAttackIcon.texture = Resources.Load<Texture>("Icons/Abilities/" + n + "MainAttack");
+            mainAttackDmg.text = "Dmg: " + hero.GetComponent<Hero>().mainAttackDmg.ToString();
+            mainAttackRange.text = "Range: " + hero.GetComponent<Hero>().mainAttackRange.ToString();
+            ability1Icon.texture = Resources.Load<Texture>("Icons/Abilities/" + n + "Ability1");
+            ability1Name.text = hero.GetComponent<Hero>().ability1Name;
+            ability1Dmg.text = "Dmg: " + hero.GetComponent<Hero>().ability1Dmg.ToString();
+            ability1Range.text = "Range: " + hero.GetComponent<Hero>().ability1Range.ToString();
+            ability1Cooldown.text = "Cooldown: " + hero.GetComponent<Hero>().ability1Cooldown.ToString();
+            ability1EffectText.text = hero.GetComponent<Hero>().firstAbility;
+            ability2Icon.texture = Resources.Load<Texture>("Icons/Abilities/" + n + "Ability2");
+            ability2Name.text = hero.GetComponent<Hero>().ability2Name;
+            if (!hero.GetComponent<Hero>().ability2Passive)
+            {
+                ability2Dmg.text = "Dmg: " + hero.GetComponent<Hero>().ability2Dmg.ToString();
+                ability2Range.text = "Range: " + hero.GetComponent<Hero>().ability2Range.ToString();
+                ability2Cooldown.text = "Cooldown: " + hero.GetComponent<Hero>().ability2Cooldown.ToString();
+            }
+            else
+            {
+                ability2Dmg.text = "Passive";
+                ability2Range.text = "";
+                ability2Cooldown.text = "";
+            }
+            ability2EffectText.text = hero.GetComponent<Hero>().secondAbility;
         }
         hero.GetComponent<BoxCollider>().enabled = false; //Disable click on hero
         return hero;

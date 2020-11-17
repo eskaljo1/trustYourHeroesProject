@@ -4501,6 +4501,8 @@ MonoBehaviour:
   mainAttackType: 0
   ability1Type: 0
   ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
@@ -4518,9 +4520,8 @@ MonoBehaviour:
     Whoever dares disobey her will feel her anger and wrath. Being a frost archmage,
     there are not many who are equal to her in power. Using her magic, Alluria expands
     her land, freezing everything in her path.
-  mainAttack: Ice staff - 10 dmg
-  firstAbility: Frostbolt - 40 dmg, range 4, -1 movement for 2 turns
-  secondAbility: Blizzard - 15 area dmg ("+" shape)
+  firstAbility: Enemy receives -1 movement for 2 turns
+  secondAbility: Does area dmg in the "+" shape, selected tile represents the center
 --- !u!82 &-2452651058500802780
 AudioSource:
   m_ObjectHideFlags: 0
