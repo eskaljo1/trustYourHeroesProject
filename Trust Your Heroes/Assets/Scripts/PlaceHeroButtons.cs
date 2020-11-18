@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //Used for the hero buttons that spawn each hero at the beginning of the game
 
@@ -12,13 +13,16 @@ public class PlaceHeroButtons : MonoBehaviour
     public static bool spawned = false; //true if spawn happened, used for disabling buttons
     public static int heroesPlaced = 0; //Number of heroes placed
 
+    public GameObject exitMenu;
+
     //Buttons
     public GameObject readyButton;
+
     public Button button1;
     public Button button2;
     public Button button3;
     public Button button4;
-    
+
     public Button hero1Button1;
     public Button hero1Button2;
     public Button hero1Button3;
@@ -120,7 +124,7 @@ public class PlaceHeroButtons : MonoBehaviour
 
     void SetHeroIcon(GameObject button, int heroNumber) //Gets icon from resources
     {
-        button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/" + YourHeroTeam.heroNames[heroNumber] + "Icon");                      
+        button.GetComponent<RawImage>().texture = Resources.Load<Texture>("Icons/Heroes/" + YourHeroTeam.heroNames[heroNumber] + "Icon");
     }
 
     void SetAbilityButtons(GameObject button1, GameObject button2, GameObject button3, int heroNumber)
@@ -153,7 +157,7 @@ public class PlaceHeroButtons : MonoBehaviour
             for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
                 for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
                     SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 0;
-            
+
             hero1Button1.interactable = true;
             hero1Button2.interactable = true;
             hero1Button3.interactable = true;
@@ -167,5 +171,19 @@ public class PlaceHeroButtons : MonoBehaviour
             hero4Button2.interactable = true;
             hero4Button3.interactable = true;
         }
+    }
+
+    public void ExitMenu(bool open)
+    {
+        exitMenu.SetActive(open);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+        YourHeroTeam.heroNames[0] = "";
+        YourHeroTeam.heroNames[1] = "";
+        YourHeroTeam.heroNames[2] = "";
+        YourHeroTeam.heroNames[3] = "";
     }
 }
