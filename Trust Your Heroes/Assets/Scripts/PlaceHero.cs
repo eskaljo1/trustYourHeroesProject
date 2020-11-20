@@ -151,17 +151,30 @@ public class PlaceHero : MonoBehaviour
         {
             switch (heroSelected.GetComponent<Hero>().ability1Effects[i])
             {
+                case "Area":
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    for (int j = 0; j < enemies.Length; j++)
+                        if ((enemies[j].GetComponent<MoveHero>().GetX() == x && enemies[j].GetComponent<MoveHero>().GetZ() == z) || (Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) == 1)
+                        {
+                            enemies[j].GetComponent<Animator>().SetTrigger("Hit");
+                            int d = (int)(enemies[j].GetComponent<Hero>().ability1Dmg + (enemies[j].GetComponent<Hero>().buff / 100.0 * enemies[j].GetComponent<Hero>().ability1Dmg) - (enemies[j].GetComponent<Hero>().debuff / 100.0 * enemies[j].GetComponent<Hero>().ability1Dmg));
+                            enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
+                            for (int k = 0; k < heroSelected.GetComponent<Hero>().ability1Effects.Length; k++)
+                                if(heroSelected.GetComponent<Hero>().ability1Effects[k] == "Poison")
+                                {
+                                    int p = Random.Range(1, 5);
+                                    if (!enemies[j].GetComponent<Hero>().poisoned && p == 1)
+                                    {
+                                        enemies[j].GetComponent<Hero>().poisoned = true;
+                                        enemies[j].GetComponent<Hero>().poisonDuration = 2;
+                                    }
+                                }
+                        }
+                    yield return new WaitForSeconds(0.5f);
+                    break;
                 case "Heal":
                     yield return new WaitForSeconds(0.5f);
                     enemy.GetComponent<Hero>().health += heroSelected.GetComponent<Hero>().ability1Dmg; ;
-                    break;
-                case "Poison":
-                    int p = Random.Range(1, 5);
-                    if (!enemy.GetComponent<Hero>().poisoned && p == 1)
-                    {
-                        enemy.GetComponent<Hero>().poisoned = true;
-                        enemy.GetComponent<Hero>().poisonDuration = 2;
-                    }
                     break;
                 case "Slow":
                     if (!enemy.GetComponent<Hero>().slow)
@@ -196,6 +209,17 @@ public class PlaceHero : MonoBehaviour
         {
             switch (heroSelected.GetComponent<Hero>().ability2Effects[i])
             {
+                case "Area":
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    for (int j = 0; j < enemies.Length; j++)
+                        if ((enemies[j].GetComponent<MoveHero>().GetX() == x && enemies[j].GetComponent<MoveHero>().GetZ() == z) || (Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) == 1)
+                        {
+                            enemies[j].GetComponent<Animator>().SetTrigger("Hit");
+                            int d = (int)(enemies[j].GetComponent<Hero>().ability2Dmg + (enemies[j].GetComponent<Hero>().buff / 100.0 * enemies[j].GetComponent<Hero>().ability2Dmg) - (enemies[j].GetComponent<Hero>().debuff / 100.0 * enemies[j].GetComponent<Hero>().ability2Dmg));
+                            enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
+                        }
+                    yield return new WaitForSeconds(0.5f);
+                    break;
                 case "Debuff":
                     enemy.GetComponent<Hero>().debuff = 50;
                     enemy.GetComponent<Hero>().debuffDuration = 2;
