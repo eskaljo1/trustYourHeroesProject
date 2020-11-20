@@ -4490,26 +4490,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  armor: 0
-  magicResistance: 0
   mainAttackDmg: 10
   ability1Dmg: 40
   ability2Dmg: 15
   mainAttackRange: 1
   ability1Range: 4
   ability2Range: 4
-  mainAttackType: 0
-  ability1Type: 0
-  ability2Type: 0
   ability1Cooldown: 0
   ability2Cooldown: 0
   mainAttackEffects:
   - Direct
-  ability1Effects: []
-  ability2Effects: []
+  ability1Effects:
+  - Direct
+  - Slow
+  ability2Effects:
+  - Area
   ability2Passive: 0
-  status: 
-  statusDuration: 0
+  evasiveness: 0
+  evasivenessDuration: 0
+  stun: 0
+  stunDuration: 0
+  poisoned: 0
+  poisonDuration: 0
+  shield: 0
+  shieldDuration: 0
+  buff: 0
+  buffDuration: 0
+  debuff: 0
+  debuffDuration: 0
   isTargetingAbility1: 1
   isTargetingAbility2: 0
   mainAttackName: Ice staff

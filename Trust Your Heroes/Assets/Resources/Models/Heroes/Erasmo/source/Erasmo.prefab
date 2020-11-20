@@ -553,26 +553,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  armor: 0
-  magicResistance: 0
   mainAttackDmg: 10
   ability1Dmg: 0
   ability2Dmg: 30
   mainAttackRange: 1
   ability1Range: 4
   ability2Range: 2
-  mainAttackType: 0
-  ability1Type: 0
-  ability2Type: 0
   ability1Cooldown: 0
   ability2Cooldown: 0
   mainAttackEffects:
   - Direct
-  ability1Effects: []
-  ability2Effects: []
+  ability1Effects:
+  - Reveal
+  ability2Effects:
+  - Direct
+  - Debuff
   ability2Passive: 0
-  status: 
-  statusDuration: 0
+  evasiveness: 0
+  evasivenessDuration: 0
+  stun: 0
+  stunDuration: 0
+  poisoned: 0
+  poisonDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 1
   mainAttackName: Warlock staff

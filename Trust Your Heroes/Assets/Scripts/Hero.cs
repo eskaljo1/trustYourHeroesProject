@@ -9,8 +9,8 @@ public class Hero : MonoBehaviour
 {
     public int health = 100;
     //Dmg reduction
-    public int armor = 0;
-    public int magicResistance = 0;
+    //public int armor = 0;
+    //public int magicResistance = 0;
     //Dmg
     public int mainAttackDmg = 20;
     public int ability1Dmg = 20;
@@ -20,9 +20,9 @@ public class Hero : MonoBehaviour
     public int ability1Range = 2;
     public int ability2Range = 2;
     //Type of attack, true if magic, false if regular
-    public bool mainAttackType = false;
-    public bool ability1Type = false;
-    public bool ability2Type = false;
+    //public bool mainAttackType = false;
+    //public bool ability1Type = false;
+    //public bool ability2Type = false;
     //Cooldowns
     public int ability1Cooldown = 0;
     public int ability2Cooldown = 0;
@@ -32,9 +32,22 @@ public class Hero : MonoBehaviour
     public string[] ability2Effects;
     //True if ability2 is passive
     public bool ability2Passive = false;
-    //Status
-    public string status = "";
-    public int statusDuration = 0;
+    //Statuses
+    public int evasiveness = 0;
+    public int evasivenessDuration = 0;
+    public bool stun = false;
+    public int stunDuration = 0;
+    public bool poisoned = false;
+    public int poisonDuration = 0;
+    public bool slow = false;
+    public int slowDuration = 0;
+    public int shield = 0;
+    public int shieldDuration = 0;
+    public int buff = 0;
+    public int buffDuration = 0;
+    public int debuff = 0;
+    public int debuffDuration = 0;
+
     //Targets enemy or cell
     public bool isTargetingAbility1 = true;
     public bool isTargetingAbility2 = true;
@@ -62,17 +75,25 @@ public class Hero : MonoBehaviour
         abilityType = -1;
         //Find health bar
         if (YourHeroTeam.heroNames[0] + "(Clone)" == name)
+        {
             if (GameObject.Find("HealthBar1"))
                 healthBar = GameObject.Find("HealthBar1").GetComponent<Slider>();
+        }
         else if (YourHeroTeam.heroNames[1] + "(Clone)" == name)
+        {
             if (GameObject.Find("HealthBar2"))
                 healthBar = GameObject.Find("HealthBar2").GetComponent<Slider>();
+        }
         else if (YourHeroTeam.heroNames[2] + "(Clone)" == name)
+        {
             if (GameObject.Find("HealthBar3"))
                 healthBar = GameObject.Find("HealthBar3").GetComponent<Slider>();
+        }
         else if (YourHeroTeam.heroNames[3] + "(Clone)" == name)
+        {
             if (GameObject.Find("HealthBar4"))
                 healthBar = GameObject.Find("HealthBar4").GetComponent<Slider>();
+        }
         if (healthBar != null)
         {
             healthBar.maxValue = health;
@@ -122,35 +143,49 @@ public class Hero : MonoBehaviour
     //Main attack
     public void MainAttack()
     {
-        ReadyForAttack(0);
-        FindEnemies(mainAttackRange, true);
+        if (!stun)
+        {
+            ReadyForAttack(0);
+            FindEnemies(mainAttackRange, true, false);
+        }
     }
 
     //Ability1
     public void Ability1()
     {
-        ReadyForAttack(1);
-        if (ability1Range > 0)
-            FindEnemies(ability1Range, isTargetingAbility1);
-        else
-            ZeroRangeAbility(true);
+        if (!stun)
+        {
+            ReadyForAttack(1);
+            if (ability1Range > 0)
+            {
+                for(int i = 0; i < ability1Effects.Length; i++)
+                    if (ability1Effects[i] == "Heal")
+                    {
+                        FindEnemies(ability1Range, isTargetingAbility1, true);
+                        return;
+                    }
+                FindEnemies(ability1Range, isTargetingAbility1, false);
+            }
+            else
+                ZeroRangeAbility(true);
+        }
     }
 
     //Ability2
     public void Ability2()
     {
-        if (!ability2Passive)
+        if (!ability2Passive && !stun)
         {
             ReadyForAttack(2);
             if (ability2Range > 0)
-                FindEnemies(ability2Range, isTargetingAbility2);
+                FindEnemies(ability2Range, isTargetingAbility2, false);
             else
                 ZeroRangeAbility(true);
         }
     }
 
     //Find enemies and light up available cells
-    void FindEnemies(int range, bool isTargeting)
+    void FindEnemies(int range, bool isTargeting, bool isHeal)
     {
         for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
         {
@@ -158,9 +193,22 @@ public class Hero : MonoBehaviour
             {
                 if (isTargeting)
                 {
-                    if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                    if (isHeal)
                     {
-                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                        {
+                            if (i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                            { }
+                            else
+                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        }
+                    }
+                    else
+                    {
+                        if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                        {
+                            SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        }
                     }
                 }
                 else
@@ -174,52 +222,97 @@ public class Hero : MonoBehaviour
         }
     }
 
+    IEnumerator StartAbility1()
+    {
+        yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < ability1Effects.Length; i++)
+        {
+            switch (ability1Effects[i])
+            {
+                case "Area":
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    for (int j = 0; j < enemies.Length; j++)
+                        if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - GetComponent<MoveHero>().GetX()) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - GetComponent<MoveHero>().GetZ())) == 1)
+                        {
+                            for(int k = 0; k < ability1Effects.Length; k++)
+                                if(ability1Effects[k] == "Entangle")
+                                {
+                                    int a = Random.Range(1, 6);
+                                    if (!enemies[j].GetComponent<Hero>().stun && a == 1)
+                                    {
+                                        enemies[j].GetComponent<Hero>().stun = true;
+                                        enemies[j].GetComponent<Hero>().stunDuration = 1;
+                                    }
+                                }
+                            enemies[j].GetComponent<Animator>().SetTrigger("Hit");
+                            int dmg = (int)(ability1Dmg + (buff / 100.0 * ability1Dmg) - (debuff / 100.0 * ability1Dmg));
+                            enemies[j].GetComponent<Hero>().health -= (int)(dmg - (enemies[j].GetComponent<Hero>().shield / 100.0 * dmg));
+                        }
+                    yield return new WaitForSeconds(0.5f);
+                    break;
+                case "Evasiveness":
+                    evasiveness = 50;
+                    evasivenessDuration = 2;
+                    break;
+                case "Taunt":
+
+                    break;
+                case "Totem":
+
+                    break;
+            }
+        }
+        PlaceHero.heroIsSelected = false;
+        PlaceHero.heroSelected = null;
+    }
+
+    IEnumerator StartAbility2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < ability2Effects.Length; i++)
+        {
+            switch (ability2Effects[i])
+            {
+                case "Area":
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    for (int j = 0; j < enemies.Length; j++)
+                        if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - GetComponent<MoveHero>().GetX()) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - GetComponent<MoveHero>().GetZ())) == 1)
+                        {
+                            enemies[j].GetComponent<Animator>().SetTrigger("Hit");
+                            int dmg = (int)(ability2Dmg + (buff / 100.0 * ability2Dmg) - (debuff/ 100.0 * ability2Dmg));
+                            enemies[j].GetComponent<Hero>().health -= (int)(dmg - (enemies[j].GetComponent<Hero>().shield / 100.0 * dmg));
+                        }
+                    yield return new WaitForSeconds(0.5f);
+                    break;
+                case "Shield":
+                    shield = 50;
+                    shieldDuration = 2;
+                    break;
+                case "Buff":
+                    buff = 100;
+                    buffDuration = 3;
+                    break;
+                case "Totem":
+
+                    break;
+            }
+        }
+        PlaceHero.heroIsSelected = false;
+        PlaceHero.heroSelected = null;
+    }
+
     //For zero range abilities
     void ZeroRangeAbility(bool isAbility1)
     {
         if (abilityType == 1)
         {
             GetComponent<Animator>().SetTrigger("Ability1");
-            for (int i = 0; i < ability1Effects.Length; i++)
-            {
-                switch (ability1Effects[i])
-                {
-                    case "Area":
-                        
-                        break;
-                    case "Evasiveness":
-
-                        break;
-                    case "Taunt":
-
-                        break;
-                    case "Totem":
-
-                        break;
-                }
-            }
+            StartCoroutine(StartAbility1());            
         }
         else if (abilityType == 2)
         {
             GetComponent<Animator>().SetTrigger("Ability2");
-            for (int i = 0; i < ability2Effects.Length; i++)
-            {
-                switch (ability2Effects[i])
-                {
-                    case "Area":
-
-                        break;
-                    case "Shield":
-
-                        break;
-                    case "Buff":
-
-                        break;
-                    case "Totem":
-
-                        break;
-                }
-            }
+            StartCoroutine(StartAbility2());
         }
     }
 }

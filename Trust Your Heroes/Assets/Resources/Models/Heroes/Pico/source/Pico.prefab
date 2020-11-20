@@ -573,8 +573,10 @@ MonoBehaviour:
   ability2Cooldown: 0
   mainAttackEffects:
   - Direct
-  ability1Effects: []
-  ability2Effects: []
+  ability1Effects:
+  - Direct
+  ability2Effects:
+  - Area
   ability2Passive: 0
   status: 
   statusDuration: 0

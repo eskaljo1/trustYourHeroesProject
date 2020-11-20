@@ -118,24 +118,25 @@ public class PlaceHero : MonoBehaviour
             {
                 case "Poison":
                     int p = Random.Range(1, 5);
-                    if (enemy.GetComponent<Hero>().status == "" && p == 1)
+                    if (!enemy.GetComponent<Hero>().poisoned && p == 1)
                     {
-                        enemy.GetComponent<Hero>().status = "Poisoned";
-                        enemy.GetComponent<Hero>().statusDuration = 2;
+                        enemy.GetComponent<Hero>().poisoned = true;
+                        enemy.GetComponent<Hero>().poisonDuration = 2;
                     }
                     break;
                 case "Entangle":
                     int a = Random.Range(1, 6);
-                    if (enemy.GetComponent<Hero>().status == "" && a == 1)
+                    if (!enemy.GetComponent<Hero>().stun && a == 1)
                     {
-                        enemy.GetComponent<Hero>().status = "Entangled";
-                        enemy.GetComponent<Hero>().statusDuration = 1;
+                        enemy.GetComponent<Hero>().stun = true;
+                        enemy.GetComponent<Hero>().stunDuration = 1;
                     }
                     break;
                 case "Direct":
                     enemy.GetComponent<Animator>().SetTrigger("Hit");
                     yield return new WaitForSeconds(0.5f);
-                    enemy.GetComponent<Hero>().health -= heroSelected.GetComponent<Hero>().mainAttackDmg;
+                    int dmg = (int)(heroSelected.GetComponent<Hero>().mainAttackDmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().mainAttackDmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().mainAttackDmg));
+                    enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
                     break;
             }
         }
@@ -146,7 +147,44 @@ public class PlaceHero : MonoBehaviour
     IEnumerator Ability1(GameObject enemy)
     {
         yield return new WaitForSeconds(2.0f);
-        
+        for (int i = 0; i < heroSelected.GetComponent<Hero>().ability1Effects.Length; i++)
+        {
+            switch (heroSelected.GetComponent<Hero>().ability1Effects[i])
+            {
+                case "Heal":
+                    yield return new WaitForSeconds(0.5f);
+                    enemy.GetComponent<Hero>().health += heroSelected.GetComponent<Hero>().ability1Dmg; ;
+                    break;
+                case "Poison":
+                    int p = Random.Range(1, 5);
+                    if (!enemy.GetComponent<Hero>().poisoned && p == 1)
+                    {
+                        enemy.GetComponent<Hero>().poisoned = true;
+                        enemy.GetComponent<Hero>().poisonDuration = 2;
+                    }
+                    break;
+                case "Slow":
+                    if (!enemy.GetComponent<Hero>().slow)
+                    {
+                        enemy.GetComponent<Hero>().slow = true;
+                        enemy.GetComponent<Hero>().slowDuration = 2;
+                    }
+                    break;
+                case "Stun":
+                    if (!enemy.GetComponent<Hero>().stun)
+                    {
+                        enemy.GetComponent<Hero>().stun = true;
+                        enemy.GetComponent<Hero>().stunDuration = 2;
+                    }
+                    break;
+                case "Direct":
+                    enemy.GetComponent<Animator>().SetTrigger("Hit");
+                    yield return new WaitForSeconds(0.5f);
+                    int dmg = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
+                    enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    break;
+            }
+        }
         heroSelected = null;
         heroIsSelected = false;
     }
@@ -154,7 +192,29 @@ public class PlaceHero : MonoBehaviour
     IEnumerator Ability2(GameObject enemy)
     {
         yield return new WaitForSeconds(2.0f);
-
+        for (int i = 0; i < heroSelected.GetComponent<Hero>().ability2Effects.Length; i++)
+        {
+            switch (heroSelected.GetComponent<Hero>().ability2Effects[i])
+            {
+                case "Debuff":
+                    enemy.GetComponent<Hero>().debuff = 50;
+                    enemy.GetComponent<Hero>().debuffDuration = 2;
+                    break;
+                case "Stun":
+                    if (!enemy.GetComponent<Hero>().stun)
+                    {
+                        enemy.GetComponent<Hero>().stun = true;
+                        enemy.GetComponent<Hero>().stunDuration = 2;
+                    }
+                    break;
+                case "Direct":
+                    enemy.GetComponent<Animator>().SetTrigger("Hit");
+                    yield return new WaitForSeconds(0.5f);
+                    int dmg = (int)(heroSelected.GetComponent<Hero>().ability2Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg));
+                    enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    break;
+            }
+        }
         heroSelected = null;
         heroIsSelected = false;
     }
