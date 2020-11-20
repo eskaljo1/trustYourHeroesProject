@@ -47,36 +47,47 @@ public class HeroAbilityButtonsShowPanel : MonoBehaviour, IPointerEnterHandler, 
     {
         if (abilityType == 1)
         {
-            nameText.text = hero.GetComponent<Hero>().mainAttackName;
-            dmgText.text = "Dmg: " + hero.GetComponent<Hero>().mainAttackDmg.ToString();
-            rangeText.text = "Range: " + hero.GetComponent<Hero>().mainAttackRange.ToString();
-            cooldownText.text = "";
-            effectText.text = "";
+            if (nameText.text == "")
+            {
+                nameText.text = hero.GetComponent<Hero>().mainAttackName;
+                dmgText.text = "Dmg: " + hero.GetComponent<Hero>().mainAttackDmg.ToString();
+                rangeText.text = "Range: " + hero.GetComponent<Hero>().mainAttackRange.ToString();
+                cooldownText.text = "";
+                effectText.text = "";
+            }
         }
         else if (abilityType == 2)
         {
-            nameText.text = hero.GetComponent<Hero>().ability1Name;
-            dmgText.text = "Dmg: " + hero.GetComponent<Hero>().ability1Dmg.ToString();
-            rangeText.text = "Range: " + hero.GetComponent<Hero>().ability1Range.ToString();
-            cooldownText.text = "Cooldown: " + hero.GetComponent<Hero>().ability1Cooldown.ToString();
-            effectText.text = "Effect: " + hero.GetComponent<Hero>().firstAbility;
+
+            if (nameText.text == "")
+            {
+                nameText.text = hero.GetComponent<Hero>().ability1Name;
+                dmgText.text = "Dmg: " + hero.GetComponent<Hero>().ability1Dmg.ToString();
+                rangeText.text = "Range: " + hero.GetComponent<Hero>().ability1Range.ToString();
+                cooldownText.text = "Cooldown: " + hero.GetComponent<Hero>().ability1Cooldown.ToString();
+                effectText.text = "Effect: " + hero.GetComponent<Hero>().firstAbility;
+            }
         }
         else if (abilityType == 3)
         {
-            nameText.text = hero.GetComponent<Hero>().ability2Name;
-            if (hero.GetComponent<Hero>().ability2Passive)
+
+            if (nameText.text == "")
             {
-                dmgText.text = "Passive ability";
-                rangeText.text = "";
-                cooldownText.text = "";
+                nameText.text = hero.GetComponent<Hero>().ability2Name;
+                if (hero.GetComponent<Hero>().ability2Passive)
+                {
+                    dmgText.text = "Passive ability";
+                    rangeText.text = "";
+                    cooldownText.text = "";
+                }
+                else
+                {
+                    dmgText.text = "Dmg: " + hero.GetComponent<Hero>().ability2Dmg.ToString();
+                    rangeText.text = "Range: " + hero.GetComponent<Hero>().ability2Range.ToString();
+                    cooldownText.text = "Cooldown: " + hero.GetComponent<Hero>().ability2Cooldown.ToString();
+                }
+                effectText.text = "Effect: " + hero.GetComponent<Hero>().secondAbility;
             }
-            else
-            {
-                dmgText.text = "Dmg: " + hero.GetComponent<Hero>().ability2Dmg.ToString();
-                rangeText.text = "Range: " + hero.GetComponent<Hero>().ability2Range.ToString();
-                cooldownText.text = "Cooldown: " + hero.GetComponent<Hero>().ability2Cooldown.ToString();
-            }
-            effectText.text = "Effect: " + hero.GetComponent<Hero>().secondAbility;
         }
     }
 }

@@ -156,6 +156,8 @@ public class PlaceHero : MonoBehaviour
                     for (int j = 0; j < enemies.Length; j++)
                         if ((enemies[j].GetComponent<MoveHero>().GetX() == x && enemies[j].GetComponent<MoveHero>().GetZ() == z) || (Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) == 1)
                         {
+                            if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
+                                continue;
                             enemies[j].GetComponent<Animator>().SetTrigger("Hit");
                             int d = (int)(enemies[j].GetComponent<Hero>().ability1Dmg + (enemies[j].GetComponent<Hero>().buff / 100.0 * enemies[j].GetComponent<Hero>().ability1Dmg) - (enemies[j].GetComponent<Hero>().debuff / 100.0 * enemies[j].GetComponent<Hero>().ability1Dmg));
                             enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
@@ -214,6 +216,8 @@ public class PlaceHero : MonoBehaviour
                     for (int j = 0; j < enemies.Length; j++)
                         if ((enemies[j].GetComponent<MoveHero>().GetX() == x && enemies[j].GetComponent<MoveHero>().GetZ() == z) || (Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) == 1)
                         {
+                            if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
+                                continue;
                             enemies[j].GetComponent<Animator>().SetTrigger("Hit");
                             int d = (int)(enemies[j].GetComponent<Hero>().ability2Dmg + (enemies[j].GetComponent<Hero>().buff / 100.0 * enemies[j].GetComponent<Hero>().ability2Dmg) - (enemies[j].GetComponent<Hero>().debuff / 100.0 * enemies[j].GetComponent<Hero>().ability2Dmg));
                             enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
