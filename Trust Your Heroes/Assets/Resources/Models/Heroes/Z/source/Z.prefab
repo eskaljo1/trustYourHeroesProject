@@ -190,24 +190,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  armor: 0
-  magicResistance: 0
   mainAttackDmg: 20
   ability1Dmg: 20
   ability2Dmg: 20
   mainAttackRange: 1
   ability1Range: 2
   ability2Range: 2
-  mainAttackType: 0
-  ability1Type: 0
-  ability2Type: 0
+  ability1Cooldown: 0
+  ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
   ability2Effects: []
   ability2Passive: 0
-  status: 
-  statusDuration: 0
+  evasiveness: 0
+  evasivenessDuration: 0
+  stun: 0
+  stunDuration: 0
+  poisoned: 0
+  poisonDuration: 0
+  slow: 0
+  slowDuration: 0
+  shield: 0
+  shieldDuration: 0
+  buff: 0
+  buffDuration: 0
+  debuff: 0
+  debuffDuration: 0
   isTargetingAbility1: 1
   isTargetingAbility2: 1
   mainAttackName: Katana blade
@@ -218,7 +227,6 @@ MonoBehaviour:
     swordplay say he has no equal. Guided by the sword, he ventures around the world,
     looking for opponents worthy of tasting his blade. Whatever the circumstances,
     no matter the odds, know that Z has never lost a fight.
-  mainAttack: Katana blade - 20 dmg
   firstAbility: 
   secondAbility: 
 --- !u!82 &318725397399783640
@@ -230,7 +238,8 @@ AudioSource:
   m_GameObject: {fileID: 741557985140212711}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -827566622020375302, guid: d3d2ffe7adb4ad949ba2f28405da9d45,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c601618bf9dd46246be9eceaa5eeba7e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7

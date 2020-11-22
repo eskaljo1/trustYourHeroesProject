@@ -3726,6 +3726,8 @@ MonoBehaviour:
   stunDuration: 0
   poisoned: 0
   poisonDuration: 0
+  slow: 0
+  slowDuration: 0
   shield: 0
   shieldDuration: 0
   buff: 0
@@ -3755,7 +3757,8 @@ AudioSource:
   m_GameObject: {fileID: 9137615492263021917}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -827566622020375302, guid: d3d2ffe7adb4ad949ba2f28405da9d45,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 106b5b432a13e444f9b3aa75a9ead1da, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7

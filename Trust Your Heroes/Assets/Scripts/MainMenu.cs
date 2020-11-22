@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 //Script for everything that happens in the main menu scene
 
 public class MainMenu : MonoBehaviour
 {
+    //Audio
+    public AudioMixer audioMixer;
+    public Slider masterSlider;
+    public Slider musicSlider;
+    public Slider soundEffectsSlider;
+
     //Panels
     public GameObject heroesPanel;
     public GameObject mainPanel;
@@ -63,6 +70,10 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
+        soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);
+
         color = mainAttackIcon.color;
         colorWithAlpha = color;
         colorWithAlpha.a = 255.0f;
@@ -338,5 +349,22 @@ public class MainMenu : MonoBehaviour
     public void PickTeamMemberPlace(int i) //Switch spawn tile in Play Panel
     {
         teamMemberPlace = i;
+    }
+
+    //Audio
+    public void SetMasterVol()
+    {
+        PlayerPrefs.SetFloat("MasterVolume", masterSlider.value);
+        audioMixer.SetFloat("MasterVol", Mathf.Log10(masterSlider.value) * 20);
+    }
+    public void SetMusicVol()
+    {
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(musicSlider.value) * 20);
+    }
+    public void SetSoundEffectsVol()
+    {
+        PlayerPrefs.SetFloat("SoundEffectsVolume", soundEffectsSlider.value);
+        audioMixer.SetFloat("SoundEffectsVol", Mathf.Log10(soundEffectsSlider.value) * 20);
     }
 }

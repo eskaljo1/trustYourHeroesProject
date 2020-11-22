@@ -400,6 +400,14 @@ MonoBehaviour:
   stunDuration: 0
   poisoned: 0
   poisonDuration: 0
+  slow: 0
+  slowDuration: 0
+  shield: 0
+  shieldDuration: 0
+  buff: 0
+  buffDuration: 0
+  debuff: 0
+  debuffDuration: 0
   isTargetingAbility1: 1
   isTargetingAbility2: 0
   mainAttackName: Razor leaves
@@ -423,7 +431,8 @@ AudioSource:
   m_GameObject: {fileID: 901212479114038451}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -827566622020375302, guid: d3d2ffe7adb4ad949ba2f28405da9d45,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 30f729106455bfa4bb2e2c4830fa1c3a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
