@@ -313,6 +313,14 @@ MonoBehaviour:
   stunDuration: 0
   poisoned: 0
   poisonDuration: 0
+  slow: 0
+  slowDuration: 0
+  shield: 0
+  shieldDuration: 0
+  buff: 0
+  buffDuration: 0
+  debuff: 0
+  debuffDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Bo staff
@@ -325,7 +333,7 @@ MonoBehaviour:
     unknown. He survived using the skills he learned with his tribe, hunting, foraging,
     crafting as well as fighting. He is also extremely fast and agile. However, Xavier
     is a pacifist, never engaging in a battle, unless he is prompted of course.
-  firstAbility: Reveal enemies on adjacent tiles, dmg is done to enemy on selected
+  firstAbility: Reveal selected tile and adjacent tiles, dmg is done to enemy on selected
     tile
   secondAbility: +50% dmg reduction for 2 turns
 --- !u!82 &-2179734815749015837

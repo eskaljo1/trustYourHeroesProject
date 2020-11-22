@@ -4505,6 +4505,7 @@ MonoBehaviour:
   - Slow
   ability2Effects:
   - Area
+  - Slow
   ability2Passive: 0
   evasiveness: 0
   evasivenessDuration: 0
@@ -4512,6 +4513,8 @@ MonoBehaviour:
   stunDuration: 0
   poisoned: 0
   poisonDuration: 0
+  slow: 0
+  slowDuration: 0
   shield: 0
   shieldDuration: 0
   buff: 0
@@ -4529,7 +4532,8 @@ MonoBehaviour:
     there are not many who are equal to her in power. Using her magic, Alluria expands
     her land, freezing everything in her path.
   firstAbility: Enemy receives -1 movement for 2 turns
-  secondAbility: Does area dmg in the "+" shape, selected tile represents the center
+  secondAbility: Does dmg adjacent tiles as well, enemies receive -1 movement for
+    2 turns
 --- !u!82 &-2452651058500802780
 AudioSource:
   m_ObjectHideFlags: 0

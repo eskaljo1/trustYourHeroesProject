@@ -58,8 +58,14 @@ public class MainMenu : MonoBehaviour
     //Selected map in the Play Panel
     private int mapNumber = 1;
 
+    private Color color;
+    private Color colorWithAlpha;
+
     void Start()
     {
+        color = mainAttackIcon.color;
+        colorWithAlpha = color;
+        colorWithAlpha.a = 255.0f;
         selectedHeroes = new GameObject[4];
         selectedHeroNumbers = new int[4];
         selectedHeroNumbers[0] = -1;
@@ -150,9 +156,9 @@ public class MainMenu : MonoBehaviour
             descriptionText.text = "";
             healthText.text = "";
             movementText.text = "";
-            mainAttackIcon.texture = null;
-            ability1Icon.texture = null;
-            ability2Icon.texture = null;
+            mainAttackIcon.color = color;
+            ability1Icon.color = color;
+            ability2Icon.color = color;
             mainAttackName.text = "";
             mainAttackDmg.text = "";
             mainAttackRange.text = "";
@@ -290,6 +296,10 @@ public class MainMenu : MonoBehaviour
         }
         if (heroesPanel) //If spawning in heroes panel also edit the description and stats
         {
+            mainAttackIcon.color = colorWithAlpha;
+            ability1Icon.color = colorWithAlpha;
+            ability2Icon.color = colorWithAlpha;
+
             string n = hero.name.Remove(hero.name.Length - 7);
             nameText.text = hero.GetComponent<Hero>().heroName;
             descriptionText.text = hero.GetComponent<Hero>().description;

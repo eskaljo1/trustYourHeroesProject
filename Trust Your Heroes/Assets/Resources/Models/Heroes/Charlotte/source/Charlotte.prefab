@@ -2225,17 +2225,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 80
-  armor: 0
-  magicResistance: 0
   mainAttackDmg: 15
   ability1Dmg: 35
   ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 0
   ability2Range: 0
-  mainAttackType: 0
-  ability1Type: 0
-  ability2Type: 0
   ability1Cooldown: 0
   ability2Cooldown: 0
   mainAttackEffects:
@@ -2246,8 +2241,20 @@ MonoBehaviour:
   - Entangle
   ability2Effects: []
   ability2Passive: 1
-  status: 
-  statusDuration: 0
+  evasiveness: 0
+  evasivenessDuration: 0
+  stun: 0
+  stunDuration: 0
+  poisoned: 0
+  poisonDuration: 0
+  slow: 0
+  slowDuration: 0
+  shield: 0
+  shieldDuration: 0
+  buff: 0
+  buffDuration: 0
+  debuff: 0
+  debuffDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Spider bite
@@ -2260,7 +2267,7 @@ MonoBehaviour:
     with sticky web she uses to entangle her opponent and deadly venom that finishes
     off her prey. Any victim that gets caught in her nest better pray to Hor to burn
     the web.
-  firstAbility: Area dmg to adjacent tiles
+  firstAbility: Does dmg to adjacent tiles
   secondAbility: Every attack has 20% chance of stunning the opponent
 --- !u!82 &322269319688617250
 AudioSource:

@@ -2076,7 +2076,7 @@ MonoBehaviour:
     so he came down from the heavens in order to convert all the heretics. Travelling
     across the realm, smiting down all those who opose him with divine wrath. The
     Sun is your friend if you respect it, if you don't it might burn you.
-  firstAbility: Reveal 5 tiles in the "+" shape, selected tile represents the center
+  firstAbility: Reveal selected tile and adjacent tiles
   secondAbility: +100% dmg buff for 3 turns
 --- !u!82 &-205764874885355143
 AudioSource:

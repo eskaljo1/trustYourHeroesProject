@@ -21,6 +21,7 @@ public class PlaceHero : MonoBehaviour
     
     void Start()
     {
+        movement = true;
         heroSelected = null;
         gameBegun = false;
         heroIsSelected = false;
@@ -104,6 +105,7 @@ public class PlaceHero : MonoBehaviour
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
                         StartCoroutine(Ability2(enemy));
                     }
+
                 }
             }
         }
@@ -111,32 +113,48 @@ public class PlaceHero : MonoBehaviour
 
     IEnumerator MainAttack(GameObject enemy)
     {
+        bool evade = false;
+        if (enemy.GetComponent<Hero>().evasiveness)
+        {
+            int e = Random.Range(0, 2);
+            if (e == 1)
+                evade = true;
+        }
         yield return new WaitForSeconds(1.5f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().mainAttackEffects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().mainAttackEffects[i])
             {
                 case "Poison":
-                    int p = Random.Range(1, 5);
-                    if (!enemy.GetComponent<Hero>().poisoned && p == 1)
+                    if (!evade)
                     {
-                        enemy.GetComponent<Hero>().poisoned = true;
-                        enemy.GetComponent<Hero>().poisonDuration = 2;
+                        int p = Random.Range(1, 5);
+                        if (!enemy.GetComponent<Hero>().poisoned && p == 1)
+                        {
+                            enemy.GetComponent<Hero>().poisoned = true;
+                            enemy.GetComponent<Hero>().poisonDuration = 2;
+                        }
                     }
                     break;
                 case "Entangle":
-                    int a = Random.Range(1, 6);
-                    if (!enemy.GetComponent<Hero>().stun && a == 1)
+                    if (!evade)
                     {
-                        enemy.GetComponent<Hero>().stun = true;
-                        enemy.GetComponent<Hero>().stunDuration = 1;
+                        int a = Random.Range(1, 6);
+                        if (!enemy.GetComponent<Hero>().stun && a == 1)
+                        {
+                            enemy.GetComponent<Hero>().stun = true;
+                            enemy.GetComponent<Hero>().stunDuration = 1;
+                        }
                     }
                     break;
                 case "Direct":
-                    enemy.GetComponent<Animator>().SetTrigger("Hit");
-                    yield return new WaitForSeconds(0.5f);
-                    int dmg = (int)(heroSelected.GetComponent<Hero>().mainAttackDmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().mainAttackDmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().mainAttackDmg));
-                    enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    if (!evade)
+                    {
+                        enemy.GetComponent<Animator>().SetTrigger("Hit");
+                        yield return new WaitForSeconds(0.5f);
+                        int dmg = (int)(heroSelected.GetComponent<Hero>().mainAttackDmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().mainAttackDmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().mainAttackDmg));
+                        enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    }
                     break;
             }
         }
@@ -146,6 +164,15 @@ public class PlaceHero : MonoBehaviour
 
     IEnumerator Ability1(GameObject enemy)
     {
+        bool evade = false;
+        if(enemy != null)
+            if (enemy.GetComponent<Hero>().evasiveness)
+            {
+                int e = Random.Range(0, 2);
+                if (e == 1)
+                    evade = true;
+            }
+        bool skipstun = false;
         yield return new WaitForSeconds(2.0f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().ability1Effects.Length; i++)
         {
@@ -158,45 +185,71 @@ public class PlaceHero : MonoBehaviour
                         {
                             if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
                                 continue;
-                            enemies[j].GetComponent<Animator>().SetTrigger("Hit");
-                            int d = (int)(enemies[j].GetComponent<Hero>().ability1Dmg + (enemies[j].GetComponent<Hero>().buff / 100.0 * enemies[j].GetComponent<Hero>().ability1Dmg) - (enemies[j].GetComponent<Hero>().debuff / 100.0 * enemies[j].GetComponent<Hero>().ability1Dmg));
-                            enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
-                            for (int k = 0; k < heroSelected.GetComponent<Hero>().ability1Effects.Length; k++)
-                                if(heroSelected.GetComponent<Hero>().ability1Effects[k] == "Poison")
-                                {
-                                    int p = Random.Range(1, 5);
-                                    if (!enemies[j].GetComponent<Hero>().poisoned && p == 1)
+                            bool ev = false;
+                            if (enemies[j].GetComponent<Hero>().evasiveness)
+                            {
+                                int e = Random.Range(0, 2);
+                                if (e == 1)
+                                    ev = true;
+                            }
+                            if (!ev)
+                            {
+                                for (int k = 0; k < heroSelected.GetComponent<Hero>().ability1Effects.Length; k++)
+                                    if (heroSelected.GetComponent<Hero>().ability1Effects[k] == "Stun")
                                     {
-                                        enemies[j].GetComponent<Hero>().poisoned = true;
-                                        enemies[j].GetComponent<Hero>().poisonDuration = 2;
+                                        if (!enemies[j].GetComponent<Hero>().stun)
+                                        {
+                                            enemies[j].GetComponent<Hero>().stun = true;
+                                            enemies[j].GetComponent<Hero>().stunDuration = 1;
+                                        }
                                     }
-                                }
+                                enemies[j].GetComponent<Animator>().SetTrigger("Hit");
+                                int d = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
+                                enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
+                                for (int k = 0; k < heroSelected.GetComponent<Hero>().ability1Effects.Length; k++)
+                                    if (heroSelected.GetComponent<Hero>().ability1Effects[k] == "Poison")
+                                    {
+                                        int p = Random.Range(1, 5);
+                                        if (!enemies[j].GetComponent<Hero>().poisoned && p == 1)
+                                        {
+                                            enemies[j].GetComponent<Hero>().poisoned = true;
+                                            enemies[j].GetComponent<Hero>().poisonDuration = 2;
+                                        }
+                                    }
+                            }
+                            else
+                                skipstun = true;
                         }
                     yield return new WaitForSeconds(0.5f);
                     break;
                 case "Heal":
                     yield return new WaitForSeconds(0.5f);
-                    enemy.GetComponent<Hero>().health += heroSelected.GetComponent<Hero>().ability1Dmg; ;
+                    enemy.GetComponent<Hero>().health += heroSelected.GetComponent<Hero>().ability1Dmg;
                     break;
                 case "Slow":
-                    if (!enemy.GetComponent<Hero>().slow)
+                    if (!enemy.GetComponent<Hero>().slow && !evade)
                     {
                         enemy.GetComponent<Hero>().slow = true;
                         enemy.GetComponent<Hero>().slowDuration = 2;
                     }
                     break;
                 case "Stun":
-                    if (!enemy.GetComponent<Hero>().stun)
+                    if (!enemy.GetComponent<Hero>().stun && !evade && !skipstun)
                     {
                         enemy.GetComponent<Hero>().stun = true;
                         enemy.GetComponent<Hero>().stunDuration = 2;
                     }
                     break;
                 case "Direct":
-                    enemy.GetComponent<Animator>().SetTrigger("Hit");
-                    yield return new WaitForSeconds(0.5f);
-                    int dmg = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
-                    enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    if (!evade)
+                    {
+                        enemy.GetComponent<Animator>().SetTrigger("Hit");
+                        yield return new WaitForSeconds(0.5f);
+                        int dmg = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
+                        enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    }
+                    break;
+                case "Zone":
                     break;
             }
         }
@@ -206,11 +259,20 @@ public class PlaceHero : MonoBehaviour
 
     IEnumerator Ability2(GameObject enemy)
     {
+        bool evade = false;
+        if (enemy != null)
+            if (enemy.GetComponent<Hero>().evasiveness)
+            {
+                int e = Random.Range(0, 2);
+                if (e == 1)
+                    evade = true;
+            }
         yield return new WaitForSeconds(2.0f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().ability2Effects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().ability2Effects[i])
             {
+
                 case "Area":
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
@@ -218,28 +280,56 @@ public class PlaceHero : MonoBehaviour
                         {
                             if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
                                 continue;
-                            enemies[j].GetComponent<Animator>().SetTrigger("Hit");
-                            int d = (int)(enemies[j].GetComponent<Hero>().ability2Dmg + (enemies[j].GetComponent<Hero>().buff / 100.0 * enemies[j].GetComponent<Hero>().ability2Dmg) - (enemies[j].GetComponent<Hero>().debuff / 100.0 * enemies[j].GetComponent<Hero>().ability2Dmg));
-                            enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
+                            bool ev = false;
+                            if (enemies[j].GetComponent<Hero>().evasiveness)
+                            {
+                                int e = Random.Range(0, 2);
+                                if (e == 1)
+                                    ev = true;
+                            }
+                            if (!ev)
+                            {
+                                for (int k = 0; k < heroSelected.GetComponent<Hero>().ability2Effects.Length; k++)
+                                    if (heroSelected.GetComponent<Hero>().ability2Effects[k] == "Slow")
+                                    {
+                                        if (!enemies[j].GetComponent<Hero>().slow)
+                                        {
+                                            enemies[j].GetComponent<Hero>().slow = true;
+                                            enemies[j].GetComponent<Hero>().slowDuration = 1;
+                                        }
+                                    }
+                                enemies[j].GetComponent<Animator>().SetTrigger("Hit");
+                                int d = (int)(heroSelected.GetComponent<Hero>().ability2Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg));
+                                enemies[j].GetComponent<Hero>().health -= (int)(d - (enemies[j].GetComponent<Hero>().shield / 100.0 * d));
+                            }
                         }
                     yield return new WaitForSeconds(0.5f);
+
                     break;
                 case "Debuff":
-                    enemy.GetComponent<Hero>().debuff = 50;
-                    enemy.GetComponent<Hero>().debuffDuration = 2;
+                    if (!evade)
+                    {
+                        enemy.GetComponent<Hero>().debuff = 50;
+                        enemy.GetComponent<Hero>().debuffDuration = 2;
+                    }
                     break;
                 case "Stun":
-                    if (!enemy.GetComponent<Hero>().stun)
+                    if (!enemy.GetComponent<Hero>().stun && !evade)
                     {
                         enemy.GetComponent<Hero>().stun = true;
                         enemy.GetComponent<Hero>().stunDuration = 2;
                     }
                     break;
                 case "Direct":
-                    enemy.GetComponent<Animator>().SetTrigger("Hit");
-                    yield return new WaitForSeconds(0.5f);
-                    int dmg = (int)(heroSelected.GetComponent<Hero>().ability2Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg));
-                    enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    if (!evade)
+                    {
+                        enemy.GetComponent<Animator>().SetTrigger("Hit");
+                        yield return new WaitForSeconds(0.5f);
+                        int dmg = (int)(heroSelected.GetComponent<Hero>().ability2Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg));
+                        enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                    }
+                    break;
+                case "Barrage":
                     break;
             }
         }

@@ -2001,10 +2001,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   mainAttackDmg: 15
-  ability1Dmg: 20
-  ability2Dmg: 20
+  ability1Dmg: 30
+  ability2Dmg: 0
   mainAttackRange: 1
-  ability1Range: 2
+  ability1Range: 1
   ability2Range: 0
   ability1Cooldown: 0
   ability2Cooldown: 0
@@ -2012,6 +2012,7 @@ MonoBehaviour:
   - Direct
   ability1Effects:
   - Area
+  - Stun
   ability2Effects: []
   ability2Passive: 0
   evasiveness: 0
@@ -2020,6 +2021,8 @@ MonoBehaviour:
   stunDuration: 0
   poisoned: 0
   poisonDuration: 0
+  slow: 0
+  slowDuration: 0
   shield: 0
   shieldDuration: 0
   buff: 0
@@ -2037,7 +2040,7 @@ MonoBehaviour:
     Known for his fierce attitude, great combat experience and hunger for battle,
     he is an excellent example of a troll warrior. If you ever plan to head to combat
     with a troll, remember to bring company.
-  firstAbility: Area dmg
+  firstAbility: Does dmg to adjacent tiles as well
   secondAbility: 
 --- !u!82 &2869950589006190341
 AudioSource:
