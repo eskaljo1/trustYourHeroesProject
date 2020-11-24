@@ -220,7 +220,10 @@ public class Hero : MonoBehaviour
                 {
                     if ((Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
                     {
-                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        if(abilityType == 1 && ability1Name == "Purgatory" && i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                        { }
+                        else
+                            SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
                     }
                 }
             }

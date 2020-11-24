@@ -181,7 +181,7 @@ public class PlaceHero : MonoBehaviour
                 case "Area":
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
-                        if ((enemies[j].GetComponent<MoveHero>().GetX() == x && enemies[j].GetComponent<MoveHero>().GetZ() == z) || (Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) == 1)
+                        if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
                         {
                             if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
                                 continue;
@@ -249,6 +249,31 @@ public class PlaceHero : MonoBehaviour
                         enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
                     }
                     break;
+                case "Purgatory":
+                    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("Player");
+                    for (int j = 0; j < enemies2.Length; j++)
+                        if ((Mathf.Abs(enemies2[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies2[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
+                        {
+                            if (heroSelected.GetComponent<MoveHero>().GetX() == enemies2[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies2[j].GetComponent<MoveHero>().GetZ())
+                                continue;
+                            if ((heroSelected.GetComponent<MoveHero>().GetX() == x && heroSelected.GetComponent<MoveHero>().GetX() == enemies2[j].GetComponent<MoveHero>().GetX()) || (heroSelected.GetComponent<MoveHero>().GetZ() == z && heroSelected.GetComponent<MoveHero>().GetZ() == enemies2[j].GetComponent<MoveHero>().GetZ())) {
+                                bool ev = false;
+                                if (enemies2[j].GetComponent<Hero>().evasiveness)
+                                {
+                                    int e = Random.Range(0, 2);
+                                    if (e == 1)
+                                        ev = true;
+                                }
+                                if (!ev)
+                                {
+                                    enemies2[j].GetComponent<Animator>().SetTrigger("Hit");
+                                    int d = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
+                                    enemies2[j].GetComponent<Hero>().health -= (int)(d - (enemies2[j].GetComponent<Hero>().shield / 100.0 * d));
+                                }
+                            }
+                        }
+                    yield return new WaitForSeconds(0.5f);
+                    break;
                 case "Zone":
                     break;
             }
@@ -276,7 +301,7 @@ public class PlaceHero : MonoBehaviour
                 case "Area":
                     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
-                        if ((enemies[j].GetComponent<MoveHero>().GetX() == x && enemies[j].GetComponent<MoveHero>().GetZ() == z) || (Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) == 1)
+                        if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
                         {
                             if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
                                 continue;
