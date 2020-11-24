@@ -686,10 +686,10 @@ MonoBehaviour:
   health: 100
   mainAttackDmg: 20
   ability1Dmg: 50
-  ability2Dmg: 20
+  ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 1
-  ability2Range: 2
+  ability2Range: 0
   ability1Cooldown: 0
   ability2Cooldown: 0
   mainAttackEffects:
@@ -697,9 +697,9 @@ MonoBehaviour:
   ability1Effects:
   - Direct
   ability2Effects: []
-  ability2Passive: 0
-  evasiveness: 0
-  evasivenessDuration: 0
+  ability2Passive: 1
+  evasiveness: 1
+  evasivenessDuration: -1
   stun: 0
   stunDuration: 0
   poisoned: 0
@@ -713,10 +713,10 @@ MonoBehaviour:
   debuff: 0
   debuffDuration: 0
   isTargetingAbility1: 1
-  isTargetingAbility2: 1
+  isTargetingAbility2: 0
   mainAttackName: Jump punch
   ability1Name: Steel fist barrage
-  ability2Name: 
+  ability2Name: Observation
   heroName: Sent Steel
   description: When they were recruited, the two brothers faced each other multiple
     times, but Ohm had the upper hand at most occasions. This did not discourage Sent.
@@ -725,7 +725,7 @@ MonoBehaviour:
     still very strong .He is the kingdom's number one assasin, with a 100% succession
     rate.
   firstAbility: 
-  secondAbility: 
+  secondAbility: Has 50% evasiveness
 --- !u!82 &-3190139489919037295
 AudioSource:
   m_ObjectHideFlags: 0
