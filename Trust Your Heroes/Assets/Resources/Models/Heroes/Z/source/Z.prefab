@@ -192,16 +192,17 @@ MonoBehaviour:
   health: 100
   mainAttackDmg: 20
   ability1Dmg: 20
-  ability2Dmg: 20
+  ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 2
-  ability2Range: 2
+  ability2Range: 0
   ability1Cooldown: 0
   ability2Cooldown: 0
   mainAttackEffects:
   - Direct
   ability1Effects: []
-  ability2Effects: []
+  ability2Effects:
+  - Trance
   ability2Passive: 0
   evasiveness: 0
   evasivenessDuration: 0
@@ -217,18 +218,20 @@ MonoBehaviour:
   buffDuration: 0
   debuff: 0
   debuffDuration: 0
+  movement: 0
+  movementDuration: 0
   isTargetingAbility1: 1
   isTargetingAbility2: 1
   mainAttackName: Katana blade
   ability1Name: 
-  ability2Name: 
+  ability2Name: Combat Trance
   heroName: Z
   description: Not much is known about the cerebral assasin Z. Those who've seen his
     swordplay say he has no equal. Guided by the sword, he ventures around the world,
     looking for opponents worthy of tasting his blade. Whatever the circumstances,
     no matter the odds, know that Z has never lost a fight.
   firstAbility: 
-  secondAbility: 
+  secondAbility: +1 movement and +50% buff for 2 turns
 --- !u!82 &318725397399783640
 AudioSource:
   m_ObjectHideFlags: 0

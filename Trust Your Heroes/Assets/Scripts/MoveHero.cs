@@ -32,6 +32,8 @@ public class MoveHero : MonoBehaviour
 
     void CheckCell(int i, int j, int heroMovement) //Check if cell is available to move to
     {
+        if (GetComponent<Hero>().slow) heroMovement--;
+        if (GetComponent<Hero>().movement != 0) heroMovement += GetComponent<Hero>().movement;
         if (heroMovement < 1) return;
         //True if the cell is not occupied and not a obstacle unless the hero can jump over them
         if (SpawnGrid.cells[i, j].tag != "EnemyCell" && SpawnGrid.cells[i, j].tag != "OccupiedCell" && SpawnGrid.cells[i, j].GetComponent<PlaceHero>().distance == 0  && (SpawnGrid.cells[i, j].tag != "Obstacle" || obstacleJumper))
@@ -94,10 +96,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
                     {
                         if (i == x && j == z) continue;
-                        if(GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 //+-
@@ -106,10 +105,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j >= 0; j--)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 //-+
@@ -118,10 +114,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 //--
@@ -130,10 +123,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j >= 0; j--)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 //Does the code above again, doesn't work if it doesn't repeat it, some cells get left out
@@ -142,10 +132,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 for (int i = x; i < SpawnGrid.cells.GetLength(0); i++)
@@ -153,10 +140,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j >= 0; j--)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 for (int i = x; i >= 0; i--)
@@ -164,10 +148,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j < SpawnGrid.cells.GetLength(1); j++)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 for (int i = x; i >= 0; i--)
@@ -175,10 +156,7 @@ public class MoveHero : MonoBehaviour
                     for (int j = z; j >= 0; j--)
                     {
                         if (i == x && j == z) continue;
-                        if (GetComponent<Hero>().slow)
-                            CheckCell(i, j, movement - 1);
-                        else
-                            CheckCell(i, j, movement);
+                        CheckCell(i, j, movement);
                     }
                 }
                 //Light up all cells that have distance != 0 and are not JumpableObstacles

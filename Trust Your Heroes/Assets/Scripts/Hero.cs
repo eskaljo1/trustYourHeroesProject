@@ -47,6 +47,8 @@ public class Hero : MonoBehaviour
     public int buffDuration = 0;
     public int debuff = 0;
     public int debuffDuration = 0;
+    public int movement = 0;
+    public int movementDuration = 0;
 
     //Targets enemy or cell
     public bool isTargetingAbility1 = true;
@@ -317,6 +319,12 @@ public class Hero : MonoBehaviour
                     break;
                 case "Totem":
 
+                    break;
+                case "Trance":
+                    movement = 1;
+                    movementDuration = 2;
+                    buff = 50;
+                    buffDuration = 2;
                     break;
             }
         }
