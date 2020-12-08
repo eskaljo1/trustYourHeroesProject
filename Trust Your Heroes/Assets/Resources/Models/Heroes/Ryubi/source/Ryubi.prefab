@@ -1651,7 +1651,7 @@ MonoBehaviour:
   ability2Dmg: 20
   mainAttackRange: 3
   ability1Range: 5
-  ability2Range: 2
+  ability2Range: 3
   ability1Cooldown: 0
   ability2Cooldown: 0
   mainAttackEffects:
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   ability1Effects:
   - Zone
   ability2Effects:
-  - Barrage
+  - Area
   ability2Passive: 0
   evasiveness: 0
   evasivenessDuration: 0
@@ -1675,6 +1675,8 @@ MonoBehaviour:
   buffDuration: 0
   debuff: 0
   debuffDuration: 0
+  movement: 0
+  movementDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Dark arrow
@@ -1687,7 +1689,7 @@ MonoBehaviour:
     Who does she have her sights on today?
   firstAbility: Dmg is done if enemy enters selected tile, ability is active until
     dmg is done, can be cancelled
-  secondAbility: 
+  secondAbility: Does dmg adjacent tiles as well
 --- !u!82 &7934626227453824619
 AudioSource:
   m_ObjectHideFlags: 0
