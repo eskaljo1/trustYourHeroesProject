@@ -93,16 +93,19 @@ public class PlaceHero : MonoBehaviour
                     if (Hero.abilityType == 0)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
+                        heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
                         StartCoroutine(MainAttack(enemy));
                     }
                     else if (Hero.abilityType == 1)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
+                        heroSelected.GetComponent<Hero>().ability1Audio.Play();
                         StartCoroutine(Ability1(enemy));
                     }
                     else if (Hero.abilityType == 2)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
+                        heroSelected.GetComponent<Hero>().ability2Audio.Play();
                         StartCoroutine(Ability2(enemy));
                     }
 

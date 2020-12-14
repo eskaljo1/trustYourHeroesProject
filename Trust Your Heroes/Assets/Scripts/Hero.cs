@@ -8,9 +8,6 @@ using UnityEngine.UI;
 public class Hero : MonoBehaviour
 {
     public int health = 100;
-    //Dmg reduction
-    //public int armor = 0;
-    //public int magicResistance = 0;
     //Dmg
     public int mainAttackDmg = 20;
     public int ability1Dmg = 20;
@@ -19,10 +16,6 @@ public class Hero : MonoBehaviour
     public int mainAttackRange = 1;
     public int ability1Range = 2;
     public int ability2Range = 2;
-    //Type of attack, true if magic, false if regular
-    //public bool mainAttackType = false;
-    //public bool ability1Type = false;
-    //public bool ability2Type = false;
     //Cooldowns
     public int ability1Cooldown = 0;
     public int ability2Cooldown = 0;
@@ -54,7 +47,6 @@ public class Hero : MonoBehaviour
     public bool isTargetingAbility1 = true;
     public bool isTargetingAbility2 = true;
 
-
     //Which ability is being used
     public static int abilityType = -1;
 
@@ -69,6 +61,10 @@ public class Hero : MonoBehaviour
     public string secondAbility = "";
 
     private Slider healthBar = null;
+    public AudioSource mainAttackAudio;
+    public AudioSource ability1Audio;
+    public AudioSource ability2Audio;
+    public AudioSource deathAudio;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
@@ -110,6 +106,7 @@ public class Hero : MonoBehaviour
         {
             SpawnGrid.cells[GetComponent<MoveHero>().GetX(), GetComponent<MoveHero>().GetZ()].tag = "Cell";
             GetComponent<Animator>().SetBool("Death", true);
+            deathAudio.Play();
             StartCoroutine(Death());
         }
     }
@@ -341,11 +338,13 @@ public class Hero : MonoBehaviour
         if (abilityType == 1)
         {
             GetComponent<Animator>().SetTrigger("Ability1");
+            ability1Audio.Play();
             StartCoroutine(StartAbility1());            
         }
         else if (abilityType == 2)
         {
             GetComponent<Animator>().SetTrigger("Ability2");
+            ability1Audio.Play();
             StartCoroutine(StartAbility2());
         }
     }
