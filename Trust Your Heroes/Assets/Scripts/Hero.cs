@@ -229,7 +229,9 @@ public class Hero : MonoBehaviour
 
     IEnumerator StartAbility1()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
+        ability1Audio.Play();
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < ability1Effects.Length; i++)
         {
             switch (ability1Effects[i])
@@ -283,7 +285,9 @@ public class Hero : MonoBehaviour
 
     IEnumerator StartAbility2()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
+        ability2Audio.Play();
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < ability2Effects.Length; i++)
         {
             switch (ability2Effects[i])
@@ -338,13 +342,11 @@ public class Hero : MonoBehaviour
         if (abilityType == 1)
         {
             GetComponent<Animator>().SetTrigger("Ability1");
-            ability1Audio.Play();
             StartCoroutine(StartAbility1());            
         }
         else if (abilityType == 2)
         {
             GetComponent<Animator>().SetTrigger("Ability2");
-            ability1Audio.Play();
             StartCoroutine(StartAbility2());
         }
     }

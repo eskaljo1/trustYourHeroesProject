@@ -93,19 +93,16 @@ public class PlaceHero : MonoBehaviour
                     if (Hero.abilityType == 0)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
-                        heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
                         StartCoroutine(MainAttack(enemy));
                     }
                     else if (Hero.abilityType == 1)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
-                        heroSelected.GetComponent<Hero>().ability1Audio.Play();
                         StartCoroutine(Ability1(enemy));
                     }
                     else if (Hero.abilityType == 2)
                     {
                         heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
-                        heroSelected.GetComponent<Hero>().ability2Audio.Play();
                         StartCoroutine(Ability2(enemy));
                     }
 
@@ -123,7 +120,17 @@ public class PlaceHero : MonoBehaviour
             if (e == 1)
                 evade = true;
         }
-        yield return new WaitForSeconds(1.5f);
+        if (heroSelected.name == "TommyApe(Clone)")
+        {
+            heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
+            yield return new WaitForSeconds(1.0f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(1.0f);
+            heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
+        }
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().mainAttackEffects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().mainAttackEffects[i])
@@ -176,7 +183,9 @@ public class PlaceHero : MonoBehaviour
                     evade = true;
             }
         bool skipstun = false;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
+        heroSelected.GetComponent<Hero>().ability1Audio.Play();
+        yield return new WaitForSeconds(1.0f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().ability1Effects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().ability1Effects[i])
@@ -295,7 +304,9 @@ public class PlaceHero : MonoBehaviour
                 if (e == 1)
                     evade = true;
             }
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
+        heroSelected.GetComponent<Hero>().ability2Audio.Play();
+        yield return new WaitForSeconds(1.0f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().ability2Effects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().ability2Effects[i])
