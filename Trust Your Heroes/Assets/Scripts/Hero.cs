@@ -65,6 +65,10 @@ public class Hero : MonoBehaviour
     public AudioSource ability1Audio;
     public AudioSource ability2Audio;
     public AudioSource deathAudio;
+
+    public ParticleSystem mainAttackParticles;
+    public ParticleSystem ability1Particles;
+    public ParticleSystem ability2Particles;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
@@ -96,6 +100,19 @@ public class Hero : MonoBehaviour
         {
             healthBar.maxValue = health;
             game = true;
+        }
+        mainAttackParticles = null;
+        ability1Particles = null;
+        ability2Particles = null;
+        ParticleSystem[] p = gameObject.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem i in p)
+        {
+            if (i.gameObject.name == "MainAttackParticles")
+                mainAttackParticles = i;
+            else if(i.gameObject.name == "Ability1Particles")
+                ability1Particles = i;
+            else if (i.gameObject.name == "Ability2Particles")
+                ability2Particles = i;
         }
     }
 
@@ -231,7 +248,11 @@ public class Hero : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         ability1Audio.Play();
+        if (ability1Particles != null)
+            ability1Particles.Play();
         yield return new WaitForSeconds(0.5f);
+        if (ability1Particles != null)
+            ability1Particles.Stop();
         for (int i = 0; i < ability1Effects.Length; i++)
         {
             switch (ability1Effects[i])
@@ -287,7 +308,11 @@ public class Hero : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         ability2Audio.Play();
+        if (ability2Particles != null)
+            ability2Particles.Play();
         yield return new WaitForSeconds(0.5f);
+        if (ability2Particles != null)
+            ability2Particles.Stop();
         for (int i = 0; i < ability2Effects.Length; i++)
         {
             switch (ability2Effects[i])

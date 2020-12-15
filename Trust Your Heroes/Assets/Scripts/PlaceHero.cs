@@ -18,7 +18,7 @@ public class PlaceHero : MonoBehaviour
     public static bool heroIsSelected = false; //true if a hero is selected
     public static bool movement = true; //true if movement, false if attack
     public static GameObject heroSelected = null; //The selected hero
-    
+
     void Start()
     {
         movement = true;
@@ -31,7 +31,7 @@ public class PlaceHero : MonoBehaviour
     {
         if (gameBegun) //When game starts there is no need for FirstRowCell tag
         {
-            if(tag == "FirstRowCell")
+            if (tag == "FirstRowCell")
                 tag = "Cell";
         }
     }
@@ -123,12 +123,24 @@ public class PlaceHero : MonoBehaviour
         if (heroSelected.name == "TommyApe(Clone)")
         {
             heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
+            heroSelected.GetComponent<Hero>().mainAttackParticles.Play();
             yield return new WaitForSeconds(1.0f);
+            heroSelected.GetComponent<Hero>().mainAttackParticles.Stop();
+        }
+        else if (heroSelected.name == "Creek(Clone)")
+        {
+            yield return new WaitForSeconds(0.5f);
+            heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
+            heroSelected.GetComponent<Hero>().mainAttackParticles.Play();
+            yield return new WaitForSeconds(1.0f);
+            heroSelected.GetComponent<Hero>().mainAttackParticles.Stop();
         }
         else
         {
             yield return new WaitForSeconds(1.0f);
             heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
+            if (heroSelected.GetComponent<Hero>().mainAttackParticles != null)
+                heroSelected.GetComponent<Hero>().mainAttackParticles.Play();
         }
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < heroSelected.GetComponent<Hero>().mainAttackEffects.Length; i++)
@@ -183,9 +195,30 @@ public class PlaceHero : MonoBehaviour
                     evade = true;
             }
         bool skipstun = false;
-        yield return new WaitForSeconds(1.0f);
+        if (heroSelected.GetComponent<Hero>().ability1Name == "Gas bomb")
+            yield return new WaitForSeconds(1.5f);
+        else
+            yield return new WaitForSeconds(0.5f);
         heroSelected.GetComponent<Hero>().ability1Audio.Play();
-        yield return new WaitForSeconds(1.0f);
+        if (heroSelected.GetComponent<Hero>().ability1Particles != null)
+            heroSelected.GetComponent<Hero>().ability1Particles.Play();
+        else
+        {
+            for (int i = 0; i < heroSelected.GetComponent<Hero>().ability1Effects.Length; i++)
+                switch (heroSelected.GetComponent<Hero>().ability1Effects[i])
+                {
+                    case "Poison":
+                        GameObject g = GameObject.Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/GasBombPrefab"), new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                        g.GetComponent<ParticleSystem>().Play();
+                        yield return new WaitForSeconds(1.5f);
+                        Destroy(g);
+                        break;
+                }
+        }
+        if (heroSelected.GetComponent<Hero>().ability1Name != "Gas bomb")
+            yield return new WaitForSeconds(1.5f);
+        if (heroSelected.GetComponent<Hero>().ability1Particles != null)
+            heroSelected.GetComponent<Hero>().ability1Particles.Stop();
         for (int i = 0; i < heroSelected.GetComponent<Hero>().ability1Effects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().ability1Effects[i])
@@ -304,9 +337,13 @@ public class PlaceHero : MonoBehaviour
                 if (e == 1)
                     evade = true;
             }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         heroSelected.GetComponent<Hero>().ability2Audio.Play();
-        yield return new WaitForSeconds(1.0f);
+        if (heroSelected.GetComponent<Hero>().ability2Particles != null)
+            heroSelected.GetComponent<Hero>().ability2Particles.Play();
+        yield return new WaitForSeconds(1.5f);
+        if (heroSelected.GetComponent<Hero>().ability2Particles != null)
+            heroSelected.GetComponent<Hero>().ability2Particles.Stop();
         for (int i = 0; i < heroSelected.GetComponent<Hero>().ability2Effects.Length; i++)
         {
             switch (heroSelected.GetComponent<Hero>().ability2Effects[i])
