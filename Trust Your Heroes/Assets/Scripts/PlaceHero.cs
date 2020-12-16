@@ -166,6 +166,7 @@ public class PlaceHero : MonoBehaviour
                         {
                             enemy.GetComponent<Hero>().stun = true;
                             enemy.GetComponent<Hero>().stunDuration = 1;
+                            enemy.GetComponent<Hero>().entangledParticles.Play();
                         }
                     }
                     break;
@@ -197,6 +198,8 @@ public class PlaceHero : MonoBehaviour
         bool skipstun = false;
         if (heroSelected.GetComponent<Hero>().ability1Name == "Gas bomb")
             yield return new WaitForSeconds(1.5f);
+        else if(heroSelected.GetComponent<Hero>().ability1Name == "Frostbolt" || heroSelected.GetComponent<Hero>().ability1Name == "Nature's gift")
+        { }
         else
             yield return new WaitForSeconds(0.5f);
         heroSelected.GetComponent<Hero>().ability1Audio.Play();

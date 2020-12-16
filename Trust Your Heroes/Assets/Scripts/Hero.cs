@@ -69,6 +69,8 @@ public class Hero : MonoBehaviour
     public ParticleSystem mainAttackParticles;
     public ParticleSystem ability1Particles;
     public ParticleSystem ability2Particles;
+
+    public ParticleSystem entangledParticles;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
@@ -109,10 +111,12 @@ public class Hero : MonoBehaviour
         {
             if (i.gameObject.name == "MainAttackParticles")
                 mainAttackParticles = i;
-            else if(i.gameObject.name == "Ability1Particles")
+            else if (i.gameObject.name == "Ability1Particles")
                 ability1Particles = i;
             else if (i.gameObject.name == "Ability2Particles")
                 ability2Particles = i;
+            else if (i.gameObject.name == "EntangledParticles")
+                entangledParticles = i;
         }
     }
 
@@ -251,8 +255,8 @@ public class Hero : MonoBehaviour
         if (ability1Particles != null)
             ability1Particles.Play();
         yield return new WaitForSeconds(0.5f);
-        if (ability1Particles != null)
-            ability1Particles.Stop();
+        if (ability1Particles != null && gameObject.name != "TommyApe(Clone)")
+                ability1Particles.Stop();
         for (int i = 0; i < ability1Effects.Length; i++)
         {
             switch (ability1Effects[i])
@@ -279,6 +283,7 @@ public class Hero : MonoBehaviour
                                         {
                                             enemies[j].GetComponent<Hero>().stun = true;
                                             enemies[j].GetComponent<Hero>().stunDuration = 1;
+                                            enemies[j].GetComponent<Hero>().entangledParticles.Play();
                                         }
                                     }
                                 enemies[j].GetComponent<Animator>().SetTrigger("Hit");
@@ -306,7 +311,10 @@ public class Hero : MonoBehaviour
 
     IEnumerator StartAbility2()
     {
-        yield return new WaitForSeconds(1.0f);
+        if (gameObject.name != "Hor(Clone)")
+            yield return new WaitForSeconds(1.0f);
+        else
+            yield return new WaitForSeconds(0.5f);
         ability2Audio.Play();
         if (ability2Particles != null)
             ability2Particles.Play();
