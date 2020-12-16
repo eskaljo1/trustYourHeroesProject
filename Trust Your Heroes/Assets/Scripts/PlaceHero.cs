@@ -299,6 +299,7 @@ public class PlaceHero : MonoBehaviour
                     break;
                 case "Purgatory":
                     GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] g = new GameObject[2];
                     for (int j = 0; j < enemies2.Length; j++)
                         if ((Mathf.Abs(enemies2[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies2[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
                         {
@@ -315,11 +316,17 @@ public class PlaceHero : MonoBehaviour
                                 if (!ev)
                                 {
                                     enemies2[j].GetComponent<Animator>().SetTrigger("Hit");
+                                    g[i] = GameObject.Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/Purgatory"), new Vector3(enemies2[j].transform.position.x, enemies2[j].transform.position.y + 1.0f, enemies2[j].transform.position.z), Quaternion.identity);
                                     int d = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
                                     enemies2[j].GetComponent<Hero>().health -= (int)(d - (enemies2[j].GetComponent<Hero>().shield / 100.0 * d));
                                 }
                             }
                         }
+                    yield return new WaitForSeconds(1.0f);
+                    if(g[0] != null)
+                        Destroy(g[0]);
+                    if (g[1] != null)
+                        Destroy(g[1]);
                     yield return new WaitForSeconds(0.5f);
                     break;
                 case "Zone":
