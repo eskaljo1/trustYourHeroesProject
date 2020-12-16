@@ -319,7 +319,7 @@ public class Hero : MonoBehaviour
         if (ability2Particles != null)
             ability2Particles.Play();
         yield return new WaitForSeconds(0.5f);
-        if (ability2Particles != null)
+        if (ability2Particles != null && gameObject.name != "Hor(Clone)" && gameObject.name != "Z(Clone)")
             ability2Particles.Stop();
         for (int i = 0; i < ability2Effects.Length; i++)
         {
