@@ -240,6 +240,8 @@ public class Hero : MonoBehaviour
                     {
                         if(abilityType == 1 && ability1Name == "Purgatory" && i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
                         { }
+                        else if(i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                        { }
                         else
                             SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
                     }

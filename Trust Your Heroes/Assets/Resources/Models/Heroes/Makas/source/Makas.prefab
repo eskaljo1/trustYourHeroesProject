@@ -6629,6 +6629,7 @@ MonoBehaviour:
   mainAttackEffects:
   - Direct
   ability1Effects:
+  - Earthquake
   - Area
   - Stun
   ability2Effects: []
@@ -6669,6 +6670,7 @@ MonoBehaviour:
   mainAttackParticles: {fileID: 0}
   ability1Particles: {fileID: 0}
   ability2Particles: {fileID: 0}
+  entangledParticles: {fileID: 0}
 --- !u!82 &7018043880074622117
 AudioSource:
   m_ObjectHideFlags: 0

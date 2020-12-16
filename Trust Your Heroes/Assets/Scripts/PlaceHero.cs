@@ -282,11 +282,12 @@ public class PlaceHero : MonoBehaviour
                     }
                     break;
                 case "Stun":
-                    if (!enemy.GetComponent<Hero>().stun && !evade && !skipstun)
-                    {
-                        enemy.GetComponent<Hero>().stun = true;
-                        enemy.GetComponent<Hero>().stunDuration = 2;
-                    }
+                    if (enemy != null)
+                        if (!enemy.GetComponent<Hero>().stun && !evade && !skipstun)
+                        {
+                            enemy.GetComponent<Hero>().stun = true;
+                            enemy.GetComponent<Hero>().stunDuration = 2;
+                        }
                     break;
                 case "Direct":
                     if (!evade)
@@ -328,6 +329,11 @@ public class PlaceHero : MonoBehaviour
                     if (g[1] != null)
                         Destroy(g[1]);
                     yield return new WaitForSeconds(0.5f);
+                    break;
+                case "Earthquake":
+                    GameObject earth = Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/EarthquakePrefab"), new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                    yield return new WaitForSeconds(1.5f);
+                    Destroy(earth);
                     break;
                 case "Zone":
                     break;
