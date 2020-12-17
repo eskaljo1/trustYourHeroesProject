@@ -71,6 +71,9 @@ public class Hero : MonoBehaviour
     public ParticleSystem ability2Particles;
 
     public ParticleSystem entangledParticles;
+    public ParticleSystem slownessParticles;
+    public ParticleSystem debuffParticles;
+    public ParticleSystem poisonParticles;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
@@ -117,6 +120,12 @@ public class Hero : MonoBehaviour
                 ability2Particles = i;
             else if (i.gameObject.name == "EntangledParticles")
                 entangledParticles = i;
+            else if (i.gameObject.name == "DebuffParticles")
+                debuffParticles = i;
+            else if (i.gameObject.name == "SlownessParticles")
+                slownessParticles = i;
+            else if (i.gameObject.name == "PoisonParticles")
+                poisonParticles = i;
         }
     }
 
@@ -182,7 +191,7 @@ public class Hero : MonoBehaviour
             if (ability1Range > 0)
             {
                 for(int i = 0; i < ability1Effects.Length; i++)
-                    if (ability1Effects[i] == "Heal")
+                    if (ability1Effects[i] == "Heal" || ability1Effects[i] == "Totem")
                     {
                         FindEnemies(ability1Range, isTargetingAbility1, true);
                         return;
@@ -201,7 +210,15 @@ public class Hero : MonoBehaviour
         {
             ReadyForAttack(2);
             if (ability2Range > 0)
+            {
+                for (int i = 0; i < ability2Effects.Length; i++)
+                    if (ability2Effects[i] == "Heal" || ability2Effects[i] == "Totem")
+                    {
+                        FindEnemies(ability2Range, isTargetingAbility2, true);
+                        return;
+                    }
                 FindEnemies(ability2Range, isTargetingAbility2, false);
+            }
             else
                 ZeroRangeAbility(true);
         }
@@ -236,14 +253,29 @@ public class Hero : MonoBehaviour
                 }
                 else
                 {
-                    if ((Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                    if (isHeal)
                     {
-                        if(abilityType == 1 && ability1Name == "Purgatory" && i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
-                        { }
-                        else if(i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
-                        { }
-                        else
-                            SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        if ((Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                        {
+                            if (SpawnGrid.cells[i, j].tag != "Cell")
+                            { }
+                            else if (i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                            { }
+                            else
+                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        }
+                    }
+                    else
+                    {
+                        if ((Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                        {
+                            if (abilityType == 1 && ability1Name == "Purgatory" && i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                            { }
+                            else if (i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                            { }
+                            else
+                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                        }
                     }
                 }
             }
@@ -302,9 +334,6 @@ public class Hero : MonoBehaviour
                 case "Taunt":
 
                     break;
-                case "Totem":
-
-                    break;
             }
         }
         PlaceHero.heroIsSelected = false;
@@ -321,7 +350,7 @@ public class Hero : MonoBehaviour
         if (ability2Particles != null)
             ability2Particles.Play();
         yield return new WaitForSeconds(0.5f);
-        if (ability2Particles != null && gameObject.name != "Hor(Clone)" && gameObject.name != "Z(Clone)" && gameObject.name != "Ohm(Clone)" && gameObject.name != "Xavier(Clone)")
+        if (ability2Particles != null && gameObject.name != "Hor(Clone)" && gameObject.name != "Z(Clone)" && gameObject.name != "Ohm(Clone)" && gameObject.name != "Makas(Clone)" && gameObject.name != "Xavier(Clone)")
             ability2Particles.Stop();
         for (int i = 0; i < ability2Effects.Length; i++)
         {
@@ -355,9 +384,6 @@ public class Hero : MonoBehaviour
                 case "Buff":
                     buff = 100;
                     buffDuration = 3;
-                    break;
-                case "Totem":
-
                     break;
                 case "Trance":
                     movement = 1;

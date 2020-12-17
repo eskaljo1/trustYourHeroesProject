@@ -155,6 +155,7 @@ public class PlaceHero : MonoBehaviour
                         {
                             enemy.GetComponent<Hero>().poisoned = true;
                             enemy.GetComponent<Hero>().poisonDuration = 2;
+                            enemy.GetComponent<Hero>().poisonParticles.Play();
                         }
                     }
                     break;
@@ -249,6 +250,7 @@ public class PlaceHero : MonoBehaviour
                                         {
                                             enemies[j].GetComponent<Hero>().stun = true;
                                             enemies[j].GetComponent<Hero>().stunDuration = 1;
+                                            enemies[j].GetComponent<Hero>().entangledParticles.Play();
                                         }
                                     }
                                 enemies[j].GetComponent<Animator>().SetTrigger("Hit");
@@ -262,6 +264,7 @@ public class PlaceHero : MonoBehaviour
                                         {
                                             enemies[j].GetComponent<Hero>().poisoned = true;
                                             enemies[j].GetComponent<Hero>().poisonDuration = 2;
+                                            enemies[j].GetComponent<Hero>().poisonParticles.Play();
                                         }
                                     }
                             }
@@ -269,6 +272,9 @@ public class PlaceHero : MonoBehaviour
                                 skipstun = true;
                         }
                     yield return new WaitForSeconds(0.5f);
+                    break;
+                case "Totem":
+                    Instantiate(Resources.Load<GameObject>("Models/Heroes/Nazz/Totems/HealTotem/source/HealTotem"), new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
                     break;
                 case "Heal":
                     yield return new WaitForSeconds(0.5f);
@@ -279,6 +285,7 @@ public class PlaceHero : MonoBehaviour
                     {
                         enemy.GetComponent<Hero>().slow = true;
                         enemy.GetComponent<Hero>().slowDuration = 2;
+                        enemy.GetComponent<Hero>().slownessParticles.Play();
                     }
                     break;
                 case "Stun":
@@ -287,6 +294,7 @@ public class PlaceHero : MonoBehaviour
                         {
                             enemy.GetComponent<Hero>().stun = true;
                             enemy.GetComponent<Hero>().stunDuration = 2;
+                            enemy.GetComponent<Hero>().entangledParticles.Play();
                         }
                     break;
                 case "Direct":
@@ -295,6 +303,13 @@ public class PlaceHero : MonoBehaviour
                         if (enemy != null)
                         {
                             enemy.GetComponent<Animator>().SetTrigger("Hit");
+                            for(int j = 0; j < heroSelected.GetComponent<Hero>().ability1Effects.Length; j++)
+                                if(heroSelected.GetComponent<Hero>().ability1Effects[j] == "Slice")
+                                {
+                                    GameObject gg = GameObject.Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/Purgatory"), new Vector3(enemy.transform.position.x, enemy.transform.position.y + 1.0f, enemy.transform.position.z), Quaternion.identity);
+                                    yield return new WaitForSeconds(1.0f);
+                                    Destroy(gg);
+                                }
                             yield return new WaitForSeconds(0.5f);
                             int dmg = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
                             enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
@@ -396,6 +411,7 @@ public class PlaceHero : MonoBehaviour
                                         {
                                             enemies[j].GetComponent<Hero>().slow = true;
                                             enemies[j].GetComponent<Hero>().slowDuration = 1;
+                                            enemies[j].GetComponent<Hero>().slownessParticles.Play();
                                         }
                                     }
                                 enemies[j].GetComponent<Animator>().SetTrigger("Hit");
@@ -411,6 +427,7 @@ public class PlaceHero : MonoBehaviour
                     {
                         enemy.GetComponent<Hero>().debuff = 50;
                         enemy.GetComponent<Hero>().debuffDuration = 2;
+                        enemy.GetComponent<Hero>().debuffParticles.Play();
                     }
                     break;
                 case "Stun":
@@ -418,6 +435,7 @@ public class PlaceHero : MonoBehaviour
                     {
                         enemy.GetComponent<Hero>().stun = true;
                         enemy.GetComponent<Hero>().stunDuration = 2;
+                        enemy.GetComponent<Hero>().entangledParticles.Play();
                     }
                     break;
                 case "Direct":
@@ -428,6 +446,9 @@ public class PlaceHero : MonoBehaviour
                         int dmg = (int)(heroSelected.GetComponent<Hero>().ability2Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability2Dmg));
                         enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
                     }
+                    break;
+                case "Totem":
+                    Instantiate(Resources.Load<GameObject>("Models/Heroes/Nazz/Totems/TrapTotem/source/TrapTotem"), new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
                     break;
                 case "Barrage":
                     break;
