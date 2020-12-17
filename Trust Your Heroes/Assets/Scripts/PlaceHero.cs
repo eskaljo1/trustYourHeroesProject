@@ -292,10 +292,13 @@ public class PlaceHero : MonoBehaviour
                 case "Direct":
                     if (!evade)
                     {
-                        enemy.GetComponent<Animator>().SetTrigger("Hit");
-                        yield return new WaitForSeconds(0.5f);
-                        int dmg = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
-                        enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                        if (enemy != null)
+                        {
+                            enemy.GetComponent<Animator>().SetTrigger("Hit");
+                            yield return new WaitForSeconds(0.5f);
+                            int dmg = (int)(heroSelected.GetComponent<Hero>().ability1Dmg + (heroSelected.GetComponent<Hero>().buff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg) - (heroSelected.GetComponent<Hero>().debuff / 100.0 * heroSelected.GetComponent<Hero>().ability1Dmg));
+                            enemy.GetComponent<Hero>().health -= (int)(dmg - (enemy.GetComponent<Hero>().shield / 100.0 * dmg));
+                        }
                     }
                     break;
                 case "Purgatory":
@@ -331,9 +334,14 @@ public class PlaceHero : MonoBehaviour
                     yield return new WaitForSeconds(0.5f);
                     break;
                 case "Earthquake":
-                    GameObject earth = Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/EarthquakePrefab"), new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                    GameObject earth = Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/EarthquakePrefab"), new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
                     yield return new WaitForSeconds(1.5f);
                     Destroy(earth);
+                    break;
+                case "Flare":
+                    GameObject flare = Instantiate(Resources.Load<GameObject>("Models/AbilityEffects/FlarePrefab"), new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Quaternion.identity);
+                    yield return new WaitForSeconds(1.5f);
+                    Destroy(flare);
                     break;
                 case "Zone":
                     break;

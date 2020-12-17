@@ -6632,7 +6632,8 @@ MonoBehaviour:
   - Earthquake
   - Area
   - Stun
-  ability2Effects: []
+  ability2Effects:
+  - Trance
   ability2Passive: 0
   evasiveness: 0
   evasivenessDuration: 0
@@ -6662,7 +6663,7 @@ MonoBehaviour:
     he is an excellent example of a troll warrior. If you ever plan to head to combat
     with a troll, remember to bring company.
   firstAbility: Does dmg to adjacent tiles as well
-  secondAbility: 
+  secondAbility: +1 movement and +50% buff for 2 turns
   mainAttackAudio: {fileID: 6005116423119694908}
   ability1Audio: {fileID: 5406735219066295889}
   ability2Audio: {fileID: 7018043880074622117}

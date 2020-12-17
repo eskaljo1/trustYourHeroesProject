@@ -257,7 +257,7 @@ public class Hero : MonoBehaviour
         if (ability1Particles != null)
             ability1Particles.Play();
         yield return new WaitForSeconds(0.5f);
-        if (ability1Particles != null && gameObject.name != "TommyApe(Clone)")
+        if (ability1Particles != null && gameObject.name != "TommyApe(Clone)" && gameObject.name != "Ohm(Clone)")
                 ability1Particles.Stop();
         for (int i = 0; i < ability1Effects.Length; i++)
         {
@@ -321,7 +321,7 @@ public class Hero : MonoBehaviour
         if (ability2Particles != null)
             ability2Particles.Play();
         yield return new WaitForSeconds(0.5f);
-        if (ability2Particles != null && gameObject.name != "Hor(Clone)" && gameObject.name != "Z(Clone)")
+        if (ability2Particles != null && gameObject.name != "Hor(Clone)" && gameObject.name != "Z(Clone)" && gameObject.name != "Ohm(Clone)" && gameObject.name != "Xavier(Clone)")
             ability2Particles.Stop();
         for (int i = 0; i < ability2Effects.Length; i++)
         {
