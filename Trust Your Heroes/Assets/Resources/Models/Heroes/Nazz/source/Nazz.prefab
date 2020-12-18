@@ -17066,8 +17066,10 @@ MonoBehaviour:
     position so the other goblins rebelled and he was exiled from his home. Now he
     seeks a new home, where he can settle and enjoy his life the best way he knows,
     commanding others.
-  firstAbility: 
-  secondAbility: 
+  firstAbility: Places a totem. If an ally walks over the totem it heals for 30 health
+    and the totem is destroyed.
+  secondAbility: Places a totem. If an enemy walks over the totem it takes 30 dmg
+    and the totem is destoryed.
   mainAttackAudio: {fileID: 3412894681295190595}
   ability1Audio: {fileID: 8945831306235393734}
   ability2Audio: {fileID: 8945831306235393734}

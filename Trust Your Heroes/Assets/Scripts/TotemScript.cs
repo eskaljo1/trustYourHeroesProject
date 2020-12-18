@@ -9,6 +9,7 @@ public class TotemScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        
+        if(type)
+        { }
     }
 }
