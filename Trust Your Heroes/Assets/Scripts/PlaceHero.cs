@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,9 +32,54 @@ public class PlaceHero : MonoBehaviour
     {
         if (gameBegun) //When game starts there is no need for FirstRowCell tag
         {
-            if (tag == "FirstRowCell")
-                tag = "Cell";
+            PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+            if (tag == "FirstRowCell" || tag == "LastRowCell")
+                photonView.RPC("SetCellTag", RpcTarget.All, "Cell");
         }
+    }
+
+    [PunRPC]
+    void HeroIsPlacedOnCell()
+    {
+        if (MoveHero.player1Move)
+            tag = "OccupiedCell";
+        else
+            tag = "EnemyCell";
+    }
+
+    [PunRPC]
+    void HeroIsMovedFromCell(int t, string s)
+    {
+        PhotonView p = PhotonView.Find(t);
+        p.gameObject.tag = s;
+    }
+
+    [PunRPC]
+    void SetCellTag(string t)
+    {
+        tag = t;
+    }
+
+    [PunRPC]
+    void SetHeroTag(int t)
+    {
+        PhotonView p = PhotonView.Find(t);
+        p.gameObject.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+        p.gameObject.tag = "Player2";
+    }
+
+    [PunRPC]
+    void SetHeroCoords(int t)
+    {
+        PhotonView p = PhotonView.Find(t);
+        p.gameObject.GetComponent<MoveHero>().SetCoordinates(x, z);
+    }
+
+    [PunRPC]
+    void SetHeroWalking(int t, bool b)
+    {
+        PhotonView p = PhotonView.Find(t);
+        p.gameObject.GetComponent<Animator>().SetBool("Walking", b);
     }
 
     void OnMouseDown()
@@ -42,37 +88,67 @@ public class PlaceHero : MonoBehaviour
         {
             if (movement) //if movement, else attack
             {
-                if (tag == "FirstRowCell") //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
+                if ((tag == "FirstRowCell" && NetworkManager.firstPlayer) || (tag == "LastRowCell" && !NetworkManager.firstPlayer)) //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
                 {
                     heroIsSelected = false;
                     if (heroSelected) //If a hero is selected on the board, move him from his current cell
                     {
                         //Change tag from OccupiedCell to FirstRowCell
-                        SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag = "FirstRowCell";
+                        if (NetworkManager.firstPlayer)
+                        {
+                            PhotonView p = PhotonView.Get(GetComponent<PhotonView>());
+                            p.RPC("HeroIsMovedFromCell", RpcTarget.All, SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].GetComponent<PhotonView>().ViewID, "FirstRowCell");
+                        }
+                        else
+                        {
+                            PhotonView p = PhotonView.Get(GetComponent<PhotonView>());
+                            p.RPC("HeroIsMovedFromCell", RpcTarget.All, SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].GetComponent<PhotonView>().ViewID, "LastRowCell");
+                        }
                         //Move
                         MoveSelectedHero();
                     }
                     else //else spawn hero of the selected hero icon
                     {
-                        heroSelected = Instantiate(Resources.Load<GameObject>("Models/Heroes/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1] + "/source/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1]), transform.position, Quaternion.identity);
-                        heroSelected.GetComponent<MoveHero>().SetCoordinates(x, z);
+                        PhotonView p = PhotonView.Get(GetComponent<PhotonView>());
+                        if (NetworkManager.firstPlayer)
+                            heroSelected = PhotonNetwork.Instantiate("Models/Heroes/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1] + "/source/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1], transform.position, Quaternion.identity);
+                        else
+                        {
+                            heroSelected = PhotonNetwork.Instantiate("Models/Heroes/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1] + "/source/" + YourHeroTeam.heroNames[PlaceHeroButtons.heroSelected - 1], transform.position, Quaternion.identity);
+                            p.RPC("SetHeroTag", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID);
+                        }
+                        heroSelected.GetComponent<Hero>().FindHealthBar();
+                        p.RPC("SetHeroCoords", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID);
                         PlaceHeroButtons.spawned = true;
                         PlaceHeroButtons.heroesPlaced++;
                     }
                     //Turn off lights
-                    GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
-                    for (int i = 0; i < firstRowCells.Length; i++)
+                    if (NetworkManager.firstPlayer)
                     {
-                        firstRowCells[i].GetComponentInChildren<Light>().intensity = 0;
+                        GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
+                        for (int i = 0; i < firstRowCells.Length; i++)
+                        {
+                            firstRowCells[i].GetComponentInChildren<Light>().intensity = 0;
+                        }
                     }
-                    tag = "OccupiedCell";
+                    else
+                    {
+                        GameObject[] lastRowCells = GameObject.FindGameObjectsWithTag("LastRowCell");
+                        for (int i = 0; i < lastRowCells.Length; i++)
+                        {
+                            lastRowCells[i].GetComponentInChildren<Light>().intensity = 0;
+                        }
+                    }
+                    PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+                    photonView.RPC("HeroIsPlacedOnCell", RpcTarget.All);
                 }
                 if (gameBegun) //If game has begun, move hero to cell if it is available
                 {
                     if (GetComponentInChildren<Light>().intensity == 15) //Checks if cell is available
                     {
                         MoveSelectedHero();
-                        tag = "OccupiedCell";
+                        PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+                        photonView.RPC("HeroIsPlacedOnCell", RpcTarget.All);
                     }
                 }
             }
@@ -82,7 +158,11 @@ public class PlaceHero : MonoBehaviour
                 {
                     heroSelected.GetComponent<MoveHero>().TurnOffLights();
                     ChangeRotationOfHero();
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] enemies;
+                    if (MoveHero.player1Move)
+                        enemies = GameObject.FindGameObjectsWithTag("Player2");
+                    else
+                        enemies = GameObject.FindGameObjectsWithTag("Player");
                     GameObject enemy = null;
                     for (int i = 0; i < enemies.Length; i++)
                         if (enemies[i].GetComponent<MoveHero>().GetX() == x && enemies[i].GetComponent<MoveHero>().GetZ() == z)
@@ -90,24 +170,92 @@ public class PlaceHero : MonoBehaviour
                             enemy = enemies[i];
                             break;
                         }
+                    if(enemy == null)
+                    {
+                        if (MoveHero.player1Move)
+                            enemies = GameObject.FindGameObjectsWithTag("Player");
+                        else
+                            enemies = GameObject.FindGameObjectsWithTag("Player2");
+                        for (int i = 0; i < enemies.Length; i++)
+                            if (enemies[i].GetComponent<MoveHero>().GetX() == x && enemies[i].GetComponent<MoveHero>().GetZ() == z)
+                            {
+                                enemy = enemies[i];
+                                break;
+                            }
+                    }
+                    PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
                     if (Hero.abilityType == 0)
                     {
-                        heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
-                        StartCoroutine(MainAttack(enemy));
+                        photonView.RPC("MainAttackRPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
                     }
                     else if (Hero.abilityType == 1)
                     {
-                        heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
-                        StartCoroutine(Ability1(enemy));
+                        if(enemy != null)
+                            photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
+                        else
+                            photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13);
                     }
                     else if (Hero.abilityType == 2)
                     {
-                        heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
-                        StartCoroutine(Ability2(enemy));
+                        if (enemy != null)
+                            photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
+                        else
+                            photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13);
                     }
-
+                    StartCoroutine(ChangeTurnAfterAbility());
                 }
             }
+        }
+    }
+
+    IEnumerator ChangeTurnAfterAbility()
+    {
+        yield return new WaitForSeconds(4.0f);
+        heroSelected.GetComponent<PhotonView>().RPC("ChangePerforming", RpcTarget.All);
+        heroSelected.GetComponent<PhotonView>().RPC("ChangeTurn", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void MainAttackRPC(int heroId, int enemyId)
+    {
+        PhotonView hero = PhotonView.Find(heroId);
+        PhotonView enemy = PhotonView.Find(enemyId);
+        heroSelected = hero.gameObject;
+        heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
+        StartCoroutine(MainAttack(enemy.gameObject));
+    }
+
+    [PunRPC]
+    void Ability1RPC(int heroId, int enemyId)
+    {
+        PhotonView hero = PhotonView.Find(heroId);
+        heroSelected = hero.gameObject;
+        heroSelected.GetComponent<Animator>().SetTrigger("Ability1");
+        if (enemyId != -13)
+        {
+            PhotonView enemy = PhotonView.Find(enemyId);
+            StartCoroutine(Ability1(enemy.gameObject));
+        }
+        else
+        {
+            StartCoroutine(Ability1(null));
+        }
+    }
+
+    [PunRPC]
+    void Ability2RPC(int heroId, int enemyId)
+    {
+        PhotonView hero = PhotonView.Find(heroId);
+        heroSelected = hero.gameObject;
+        heroSelected.GetComponent<Animator>().SetTrigger("Ability2");
+        if (enemyId != -13)
+        {
+            PhotonView enemy = PhotonView.Find(enemyId);
+            StartCoroutine(Ability2(enemy.gameObject));
+        }
+        else
+        {
+            StartCoroutine(Ability2(null));
         }
     }
 
@@ -182,7 +330,6 @@ public class PlaceHero : MonoBehaviour
                     break;
             }
         }
-        heroSelected = null;
         heroIsSelected = false;
     }
 
@@ -228,7 +375,11 @@ public class PlaceHero : MonoBehaviour
             switch (heroSelected.GetComponent<Hero>().ability1Effects[i])
             {
                 case "Area":
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] enemies;
+                    if (MoveHero.player1Move)
+                        enemies = GameObject.FindGameObjectsWithTag("Player2");
+                    else
+                        enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
                         if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
                         {
@@ -317,7 +468,11 @@ public class PlaceHero : MonoBehaviour
                     }
                     break;
                 case "Purgatory":
-                    GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] enemies2;
+                    if (MoveHero.player1Move)
+                        enemies2 = GameObject.FindGameObjectsWithTag("Player2");
+                    else
+                        enemies2 = GameObject.FindGameObjectsWithTag("Player");
                     GameObject[] g = new GameObject[2];
                     for (int j = 0; j < enemies2.Length; j++)
                         if ((Mathf.Abs(enemies2[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies2[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
@@ -362,7 +517,6 @@ public class PlaceHero : MonoBehaviour
                     break;
             }
         }
-        heroSelected = null;
         heroIsSelected = false;
     }
 
@@ -389,7 +543,11 @@ public class PlaceHero : MonoBehaviour
             {
 
                 case "Area":
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] enemies;
+                    if (MoveHero.player1Move)
+                        enemies = GameObject.FindGameObjectsWithTag("Player2");
+                    else
+                        enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
                         if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - x) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - z)) <= 1)
                         {
@@ -454,13 +612,14 @@ public class PlaceHero : MonoBehaviour
                     break;
             }
         }
-        heroSelected = null;
         heroIsSelected = false;
     }
 
     //Moves hero over time
-    public IEnumerator MoveToPosition(Vector3 target, float timeToMove)
+    public IEnumerator MoveToPosition(Vector3 target, float timeToMove, bool changeTurn)
     {
+        if(changeTurn)
+            heroSelected.GetComponent<PhotonView>().RPC("ChangePerforming", RpcTarget.All);
         //Erasmo's grass needs to disappear below
         if (heroSelected.name == "Erasmo(Clone)") 
                   target = new Vector3(target.x, target.y - 0.05f, target.z);
@@ -474,34 +633,42 @@ public class PlaceHero : MonoBehaviour
             heroSelected.transform.position = Vector3.Lerp(currentPos, target, t);
             yield return null;
         }
-        heroSelected.GetComponent<Animator>().SetBool("Walking", false);
+        PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+        photonView.RPC("SetHeroWalking", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, false);
         //Changes the tag of the cell the hero is currently on
-        if (SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag == "OccupiedCell")
+        if (SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag == "OccupiedCell" || SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag == "EnemyCell")
         {
-            SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].tag = "Cell";
+            PhotonView p = PhotonView.Get(GetComponent<PhotonView>());
+            p.RPC("HeroIsMovedFromCell", RpcTarget.All, SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].GetComponent<PhotonView>().ViewID, "Cell");
         }
-        //Changes the coordinates in MoveHero
-        heroSelected.GetComponent<MoveHero>().SetCoordinates(x, z);
+        //Changes the coordinates in MoveHero and turn
+        photonView.RPC("SetHeroCoords", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID);
+        if (changeTurn)
+        {
+            yield return new WaitForSeconds(1.0f);
+            heroSelected.GetComponent<PhotonView>().RPC("ChangeTurn", RpcTarget.All);
+        }
         heroSelected = null;
     }
 
     void MoveSelectedHero() //Move hero
     {
-        if (tag != "FirstRowCell")
+        if (tag != "FirstRowCell" && tag != "LastRowCell")
         {
             ChangeRotationOfHero();
             //Play animation for walking
-            heroSelected.GetComponent<Animator>().SetBool("Walking", true);
+            PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+            photonView.RPC("SetHeroWalking", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, true);
             //Animation speed set, if Tommy then all animations are 1s, the rest is dependable on distance
             if (heroSelected.name == "TommyApe(Clone)" || (Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ())) == 1 && heroSelected.GetComponent<MoveHero>().movement != 1)
-                StartCoroutine(MoveToPosition(transform.position, 1.0f));
+                StartCoroutine(MoveToPosition(transform.position, 1.0f, true));
             else if (Mathf.Abs(x - heroSelected.GetComponent<MoveHero>().GetX()) == 1 && Mathf.Abs(z - heroSelected.GetComponent<MoveHero>().GetZ()) == 1)
-                StartCoroutine(MoveToPosition(transform.position, 1.2f));
+                StartCoroutine(MoveToPosition(transform.position, 1.2f, true));
             else
-                StartCoroutine(MoveToPosition(transform.position, 2.0f));
+                StartCoroutine(MoveToPosition(transform.position, 2.0f, true));
         }
         else //If the game has not begun there is no need for animation
-            StartCoroutine(MoveToPosition(transform.position, 0.0f));
+            StartCoroutine(MoveToPosition(transform.position, 0.0f, false));
     }
 
     //Change heros rotation so he is facing the cell he needs to move to

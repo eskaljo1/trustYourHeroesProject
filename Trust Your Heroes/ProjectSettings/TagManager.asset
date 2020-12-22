@@ -9,6 +9,11 @@ TagManager:
   - Obstacle
   - Cell
   - EnemyCell
+  - FxTemporaire
+  - Bullet
+  - LastRowCell
+  - Player2
+  - Text
   layers:
   - Default
   - TransparentFX

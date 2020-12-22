@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 7658889228016531845}
   - component: {fileID: 808291845654976182}
   - component: {fileID: 4859890393861770736}
+  - component: {fileID: -8186831804706631305}
   m_Layer: 0
   m_Name: cellitem(Christmas)
   m_TagString: Cell
@@ -326,6 +327,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7834d58be1e0f17439d6ef8b04edb446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+--- !u!114 &-8186831804706631305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550414163930350919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 1
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6758681271636928438
 GameObject:
   m_ObjectHideFlags: 0

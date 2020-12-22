@@ -9,6 +9,9 @@ using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    //Network Manager
+    public GameObject networkManager;
+
     //Audio
     public AudioMixer audioMixer;
     public Slider masterSlider;
@@ -51,6 +54,8 @@ public class MainMenu : MonoBehaviour
     public Text ability2EffectText;
     //*Play Panel
     public RawImage mapImage;
+    public GameObject playButton;
+    public GameObject waitingText;
 
     //Info on what spawntile is selected
     public static int teamMemberPlace = 0;
@@ -63,7 +68,7 @@ public class MainMenu : MonoBehaviour
     private int[] selectedHeroNumbers; //Used so you can't pick two same heroes
 
     //Selected map in the Play Panel
-    private int mapNumber = 1;
+    public static int mapNumber = 1;
 
     private Color color;
     private Color colorWithAlpha;
@@ -96,6 +101,9 @@ public class MainMenu : MonoBehaviour
         playPanel.SetActive(t);
         if (!t)
         {
+            networkManager.GetComponent<NetworkManager>().OnLeave();
+            playButton.SetActive(true);
+            waitingText.SetActive(false);
             Destroy(selectedHeroes[0]);
             Destroy(selectedHeroes[1]);
             Destroy(selectedHeroes[2]);
@@ -196,18 +204,9 @@ public class MainMenu : MonoBehaviour
         YourHeroTeam.heroNames[1] = selectedHeroes[1].name.Remove(selectedHeroes[1].name.Length - 7);
         YourHeroTeam.heroNames[2] = selectedHeroes[2].name.Remove(selectedHeroes[2].name.Length - 7);
         YourHeroTeam.heroNames[3] = selectedHeroes[3].name.Remove(selectedHeroes[3].name.Length - 7);
-        switch (mapNumber) //Opens scene depending on the chosen map
-        {
-            case 1:
-                SceneManager.LoadScene("DarkTownScene");
-                break;
-            case 2:
-                SceneManager.LoadScene("ChristmasScene");
-                break;
-            case 3:
-                SceneManager.LoadScene("DesertScene");
-                break;
-        }
+        networkManager.GetComponent<NetworkManager>().OnClickConnectToRoom();
+        playButton.SetActive(false);
+        waitingText.SetActive(true);
     }
 
     public void SpawnHero(int heroNumber) //Spawns hero prefab, Heroes Panel

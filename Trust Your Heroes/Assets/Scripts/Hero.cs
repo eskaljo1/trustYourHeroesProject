@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class Hero : MonoBehaviour
     //Cooldowns
     public int ability1Cooldown = 0;
     public int ability2Cooldown = 0;
+    public int ability1C = 0;
+    public int ability2C = 0;
     //Effects
     public string[] mainAttackEffects;
     public string[] ability1Effects;
@@ -77,9 +80,38 @@ public class Hero : MonoBehaviour
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
+    public PhotonView photonView;
+
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
         abilityType = -1;
+
+        mainAttackParticles = null;
+        ability1Particles = null;
+        ability2Particles = null;
+        ParticleSystem[] p = gameObject.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem i in p)
+        {
+            if (i.gameObject.name == "MainAttackParticles")
+                mainAttackParticles = i;
+            else if (i.gameObject.name == "Ability1Particles")
+                ability1Particles = i;
+            else if (i.gameObject.name == "Ability2Particles")
+                ability2Particles = i;
+            else if (i.gameObject.name == "EntangledParticles")
+                entangledParticles = i;
+            else if (i.gameObject.name == "DebuffParticles")
+                debuffParticles = i;
+            else if (i.gameObject.name == "SlownessParticles")
+                slownessParticles = i;
+            else if (i.gameObject.name == "PoisonParticles")
+                poisonParticles = i;
+        }
+    }
+
+    public void FindHealthBar()
+    {
         //Find health bar
         if (YourHeroTeam.heroNames[0] + "(Clone)" == name)
         {
@@ -106,27 +138,14 @@ public class Hero : MonoBehaviour
             healthBar.maxValue = health;
             game = true;
         }
-        mainAttackParticles = null;
-        ability1Particles = null;
-        ability2Particles = null;
-        ParticleSystem[] p = gameObject.GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem i in p)
-        {
-            if (i.gameObject.name == "MainAttackParticles")
-                mainAttackParticles = i;
-            else if (i.gameObject.name == "Ability1Particles")
-                ability1Particles = i;
-            else if (i.gameObject.name == "Ability2Particles")
-                ability2Particles = i;
-            else if (i.gameObject.name == "EntangledParticles")
-                entangledParticles = i;
-            else if (i.gameObject.name == "DebuffParticles")
-                debuffParticles = i;
-            else if (i.gameObject.name == "SlownessParticles")
-                slownessParticles = i;
-            else if (i.gameObject.name == "PoisonParticles")
-                poisonParticles = i;
-        }
+    }
+
+    [PunRPC]
+    void DeathRPC()
+    {
+        SpawnGrid.cells[GetComponent<MoveHero>().GetX(), GetComponent<MoveHero>().GetZ()].tag = "Cell";
+        GetComponent<Animator>().SetBool("Death", true);
+        deathAudio.Play();
     }
 
     void Update()
@@ -134,10 +153,8 @@ public class Hero : MonoBehaviour
         //Death
         if(health <= 0)
         {
-            SpawnGrid.cells[GetComponent<MoveHero>().GetX(), GetComponent<MoveHero>().GetZ()].tag = "Cell";
-            GetComponent<Animator>().SetBool("Death", true);
-            deathAudio.Play();
-            StartCoroutine(Death());
+            photonView.RPC("DeathRPC", RpcTarget.All);
+            if (photonView.IsMine) StartCoroutine(Death());
         }
     }
 
@@ -145,15 +162,19 @@ public class Hero : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSeconds(2.0f);
-        Destroy(gameObject);
+        if (NetworkManager.firstPlayer)
+            PlaceHeroButtons.player1DeadHeroes++;
+        else
+            PlaceHeroButtons.player2DeadHeroes++;
+        PhotonNetwork.Destroy(gameObject);
     }
 
     //Update healthbar
     void FixedUpdate()
     {
-        if (game)
+        if (game && health != healthBar.value)
         {
-            if (health > healthBar.maxValue) health =(int) healthBar.maxValue;
+            if (health > healthBar.maxValue) health = (int) healthBar.maxValue;
             healthBar.value = health;
         }
     }
@@ -175,52 +196,61 @@ public class Hero : MonoBehaviour
     //Main attack
     public void MainAttack()
     {
-        if (!stun)
+        if (!stun && PlaceHero.gameBegun && !MoveHero.performing)
         {
-            ReadyForAttack(0);
-            FindEnemies(mainAttackRange, true, false);
+            if ((MoveHero.player1Move && NetworkManager.firstPlayer) || (!MoveHero.player1Move && !NetworkManager.firstPlayer))
+            {
+                ReadyForAttack(0);
+                FindEnemies(mainAttackRange, true, false);
+            }
         }
     }
 
     //Ability1
     public void Ability1()
     {
-        if (!stun)
+        if (!stun && PlaceHero.gameBegun && !MoveHero.performing && ability1C == ability1Cooldown)
         {
-            ReadyForAttack(1);
-            if (ability1Range > 0)
+            if ((MoveHero.player1Move && NetworkManager.firstPlayer) || (!MoveHero.player1Move && !NetworkManager.firstPlayer))
             {
-                for(int i = 0; i < ability1Effects.Length; i++)
-                    if (ability1Effects[i] == "Heal" || ability1Effects[i] == "Totem")
-                    {
-                        FindEnemies(ability1Range, isTargetingAbility1, true);
-                        return;
-                    }
-                FindEnemies(ability1Range, isTargetingAbility1, false);
+                ReadyForAttack(1);
+                if (ability1Range > 0)
+                {
+                    for (int i = 0; i < ability1Effects.Length; i++)
+                        if (ability1Effects[i] == "Heal" || ability1Effects[i] == "Totem")
+                        {
+                            FindEnemies(ability1Range, isTargetingAbility1, true);
+                            return;
+                        }
+                    FindEnemies(ability1Range, isTargetingAbility1, false);
+                }
+                else
+                    ZeroRangeAbility(true);
             }
-            else
-                ZeroRangeAbility(true);
         }
     }
 
     //Ability2
     public void Ability2()
     {
-        if (!ability2Passive && !stun)
+        if (!ability2Passive && !stun && PlaceHero.gameBegun && !MoveHero.performing && ability2C == ability2Cooldown)
         {
-            ReadyForAttack(2);
-            if (ability2Range > 0)
+            if ((MoveHero.player1Move && NetworkManager.firstPlayer) || (!MoveHero.player1Move && !NetworkManager.firstPlayer))
             {
-                for (int i = 0; i < ability2Effects.Length; i++)
-                    if (ability2Effects[i] == "Heal" || ability2Effects[i] == "Totem")
-                    {
-                        FindEnemies(ability2Range, isTargetingAbility2, true);
-                        return;
-                    }
-                FindEnemies(ability2Range, isTargetingAbility2, false);
+                ReadyForAttack(2);
+                if (ability2Range > 0)
+                {
+                    for (int i = 0; i < ability2Effects.Length; i++)
+                        if (ability2Effects[i] == "Heal" || ability2Effects[i] == "Totem")
+                        {
+                            FindEnemies(ability2Range, isTargetingAbility2, true);
+                            return;
+                        }
+                    FindEnemies(ability2Range, isTargetingAbility2, false);
+                }
+                else
+                    ZeroRangeAbility(true);
             }
-            else
-                ZeroRangeAbility(true);
         }
     }
 
@@ -233,21 +263,44 @@ public class Hero : MonoBehaviour
             {
                 if (isTargeting)
                 {
-                    if (isHeal)
+                    if (NetworkManager.firstPlayer)
                     {
-                        if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                        if (isHeal)
                         {
-                            if (i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
-                            { }
-                            else
+                            if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                            {
+                                if (i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                                { }
+                                else
+                                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                            }
+                        }
+                        else
+                        {
+                            if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                            {
                                 SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                            }
                         }
                     }
                     else
                     {
-                        if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                        if (isHeal)
                         {
-                            SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                            if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                            {
+                                if (i == GetComponent<MoveHero>().GetX() && j == GetComponent<MoveHero>().GetZ())
+                                { }
+                                else
+                                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                            }
+                        }
+                        else
+                        {
+                            if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                            {
+                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                            }
                         }
                     }
                 }
@@ -296,7 +349,11 @@ public class Hero : MonoBehaviour
             switch (ability1Effects[i])
             {
                 case "Area":
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] enemies;
+                    if (MoveHero.player1Move)
+                        enemies = GameObject.FindGameObjectsWithTag("Player2");
+                    else
+                        enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
                         if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - GetComponent<MoveHero>().GetX()) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - GetComponent<MoveHero>().GetZ())) == 1)
                         {
@@ -336,6 +393,8 @@ public class Hero : MonoBehaviour
                     break;
             }
         }
+        yield return new WaitForSeconds(2.0f);
+        GetComponent<PhotonView>().RPC("ChangeTurn", RpcTarget.All);
         PlaceHero.heroIsSelected = false;
         PlaceHero.heroSelected = null;
     }
@@ -357,7 +416,11 @@ public class Hero : MonoBehaviour
             switch (ability2Effects[i])
             {
                 case "Area":
-                    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                    GameObject[] enemies;
+                    if (MoveHero.player1Move)
+                        enemies = GameObject.FindGameObjectsWithTag("Player2");
+                    else
+                        enemies = GameObject.FindGameObjectsWithTag("Player");
                     for (int j = 0; j < enemies.Length; j++)
                         if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - GetComponent<MoveHero>().GetX()) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - GetComponent<MoveHero>().GetZ())) == 1)
                         {
@@ -397,18 +460,188 @@ public class Hero : MonoBehaviour
         PlaceHero.heroSelected = null;
     }
 
+    [PunRPC]
+    void Ability1RPC()
+    {
+        ability1C = 0;
+        GetComponent<Animator>().SetTrigger("Ability1");
+        StartCoroutine(StartAbility1());
+    }
+
+    [PunRPC]
+    void Ability2RPC()
+    {
+        ability2C = 0;
+        GetComponent<Animator>().SetTrigger("Ability2");
+        StartCoroutine(StartAbility2());
+    }
+
+    IEnumerator ChangeTurnAfterAbility()
+    {
+        yield return new WaitForSeconds(3.0f);
+        GetComponent<PhotonView>().RPC("ChangeTurn", RpcTarget.All);
+    }
+
     //For zero range abilities
     void ZeroRangeAbility(bool isAbility1)
     {
+        photonView.RPC("ChangePerforming", RpcTarget.All);
         if (abilityType == 1)
         {
-            GetComponent<Animator>().SetTrigger("Ability1");
-            StartCoroutine(StartAbility1());            
+            photonView.RPC("Ability1RPC", RpcTarget.All);
         }
         else if (abilityType == 2)
         {
-            GetComponent<Animator>().SetTrigger("Ability2");
-            StartCoroutine(StartAbility2());
+            photonView.RPC("Ability2RPC", RpcTarget.All);
+        }
+        StartCoroutine(ChangeTurnAfterAbility());
+    }
+
+    //Reduce cooldowns by 1
+    void Cooldowns()
+    {
+        //Abilities
+        if (ability1C != ability1Cooldown)
+        {
+            ability1C++;
+        }
+        if (ability1C == ability1Cooldown)
+        {
+
+        }
+        if (!ability2Passive)
+        {
+            if (ability2C != ability2Cooldown)
+            {
+                ability2C++;
+            }
+            if (ability2C == ability2Cooldown)
+            {
+
+            }
+        }
+        //Evasiveness
+        if (evasivenessDuration != -1)
+        {
+            evasivenessDuration--;
+            if (evasivenessDuration == -1 && gameObject.name != "Sent(Clone)")
+            {
+                evasiveness = false;
+                if (gameObject.name == "TommyApe(Clone)")
+                    ability1Particles.Stop();
+            }
+        }
+        //Stun
+        if (stunDuration != -1)
+        {
+            stunDuration--;
+            if (stunDuration == -1)
+            {
+                stun = false;
+                entangledParticles.Stop();
+            }
+        }
+        //Poison
+        if (poisonDuration != -1)
+        {
+            poisonDuration--;
+            if (poisonDuration == -1)
+            {
+                poisoned = false;
+                poisonParticles.Stop();
+            }
+            else
+                health -= 10;
+        }
+        //Slowness
+        if (slowDuration != -1)
+        {
+            slowDuration--;
+            if (slowDuration == -1)
+            {
+                slow = false;
+                slownessParticles.Stop();
+            }
+        }
+        //Shield
+        if (shieldDuration != -1)
+        {
+            shieldDuration--;
+            if (shieldDuration == -1)
+            {
+                shield = 0;
+                if (gameObject.name == "Ohm(Clone)" || gameObject.name == "Xavier(Clone)")
+                    ability2Particles.Stop();
+            }
+        }
+        //Buff
+        if (buffDuration != -1)
+        {
+            buffDuration--;
+            if (buffDuration == -1)
+            {
+                buff = 0;
+                if (gameObject.name == "Hor(Clone)" || gameObject.name == "Z(Clone)")
+                    ability2Particles.Stop();
+            }
+        }
+        //Debuff
+        if (debuffDuration != -1)
+        {
+            debuffDuration--;
+            if (debuffDuration == -1)
+            {
+                debuff = 0;
+                debuffParticles.Stop();
+            }
+        }
+        //Movement
+        if (movementDuration != -1)
+        {
+            movementDuration--;
+            if (movementDuration == -1)
+                movement = 0;
+        }
+}
+
+    [PunRPC]
+    void ChangeTurn()
+    {
+        MoveHero.player1Move = !MoveHero.player1Move;
+        MoveHero.performing = !MoveHero.performing;
+        if (MoveHero.player1Move)
+        {
+            if (NetworkManager.firstPlayer)
+            {
+                GameObject[] allies = GameObject.FindGameObjectsWithTag("Player");
+                for(int i = 0; i < allies.Length; i++)
+                    allies[i].GetComponent<Hero>().Cooldowns();
+                SwitchCamera.moveText.GetComponent<Text>().text = "Your move";
+            }
+            else
+            {
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                for (int i = 0; i < enemies.Length; i++)
+                    enemies[i].GetComponent<Hero>().Cooldowns();
+                SwitchCamera.moveText.GetComponent<Text>().text = "Opponent's move";
+            }
+        }
+        else
+        {
+            if (!NetworkManager.firstPlayer)
+            {
+                GameObject[] allies = GameObject.FindGameObjectsWithTag("Player2");
+                for (int i = 0; i < allies.Length; i++)
+                    allies[i].GetComponent<Hero>().Cooldowns();
+                SwitchCamera.moveText.GetComponent<Text>().text = "Your move";
+            }
+            else
+            {
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player2");
+                for (int i = 0; i < enemies.Length; i++)
+                    enemies[i].GetComponent<Hero>().Cooldowns();
+                SwitchCamera.moveText.GetComponent<Text>().text = "Opponent's move";
+            }
         }
     }
 }

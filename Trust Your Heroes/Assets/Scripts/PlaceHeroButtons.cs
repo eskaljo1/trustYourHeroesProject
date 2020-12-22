@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 //Used for the hero buttons that spawn each hero at the beginning of the game
 
 public class PlaceHeroButtons : MonoBehaviour
 {
+    //Dead heroes
+    public static int player1DeadHeroes = 0;
+    public static int player2DeadHeroes = 0;
+
     //Static variables
     public static int heroSelected; //Remember what button was pushed, used for disabling buttons
     public static bool spawned = false; //true if spawn happened, used for disabling buttons
     public static int heroesPlaced = 0; //Number of heroes placed
+    public static bool ready1 = false; //When Ready button is clicked the game starts
+    public static bool ready2 = false;
 
     public GameObject exitMenu;
 
@@ -39,6 +46,10 @@ public class PlaceHeroButtons : MonoBehaviour
     public Button hero4Button2;
     public Button hero4Button3;
 
+    //Panels
+    public GameObject winPanel;
+    public GameObject losePanel;
+
     void Start()
     {
         //Set icons of chosen heroes and abilities
@@ -54,10 +65,62 @@ public class PlaceHeroButtons : MonoBehaviour
         heroesPlaced = 0;
         spawned = false;
         heroSelected = -1;
+        ready1 = false;
+        ready2 = false;
+        player1DeadHeroes = 0;
+        player2DeadHeroes = 0;
     }
 
     void Update()
     {
+        if (player1DeadHeroes != 4 && player2DeadHeroes != 4)
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+                if (NetworkManager.firstPlayer)
+                    photonView.RPC("Player1Wins", RpcTarget.All);
+                else
+                    photonView.RPC("Player2Wins", RpcTarget.All);
+            }
+        if (player1DeadHeroes == 4)
+        {
+            PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+            photonView.RPC("Player2Wins", RpcTarget.All);
+        }
+        else if (player2DeadHeroes == 4)
+        {
+            PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+            photonView.RPC("Player1Wins", RpcTarget.All);
+        }
+        if(ready1 && ready2)
+        {
+            ready1 = false;
+            ready2 = false;
+            PlaceHero.gameBegun = true;
+            SwitchCamera.moveText.SetActive(true);
+            if (MoveHero.player1Move)
+            {
+                if (NetworkManager.firstPlayer)
+                {
+                    SwitchCamera.moveText.GetComponent<Text>().text = "Your move";
+                }
+                else
+                {
+                    SwitchCamera.moveText.GetComponent<Text>().text = "Opponent's move";
+                }
+            }
+            else
+            {
+                if (!NetworkManager.firstPlayer)
+                {
+                    SwitchCamera.moveText.GetComponent<Text>().text = "Your move";
+                }
+                else
+                {
+                    SwitchCamera.moveText.GetComponent<Text>().text = "Opponent's move";
+                }
+            }
+        }
         if (spawned) //If spawn happened disable the button of the spawned hero
         {
             spawned = false;
@@ -139,10 +202,59 @@ public class PlaceHeroButtons : MonoBehaviour
         PlaceHero.heroIsSelected = true;
         heroSelected = heroNumber;
         //Light up every first row cell
-        GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
-        for (int i = 0; i < firstRowCells.Length; i++)
+        if (NetworkManager.firstPlayer)
         {
-            firstRowCells[i].GetComponentInChildren<Light>().intensity = 15;
+            GameObject[] firstRowCells = GameObject.FindGameObjectsWithTag("FirstRowCell");
+            for (int i = 0; i < firstRowCells.Length; i++)
+            {
+                firstRowCells[i].GetComponentInChildren<Light>().intensity = 15;
+            }
+        }
+        else
+        {
+            GameObject[] lastRowCells = GameObject.FindGameObjectsWithTag("LastRowCell");
+            for (int i = 0; i < lastRowCells.Length; i++)
+            {
+                lastRowCells[i].GetComponentInChildren<Light>().intensity = 15;
+            }
+        }
+    }
+
+    [PunRPC]
+    void Ready1Set()
+    {
+        ready1 = true;
+    }
+
+    [PunRPC]
+    void Ready2Set()
+    {
+        ready2 = true;
+    }
+
+    [PunRPC]
+    void Player1Wins()
+    {
+        if(NetworkManager.firstPlayer)
+        {
+            winPanel.SetActive(true);
+        }
+        else
+        {
+            losePanel.SetActive(true);
+        }
+    }
+
+    [PunRPC]
+    void Player2Wins()
+    {
+        if (!NetworkManager.firstPlayer)
+        {
+            winPanel.SetActive(true);
+        }
+        else
+        {
+            losePanel.SetActive(true);
         }
     }
 
@@ -151,7 +263,11 @@ public class PlaceHeroButtons : MonoBehaviour
         if (heroesPlaced == 4)
         {
             PlaceHero.heroIsSelected = false;
-            PlaceHero.gameBegun = true;
+            PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
+            if (NetworkManager.firstPlayer)
+                photonView.RPC("Ready1Set", RpcTarget.All);
+            else
+                photonView.RPC("Ready2Set", RpcTarget.All);
             readyButton.SetActive(false);
             //Turn off lights if hero is selected
             for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
@@ -180,10 +296,6 @@ public class PlaceHeroButtons : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene("MainMenuScene");
-        YourHeroTeam.heroNames[0] = "";
-        YourHeroTeam.heroNames[1] = "";
-        YourHeroTeam.heroNames[2] = "";
-        YourHeroTeam.heroNames[3] = "";
+        PhotonNetwork.LeaveRoom();
     }
 }

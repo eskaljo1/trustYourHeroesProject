@@ -16940,6 +16940,8 @@ GameObject:
   - component: {fileID: 3412894681295190595}
   - component: {fileID: 8945831306235393734}
   - component: {fileID: 5471212677656310957}
+  - component: {fileID: -3274300006067861415}
+  - component: {fileID: 40798664559488256}
   m_Layer: 0
   m_Name: Nazz
   m_TagString: Player
@@ -17031,6 +17033,8 @@ MonoBehaviour:
   ability2Range: 1
   ability1Cooldown: 0
   ability2Cooldown: 0
+  ability1C: 0
+  ability2C: 0
   mainAttackEffects:
   - Direct
   ability1Effects:
@@ -17081,6 +17085,7 @@ MonoBehaviour:
   slownessParticles: {fileID: 0}
   debuffParticles: {fileID: 0}
   poisonParticles: {fileID: 0}
+  photonView: {fileID: 0}
 --- !u!82 &3517953168708052051
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17469,6 +17474,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3274300006067861415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614249880419315527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 1
+  ObservedComponents:
+  - {fileID: 40798664559488256}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &40798664559488256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614249880419315527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 0
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 4
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 3
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &7754002480237894378
 GameObject:
   m_ObjectHideFlags: 0

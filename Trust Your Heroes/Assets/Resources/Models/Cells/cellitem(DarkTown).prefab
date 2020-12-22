@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 6920658776736574023}
   - component: {fileID: 105105028535223668}
   - component: {fileID: 5274565917812579890}
+  - component: {fileID: 3232555012165066482}
   m_Layer: 0
   m_Name: cellitem(DarkTown)
   m_TagString: Cell
@@ -326,6 +327,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7834d58be1e0f17439d6ef8b04edb446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+--- !u!114 &3232555012165066482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5135723256958064261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 1
+  ObservedComponents: []
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6307680090330117236
 GameObject:
   m_ObjectHideFlags: 0

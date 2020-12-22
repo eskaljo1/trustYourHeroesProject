@@ -12,6 +12,8 @@ public class SwitchCamera : MonoBehaviour
     public Camera cam4;
     public Canvas canvas;
 
+    public static GameObject moveText;
+
     private int active = 1;
 
     void Start()
@@ -19,6 +21,13 @@ public class SwitchCamera : MonoBehaviour
         cam2.enabled = false;
         cam3.enabled = false;
         cam4.enabled = false;
+        if(!NetworkManager.firstPlayer)
+        {
+            Switch(false);
+            Switch(false);
+        }
+        moveText = GameObject.FindGameObjectWithTag("Text");
+        moveText.SetActive(false);
     }
 
     void Update()
