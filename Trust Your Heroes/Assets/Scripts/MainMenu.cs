@@ -75,6 +75,8 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        networkManager = GameObject.FindGameObjectWithTag("Network");
+
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);

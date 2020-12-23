@@ -104,11 +104,11 @@ public class SpawnGrid : MonoBehaviour
             case 2:
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[3, 3].GetComponent<PhotonView>().ViewID, "Obstacle");
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[3, 4].GetComponent<PhotonView>().ViewID, "Obstacle");
-                photonView.RPC("SetCellTag", RpcTarget.All, cells[4, 4].GetComponent<PhotonView>().ViewID, "Obstacle");
+                photonView.RPC("SetCellTag", RpcTarget.All, cells[4, 3].GetComponent<PhotonView>().ViewID, "Obstacle");
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[4, 4].GetComponent<PhotonView>().ViewID, "Obstacle");
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[1, 3].GetComponent<PhotonView>().ViewID, "Obstacle");
-                photonView.RPC("SetCellTag", RpcTarget.All, cells[1, 3].GetComponent<PhotonView>().ViewID, "Obstacle");
-                photonView.RPC("SetCellTag", RpcTarget.All, cells[6, 4].GetComponent<PhotonView>().ViewID, "Obstacle");
+                photonView.RPC("SetCellTag", RpcTarget.All, cells[1, 4].GetComponent<PhotonView>().ViewID, "Obstacle");
+                photonView.RPC("SetCellTag", RpcTarget.All, cells[6, 3].GetComponent<PhotonView>().ViewID, "Obstacle");
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[6, 4].GetComponent<PhotonView>().ViewID, "Obstacle");
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[4, 0].GetComponent<PhotonView>().ViewID, "Obstacle");
                 photonView.RPC("SetCellTag", RpcTarget.All, cells[3, 7].GetComponent<PhotonView>().ViewID, "Obstacle");

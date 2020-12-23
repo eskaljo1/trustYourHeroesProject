@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
@@ -16,10 +15,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Start()
     {
         TriesToConnectToMaster = false;
+        TriesToConnectToRoom = false;
+        DontDestroyOnLoad(gameObject);
         if (!PhotonNetwork.IsConnected)
         {
-            DontDestroyOnLoad(gameObject);
-            TriesToConnectToRoom = false;
             PhotonNetwork.OfflineMode = false;
             PhotonNetwork.GameVersion = "v1";
             PhotonNetwork.AutomaticallySyncScene = true;
@@ -52,6 +51,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         YourHeroTeam.heroNames[3] = "";
         SceneManager.LoadScene("MainMenuScene");
         Debug.Log("Left room");
+        Destroy(gameObject);
     }
 
     public void OnLeave()

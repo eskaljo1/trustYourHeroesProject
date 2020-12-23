@@ -50,8 +50,11 @@ public class PlaceHeroButtons : MonoBehaviour
     public GameObject winPanel;
     public GameObject losePanel;
 
+    private bool gameEnded;
+
     void Start()
     {
+        gameEnded = false;
         //Set icons of chosen heroes and abilities
         SetHeroIcon(button1.gameObject, 0);
         SetAbilityButtons(hero1Button1.gameObject, hero1Button2.gameObject, hero1Button3.gameObject, 0);
@@ -73,9 +76,10 @@ public class PlaceHeroButtons : MonoBehaviour
 
     void Update()
     {
-        if (player1DeadHeroes != 4 && player2DeadHeroes != 4)
+        if (!gameEnded)
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
+                gameEnded = true;
                 PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
                 if (NetworkManager.firstPlayer)
                     photonView.RPC("Player1Wins", RpcTarget.All);
@@ -84,11 +88,15 @@ public class PlaceHeroButtons : MonoBehaviour
             }
         if (player1DeadHeroes == 4)
         {
+            gameEnded = true;
+            player1DeadHeroes++;
             PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
             photonView.RPC("Player2Wins", RpcTarget.All);
         }
         else if (player2DeadHeroes == 4)
         {
+            gameEnded = true;
+            player2DeadHeroes++;
             PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
             photonView.RPC("Player1Wins", RpcTarget.All);
         }
@@ -296,6 +304,7 @@ public class PlaceHeroButtons : MonoBehaviour
 
     public void Exit()
     {
+        gameEnded = true;
         PhotonNetwork.LeaveRoom();
     }
 }
