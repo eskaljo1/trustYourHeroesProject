@@ -14945,7 +14945,7 @@ MonoBehaviour:
     Who does she have her sights on today?
   firstAbility: Dmg is done if enemy enters selected tile, ability is active until
     dmg is done, can be cancelled
-  secondAbility: Does dmg adjacent tiles as well
+  secondAbility: Does dmg to adjacent tiles as well
   mainAttackAudio: {fileID: 6978743465052917668}
   ability1Audio: {fileID: 6978743465052917668}
   ability2Audio: {fileID: 6978743465052917668}

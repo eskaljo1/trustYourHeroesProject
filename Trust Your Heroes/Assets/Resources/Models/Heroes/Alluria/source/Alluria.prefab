@@ -27927,7 +27927,7 @@ MonoBehaviour:
     there are not many who are equal to her in power. Using her magic, Alluria expands
     her land, freezing everything in her path.
   firstAbility: Enemy receives -1 movement for 2 turns
-  secondAbility: Does dmg adjacent tiles as well, enemies receive -1 movement for
+  secondAbility: Does dmg to adjacent tiles as well, enemies receive -1 movement for
     2 turns
   mainAttackAudio: {fileID: 3685305129302572773}
   ability1Audio: {fileID: 3074632545453298794}
