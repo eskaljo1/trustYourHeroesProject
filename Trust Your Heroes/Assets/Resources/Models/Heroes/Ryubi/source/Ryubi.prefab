@@ -14906,8 +14906,8 @@ MonoBehaviour:
   mainAttackRange: 3
   ability1Range: 5
   ability2Range: 3
-  ability1Cooldown: 0
-  ability2Cooldown: 0
+  ability1Cooldown: 3
+  ability2Cooldown: 8
   ability1C: 0
   ability2C: 0
   mainAttackEffects:
@@ -14957,6 +14957,8 @@ MonoBehaviour:
   slownessParticles: {fileID: 0}
   debuffParticles: {fileID: 0}
   poisonParticles: {fileID: 0}
+  ability1CooldownCounter: {fileID: 0}
+  ability2CooldownCounter: {fileID: 0}
   photonView: {fileID: 0}
 --- !u!82 &678339052198385494
 AudioSource:

@@ -19,6 +19,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(gameObject);
         if (!PhotonNetwork.IsConnected)
         {
+            PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "eu";
             PhotonNetwork.OfflineMode = false;
             PhotonNetwork.GameVersion = "v1";
             PhotonNetwork.AutomaticallySyncScene = true;

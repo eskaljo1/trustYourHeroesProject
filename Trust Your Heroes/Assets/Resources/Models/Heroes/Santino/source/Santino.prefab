@@ -5462,8 +5462,8 @@ MonoBehaviour:
   mainAttackRange: 1
   ability1Range: 2
   ability2Range: 2
-  ability1Cooldown: 0
-  ability2Cooldown: 0
+  ability1Cooldown: 7
+  ability2Cooldown: 9
   ability1C: 0
   ability2C: 0
   mainAttackEffects:

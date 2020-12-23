@@ -77,6 +77,9 @@ public class Hero : MonoBehaviour
     public ParticleSystem slownessParticles;
     public ParticleSystem debuffParticles;
     public ParticleSystem poisonParticles;
+    
+    public Text ability1CooldownCounter;
+    public Text ability2CooldownCounter;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
 
@@ -86,6 +89,9 @@ public class Hero : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
         abilityType = -1;
+
+        ability1C = ability1Cooldown;
+        ability2C = ability2Cooldown;
 
         mainAttackParticles = null;
         ability1Particles = null;
@@ -109,7 +115,7 @@ public class Hero : MonoBehaviour
                 poisonParticles = i;
         }
     }
-
+    
     public void FindHealthBar()
     {
         //Find health bar
@@ -488,10 +494,12 @@ public class Hero : MonoBehaviour
         photonView.RPC("ChangePerforming", RpcTarget.All);
         if (abilityType == 1)
         {
+            ability1C = 0;
             photonView.RPC("Ability1RPC", RpcTarget.All);
         }
         else if (abilityType == 2)
         {
+            ability2C = 0;
             photonView.RPC("Ability2RPC", RpcTarget.All);
         }
         StartCoroutine(ChangeTurnAfterAbility());
@@ -501,23 +509,28 @@ public class Hero : MonoBehaviour
     void Cooldowns()
     {
         //Abilities
-        if (ability1C != ability1Cooldown)
+        if (photonView.IsMine)
         {
-            ability1C++;
-        }
-        if (ability1C == ability1Cooldown)
-        {
-
-        }
-        if (!ability2Passive)
-        {
-            if (ability2C != ability2Cooldown)
+            if (ability1C != ability1Cooldown)
             {
-                ability2C++;
+                ability1C++;
+                ability1CooldownCounter.text = (ability1Cooldown - ability1C).ToString();
             }
-            if (ability2C == ability2Cooldown)
+            if (ability1C == ability1Cooldown)
             {
-
+                ability1CooldownCounter.text = "";
+            }
+            if (!ability2Passive)
+            {
+                if (ability2C != ability2Cooldown)
+                {
+                    ability2C++;
+                    ability2CooldownCounter.text = (ability2Cooldown - ability2C).ToString();
+                }
+                if (ability2C == ability2Cooldown)
+                {
+                    ability2CooldownCounter.text = "";
+                }
             }
         }
         //Evasiveness

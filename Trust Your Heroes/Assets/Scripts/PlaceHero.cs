@@ -190,13 +190,15 @@ public class PlaceHero : MonoBehaviour
                     }
                     else if (Hero.abilityType == 1)
                     {
-                        if(enemy != null)
+                        heroSelected.GetComponent<Hero>().ability1C = 0;
+                        if (enemy != null)
                             photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
                         else
                             photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13);
                     }
                     else if (Hero.abilityType == 2)
                     {
+                        heroSelected.GetComponent<Hero>().ability2C = 0;
                         if (enemy != null)
                             photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
                         else
