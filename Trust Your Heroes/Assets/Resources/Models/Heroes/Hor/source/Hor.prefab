@@ -6411,7 +6411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   mainAttackDmg: 20
-  ability1Dmg: 0
+  ability1Dmg: 20
   ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 5
@@ -6423,7 +6423,7 @@ MonoBehaviour:
   mainAttackEffects:
   - Direct
   ability1Effects:
-  - RevealPlus
+  - Area
   ability2Effects:
   - Buff
   ability2Passive: 0
@@ -6455,7 +6455,7 @@ MonoBehaviour:
     so he came down from the heavens in order to convert all the heretics. Travelling
     across the realm, smiting down all those who opose him with divine wrath. The
     Sun is your friend if you respect it, if you don't it might burn you.
-  firstAbility: Reveal selected tile and adjacent tiles
+  firstAbility: Does dmg to adjacent tiles as well
   secondAbility: +100% dmg buff for 3 turns
   mainAttackAudio: {fileID: 2724399014007101684}
   ability1Audio: {fileID: 264282115443725804}

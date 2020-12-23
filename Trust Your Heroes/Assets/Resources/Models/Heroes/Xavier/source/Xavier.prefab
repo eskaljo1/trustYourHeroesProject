@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 80
   mainAttackDmg: 15
-  ability1Dmg: 20
+  ability1Dmg: 30
   ability2Dmg: 0
   mainAttackRange: 1
   ability1Range: 3
@@ -495,7 +495,6 @@ MonoBehaviour:
   ability1Effects:
   - Flare
   - Direct
-  - RevealPlus
   ability2Effects:
   - Shield
   ability2Passive: 0
@@ -527,8 +526,7 @@ MonoBehaviour:
     unknown. He survived using the skills he learned with his tribe, hunting, foraging,
     crafting as well as fighting. He is also extremely fast and agile. However, Xavier
     is a pacifist, never engaging in a battle, unless he is prompted of course.
-  firstAbility: Reveal selected tile and adjacent tiles, dmg is done to enemy on selected
-    tile
+  firstAbility: 
   secondAbility: +50% dmg reduction for 2 turns
   mainAttackAudio: {fileID: 6854655130687048884}
   ability1Audio: {fileID: 2848011374671630739}
