@@ -427,7 +427,16 @@ public class PlaceHero : MonoBehaviour
                     yield return new WaitForSeconds(0.5f);
                     break;
                 case "Totem":
-                    Instantiate(Resources.Load<GameObject>("Models/Heroes/Nazz/Totems/HealTotem/source/HealTotem"), new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                    if (NetworkManager.firstPlayer && MoveHero.player1Move)
+                    {
+                        GameObject totem = PhotonNetwork.Instantiate("Models/Heroes/Nazz/Totems/HealTotem/source/HealTotem", new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                        totem.GetComponent<PhotonView>().RPC("SetTag", RpcTarget.All, true);
+                    }
+                    else if(!NetworkManager.firstPlayer && !MoveHero.player1Move)
+                    {
+                        GameObject totem = PhotonNetwork.Instantiate("Models/Heroes/Nazz/Totems/HealTotem/source/HealTotem", new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                        totem.GetComponent<PhotonView>().RPC("SetTag", RpcTarget.All, false);
+                    }
                     break;
                 case "Heal":
                     yield return new WaitForSeconds(0.5f);
@@ -608,7 +617,16 @@ public class PlaceHero : MonoBehaviour
                     }
                     break;
                 case "Totem":
-                    Instantiate(Resources.Load<GameObject>("Models/Heroes/Nazz/Totems/TrapTotem/source/TrapTotem"), new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                    if (NetworkManager.firstPlayer && MoveHero.player1Move)
+                    {
+                        GameObject totem = PhotonNetwork.Instantiate("Models/Heroes/Nazz/Totems/TrapTotem/source/TrapTotem", new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                        totem.GetComponent<PhotonView>().RPC("SetTag", RpcTarget.All, true);
+                    }
+                    else if (!NetworkManager.firstPlayer && !MoveHero.player1Move)
+                    {
+                        GameObject totem = PhotonNetwork.Instantiate("Models/Heroes/Nazz/Totems/TrapTotem/source/TrapTotem", new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
+                        totem.GetComponent<PhotonView>().RPC("SetTag", RpcTarget.All, false);
+                    }
                     break;
                 case "Barrage":
                     break;

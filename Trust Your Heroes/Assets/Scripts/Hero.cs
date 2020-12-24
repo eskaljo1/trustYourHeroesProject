@@ -45,6 +45,8 @@ public class Hero : MonoBehaviour
     public int debuffDuration = 0;
     public int movement = 0;
     public int movementDuration = 0;
+    public bool taunt = false;
+    public int tauntDuration = 0;
 
     //Targets enemy or cell
     public bool isTargetingAbility1 = true;
@@ -263,6 +265,36 @@ public class Hero : MonoBehaviour
     //Find enemies and light up available cells
     void FindEnemies(int range, bool isTargeting, bool isHeal)
     {
+        bool taunting = false;
+        int xTaunt = -1;
+        int zTaunt = -1;
+        if (isTargeting && !isHeal)
+        {
+            if(NetworkManager.firstPlayer)
+            {
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player2");
+                for (int e = 0; e < enemies.Length; e++)
+                    if (enemies[e].GetComponent<Hero>().taunt)
+                    {
+                        taunting = true;
+                        xTaunt = enemies[e].GetComponent<MoveHero>().GetX();
+                        zTaunt = enemies[e].GetComponent<MoveHero>().GetZ();
+                        break;
+                    }
+            }
+            else
+            {
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+                for (int e = 0; e < enemies.Length; e++)
+                    if (enemies[e].GetComponent<Hero>().taunt)
+                    {
+                        taunting = true;
+                        xTaunt = enemies[e].GetComponent<MoveHero>().GetX();
+                        zTaunt = enemies[e].GetComponent<MoveHero>().GetZ();
+                        break;
+                    }
+            }
+        }
         for (int i = 0; i < SpawnGrid.cells.GetLength(0); i++)
         {
             for (int j = 0; j < SpawnGrid.cells.GetLength(1); j++)
@@ -283,9 +315,22 @@ public class Hero : MonoBehaviour
                         }
                         else
                         {
-                            if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                            if (taunting)
                             {
-                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                                if (xTaunt == i && zTaunt == j)
+                                {
+                                    if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                                    {
+                                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (SpawnGrid.cells[i, j].tag == "EnemyCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                                {
+                                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                                }
                             }
                         }
                     }
@@ -303,9 +348,22 @@ public class Hero : MonoBehaviour
                         }
                         else
                         {
-                            if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                            if (taunting)
                             {
-                                SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                                if (xTaunt == i && zTaunt == j)
+                                {
+                                    if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                                    {
+                                        SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (SpawnGrid.cells[i, j].tag == "OccupiedCell" && (Mathf.Abs(GetComponent<MoveHero>().GetX() - i) + Mathf.Abs(GetComponent<MoveHero>().GetZ() - j)) <= range)
+                                {
+                                    SpawnGrid.cells[i, j].GetComponentInChildren<Light>().intensity = 15;
+                                }
                             }
                         }
                     }
@@ -395,12 +453,11 @@ public class Hero : MonoBehaviour
                     evasivenessDuration = 2;
                     break;
                 case "Taunt":
-
+                    taunt = true;
+                    tauntDuration = 2;
                     break;
             }
         }
-        yield return new WaitForSeconds(2.0f);
-        GetComponent<PhotonView>().RPC("ChangeTurn", RpcTarget.All);
         PlaceHero.heroIsSelected = false;
         PlaceHero.heroSelected = null;
     }
@@ -615,7 +672,18 @@ public class Hero : MonoBehaviour
             if (movementDuration == -1)
                 movement = 0;
         }
-}
+        //Taunt
+        if (tauntDuration != -1)
+        {
+            tauntDuration--;
+            if (tauntDuration == -1)
+            {
+                taunt = false;
+                if(gameObject.name == "Ohm(Clone)")
+                    ability1Particles.Stop();
+            }
+        }
+    }
 
     [PunRPC]
     void ChangeTurn()

@@ -5490,6 +5490,8 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
+  taunt: 0
+  tauntDuration: 0
   isTargetingAbility1: 1
   isTargetingAbility2: 1
   mainAttackName: Forest staff
@@ -5514,6 +5516,8 @@ MonoBehaviour:
   slownessParticles: {fileID: 0}
   debuffParticles: {fileID: 0}
   poisonParticles: {fileID: 0}
+  ability1CooldownCounter: {fileID: 0}
+  ability2CooldownCounter: {fileID: 0}
   photonView: {fileID: 0}
 --- !u!82 &2367213956502848052
 AudioSource:

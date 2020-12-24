@@ -80,7 +80,7 @@ public class MainMenu : MonoBehaviour
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SoundEffectsVolume", 1.0f);
-
+        mapNumber = 1;
         color = mainAttackIcon.color;
         colorWithAlpha = color;
         colorWithAlpha.a = 255.0f;

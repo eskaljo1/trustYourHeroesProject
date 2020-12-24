@@ -514,7 +514,9 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
-  isTargetingAbility1: 0
+  taunt: 0
+  tauntDuration: 0
+  isTargetingAbility1: 1
   isTargetingAbility2: 0
   mainAttackName: Bo staff
   ability1Name: Flare

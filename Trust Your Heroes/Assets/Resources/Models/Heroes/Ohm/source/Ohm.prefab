@@ -32861,7 +32861,7 @@ MonoBehaviour:
   mainAttackRange: 1
   ability1Range: 0
   ability2Range: 0
-  ability1Cooldown: 0
+  ability1Cooldown: 9
   ability2Cooldown: 6
   ability1C: 0
   ability2C: 0
@@ -32888,6 +32888,8 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
+  taunt: 0
+  tauntDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Steel punch

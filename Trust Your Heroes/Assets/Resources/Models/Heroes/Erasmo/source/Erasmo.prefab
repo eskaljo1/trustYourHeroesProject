@@ -24329,19 +24329,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   mainAttackDmg: 10
-  ability1Dmg: 0
+  ability1Dmg: 30
   ability2Dmg: 30
   mainAttackRange: 1
   ability1Range: 4
   ability2Range: 2
-  ability1Cooldown: 0
+  ability1Cooldown: 6
   ability2Cooldown: 6
   ability1C: 0
   ability2C: 0
   mainAttackEffects:
   - Direct
   ability1Effects:
-  - Reveal
+  - Direct
   ability2Effects:
   - Direct
   - Debuff
@@ -24362,10 +24362,12 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
-  isTargetingAbility1: 0
+  taunt: 0
+  tauntDuration: 0
+  isTargetingAbility1: 1
   isTargetingAbility2: 1
   mainAttackName: Warlock staff
-  ability1Name: Crow
+  ability1Name: Crow's eye
   ability2Name: Forbidden spell
   heroName: Erasmo The Mad
   description: Erasmo is known for his infamous experiments that he conducted on living
@@ -24373,7 +24375,7 @@ MonoBehaviour:
     spells and effects. Eventually he was put on the Soulstein kingdom's wanted list
     as one of the most dangerous people in the land. Always accompanied by his crow
     Karasu, he is looking for new myterious magic that he may use in his arsenal.
-  firstAbility: Reveal 3x3 tiles, selected tile represents the center
+  firstAbility: 
   secondAbility: Enemy receives 50% dmg debuff for 2 turns
   mainAttackAudio: {fileID: 6510637199467363554}
   ability1Audio: {fileID: 176494630795422563}
