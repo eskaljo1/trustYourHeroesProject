@@ -21,16 +21,6 @@ public class MoveHero : MonoBehaviour
     //Erasmo's grass needs to dissapear below
     void Start()
     {
-        //for testing
-        /*if (gameObject.name == "Nazz" && transform.position.x < 0 && transform.position.z > -3.5)
-        {
-            SetCoordinates(0, 1);
-        }
-        if(gameObject.name == "Charlotte" && transform.position.x > 0 && transform.position.z > -3.5)
-        {
-            SetCoordinates(4, 2);
-        }*/
-        //
         performing = false;
         player1Move = true;
         if (name == "Erasmo(Clone)")
@@ -39,6 +29,22 @@ public class MoveHero : MonoBehaviour
 
     void CheckCell(int i, int j, int heroMovement) //Check if cell is available to move to
     {
+        if (NetworkManager.firstPlayer)
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player2");
+            for (int e = 0; e < enemies.Length; e++)
+                if (enemies[e].name == "Creek(Clone)")
+                    if ((Mathf.Abs(x - enemies[e].GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - enemies[e].GetComponent<MoveHero>().GetZ())) == 1)
+                        heroMovement--;
+        }
+        else
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+            for (int e = 0; e < enemies.Length; e++)
+                if (enemies[e].name == "Creek(Clone)")
+                    if ((Mathf.Abs(x - enemies[e].GetComponent<MoveHero>().GetX()) + Mathf.Abs(z - enemies[e].GetComponent<MoveHero>().GetZ())) == 1)
+                        heroMovement--;
+        }
         if (GetComponent<Hero>().slow) heroMovement--;
         if (GetComponent<Hero>().movement != 0) heroMovement += GetComponent<Hero>().movement;
         if (heroMovement < 1) return;

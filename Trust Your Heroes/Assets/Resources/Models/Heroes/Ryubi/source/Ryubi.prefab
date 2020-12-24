@@ -14901,19 +14901,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 80
   mainAttackDmg: 25
-  ability1Dmg: 50
-  ability2Dmg: 20
+  ability1Dmg: 35
+  ability2Dmg: 25
   mainAttackRange: 3
-  ability1Range: 5
-  ability2Range: 3
-  ability1Cooldown: 3
+  ability1Range: 6
+  ability2Range: 4
+  ability1Cooldown: 10
   ability2Cooldown: 8
   ability1C: 0
   ability2C: 0
   mainAttackEffects:
   - Direct
   ability1Effects:
-  - Zone
+  - Direct
   ability2Effects:
   - Area
   ability2Passive: 0
@@ -14933,18 +14933,19 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
-  isTargetingAbility1: 0
+  taunt: 0
+  tauntDuration: 0
+  isTargetingAbility1: 1
   isTargetingAbility2: 0
   mainAttackName: Dark arrow
-  ability1Name: Zone
+  ability1Name: Sharpshooter
   ability2Name: Volley
   heroName: Ryubi The Silent
   description: The most skilled sharpshooter in the realm and beyond. Ryubi empowers
     her arrows with her tribe's dark magic, making them capable of penetrating the
     toughest shields and armor. They say the deadliest predators are the silent ones.
     Who does she have her sights on today?
-  firstAbility: Dmg is done if enemy enters selected tile, ability is active until
-    dmg is done, can be cancelled
+  firstAbility: 
   secondAbility: Does dmg to adjacent tiles as well
   mainAttackAudio: {fileID: 6978743465052917668}
   ability1Audio: {fileID: 6978743465052917668}

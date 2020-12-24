@@ -524,8 +524,6 @@ public class PlaceHero : MonoBehaviour
                     yield return new WaitForSeconds(1.5f);
                     Destroy(flare);
                     break;
-                case "Zone":
-                    break;
             }
         }
         heroIsSelected = false;
