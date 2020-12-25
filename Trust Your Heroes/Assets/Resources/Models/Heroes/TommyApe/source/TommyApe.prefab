@@ -19516,6 +19516,8 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
+  taunt: 0
+  tauntDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Machine gun
@@ -19527,7 +19529,8 @@ MonoBehaviour:
     he turned on his former master, escaping and stealing his prized weapon, a machine
     gun that fires magical bullets. Now, Tommy roams free, adventuring and living
     a life full of mischief.
-  firstAbility: +50% evasiveness for 2 turns
+  firstAbility: +50% evasiveness for direct attacks, +100% for area attacks, for 2
+    turns
   secondAbility: Able to jump over obstacles
   mainAttackAudio: {fileID: 2396458303715328651}
   ability1Audio: {fileID: 3034715203897710542}

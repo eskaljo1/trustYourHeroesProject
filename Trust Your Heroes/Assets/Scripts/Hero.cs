@@ -84,6 +84,7 @@ public class Hero : MonoBehaviour
     public Text ability2CooldownCounter;
     //True if hero isn't spawned in heroes panel or play panel
     private bool game = false;
+    private bool died = false;
 
     public PhotonView photonView;
 
@@ -159,8 +160,9 @@ public class Hero : MonoBehaviour
     void Update()
     {
         //Death
-        if(health <= 0)
+        if(health <= 0 && !died)
         {
+            died = true;
             photonView.RPC("DeathRPC", RpcTarget.All);
             if (photonView.IsMine) StartCoroutine(Death());
         }
@@ -399,7 +401,7 @@ public class Hero : MonoBehaviour
         }
     }
 
-    IEnumerator StartAbility1()
+    IEnumerator StartAbility1(int a)
     {
         yield return new WaitForSeconds(1.0f);
         ability1Audio.Play();
@@ -421,19 +423,11 @@ public class Hero : MonoBehaviour
                     for (int j = 0; j < enemies.Length; j++)
                         if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - GetComponent<MoveHero>().GetX()) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - GetComponent<MoveHero>().GetZ())) == 1)
                         {
-                            bool evade = false;
-                            if (enemies[j].GetComponent<Hero>().evasiveness)
-                            {
-                                int e = Random.Range(0, 2);
-                                if (e == 1)
-                                    evade = true;
-                            }
-                            if (!evade)
+                            if (!enemies[j].GetComponent<Hero>().evasiveness)
                             {
                                 for (int k = 0; k < ability1Effects.Length; k++)
                                     if (ability1Effects[k] == "Entangle")
                                     {
-                                        int a = Random.Range(1, 6);
                                         if (!enemies[j].GetComponent<Hero>().stun && a == 1)
                                         {
                                             enemies[j].GetComponent<Hero>().stun = true;
@@ -487,14 +481,7 @@ public class Hero : MonoBehaviour
                     for (int j = 0; j < enemies.Length; j++)
                         if ((Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetX() - GetComponent<MoveHero>().GetX()) + Mathf.Abs(enemies[j].GetComponent<MoveHero>().GetZ() - GetComponent<MoveHero>().GetZ())) == 1)
                         {
-                            bool evade = false;
-                            if (enemies[j].GetComponent<Hero>().evasiveness)
-                            {
-                                int e = Random.Range(0, 2);
-                                if (e == 1)
-                                    evade = true;
-                            }
-                            if (!evade)
+                            if (!enemies[j].GetComponent<Hero>().evasiveness)
                             {
                                 enemies[j].GetComponent<Animator>().SetTrigger("Hit");
                                 int dmg = (int)(ability2Dmg + (buff / 100.0 * ability2Dmg) - (debuff / 100.0 * ability2Dmg));
@@ -524,11 +511,11 @@ public class Hero : MonoBehaviour
     }
 
     [PunRPC]
-    void Ability1RPC()
+    void Ability1RPC(int a)
     {
         ability1C = 0;
         GetComponent<Animator>().SetTrigger("Ability1");
-        StartCoroutine(StartAbility1());
+        StartCoroutine(StartAbility1(a));
     }
 
     [PunRPC]
@@ -551,8 +538,9 @@ public class Hero : MonoBehaviour
         photonView.RPC("ChangePerforming", RpcTarget.All);
         if (abilityType == 1)
         {
+            int a = Random.Range(1, 6);
             ability1C = 0;
-            photonView.RPC("Ability1RPC", RpcTarget.All);
+            photonView.RPC("Ability1RPC", RpcTarget.All, a);
         }
         else if (abilityType == 2)
         {

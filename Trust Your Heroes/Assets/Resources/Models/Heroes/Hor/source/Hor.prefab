@@ -6443,6 +6443,8 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
+  taunt: 0
+  tauntDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Fan scythe

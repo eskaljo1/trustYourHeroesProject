@@ -27445,6 +27445,8 @@ MonoBehaviour:
   debuffDuration: 0
   movement: 0
   movementDuration: 0
+  taunt: 0
+  tauntDuration: 0
   isTargetingAbility1: 0
   isTargetingAbility2: 0
   mainAttackName: Poison sting
@@ -27458,7 +27460,8 @@ MonoBehaviour:
     kingdom is because he can easily aquire any material he needs and he can freely
     test his weapons on his missions without repercussions.
   firstAbility: Does dmg to adjacent tiles as well
-  secondAbility: Every attack has 25% chance of poisoning the opponent
+  secondAbility: Every attack has 25% chance of poisoning the opponent for 2 turns.
+    Poisoned enemies take 10dmg every turn.
   mainAttackAudio: {fileID: 7852064526429481828}
   ability1Audio: {fileID: 8431764716204119581}
   ability2Audio: {fileID: 0}

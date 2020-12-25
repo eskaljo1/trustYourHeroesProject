@@ -39,11 +39,12 @@ public class PlaceHero : MonoBehaviour
     }
 
     [PunRPC]
-    void HeroIsPlacedOnCell()
+    void HeroIsPlacedOnCell(int id)
     {
-        if (MoveHero.player1Move)
+        PhotonView p = PhotonView.Find(id);
+        if (p.gameObject.tag == "Player")
             tag = "OccupiedCell";
-        else
+        else if(p.gameObject.tag == "Player2")
             tag = "EnemyCell";
     }
 
@@ -86,6 +87,7 @@ public class PlaceHero : MonoBehaviour
     {
         if (heroIsSelected)
         {
+            int id;
             if (movement) //if movement, else attack
             {
                 if ((tag == "FirstRowCell" && NetworkManager.firstPlayer) || (tag == "LastRowCell" && !NetworkManager.firstPlayer)) //If the selected cell has FirstRowCell tag the game hasn't started yet, spawns hero on cell
@@ -104,6 +106,7 @@ public class PlaceHero : MonoBehaviour
                             PhotonView p = PhotonView.Get(GetComponent<PhotonView>());
                             p.RPC("HeroIsMovedFromCell", RpcTarget.All, SpawnGrid.cells[heroSelected.GetComponent<MoveHero>().GetX(), heroSelected.GetComponent<MoveHero>().GetZ()].GetComponent<PhotonView>().ViewID, "LastRowCell");
                         }
+                        id = heroSelected.GetComponent<PhotonView>().ViewID;
                         //Move
                         MoveSelectedHero();
                     }
@@ -121,6 +124,7 @@ public class PlaceHero : MonoBehaviour
                         p.RPC("SetHeroCoords", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID);
                         PlaceHeroButtons.spawned = true;
                         PlaceHeroButtons.heroesPlaced++;
+                        id = heroSelected.GetComponent<PhotonView>().ViewID;
                     }
                     //Turn off lights
                     if (NetworkManager.firstPlayer)
@@ -140,15 +144,16 @@ public class PlaceHero : MonoBehaviour
                         }
                     }
                     PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
-                    photonView.RPC("HeroIsPlacedOnCell", RpcTarget.All);
+                    photonView.RPC("HeroIsPlacedOnCell", RpcTarget.All, id);
                 }
                 if (gameBegun) //If game has begun, move hero to cell if it is available
                 {
                     if (GetComponentInChildren<Light>().intensity == 15) //Checks if cell is available
                     {
+                        id = heroSelected.GetComponent<PhotonView>().ViewID;
                         MoveSelectedHero();
                         PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
-                        photonView.RPC("HeroIsPlacedOnCell", RpcTarget.All);
+                        photonView.RPC("HeroIsPlacedOnCell", RpcTarget.All, id);
                     }
                 }
             }
@@ -183,26 +188,36 @@ public class PlaceHero : MonoBehaviour
                                 break;
                             }
                     }
+                    bool evade = false;
+                    if (enemy != null)
+                        if (enemy.GetComponent<Hero>().evasiveness)
+                        {
+                            int e = Random.Range(0, 2);
+                            if (e == 1)
+                                evade = true;
+                        }
+                    int p = Random.Range(1, 5);
+                    int a = Random.Range(1, 6);
                     PhotonView photonView = PhotonView.Get(GetComponent<PhotonView>());
                     if (Hero.abilityType == 0)
                     {
-                        photonView.RPC("MainAttackRPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
+                        photonView.RPC("MainAttackRPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID, evade, a, p);
                     }
                     else if (Hero.abilityType == 1)
                     {
                         heroSelected.GetComponent<Hero>().ability1C = 0;
                         if (enemy != null)
-                            photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
+                            photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID, evade, p);
                         else
-                            photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13);
+                            photonView.RPC("Ability1RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13, evade, p);
                     }
                     else if (Hero.abilityType == 2)
                     {
                         heroSelected.GetComponent<Hero>().ability2C = 0;
                         if (enemy != null)
-                            photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID);
+                            photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, enemy.GetComponent<PhotonView>().ViewID, evade);
                         else
-                            photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13);
+                            photonView.RPC("Ability2RPC", RpcTarget.All, heroSelected.GetComponent<PhotonView>().ViewID, -13, evade);
                     }
                     StartCoroutine(ChangeTurnAfterAbility());
                 }
@@ -218,17 +233,17 @@ public class PlaceHero : MonoBehaviour
     }
 
     [PunRPC]
-    void MainAttackRPC(int heroId, int enemyId)
+    void MainAttackRPC(int heroId, int enemyId, bool evade, int a, int p)
     {
         PhotonView hero = PhotonView.Find(heroId);
         PhotonView enemy = PhotonView.Find(enemyId);
         heroSelected = hero.gameObject;
         heroSelected.GetComponent<Animator>().SetTrigger("MainAttack");
-        StartCoroutine(MainAttack(enemy.gameObject));
+        StartCoroutine(MainAttack(enemy.gameObject, evade, a, p));
     }
 
     [PunRPC]
-    void Ability1RPC(int heroId, int enemyId)
+    void Ability1RPC(int heroId, int enemyId, bool evade, int p)
     {
         PhotonView hero = PhotonView.Find(heroId);
         heroSelected = hero.gameObject;
@@ -236,16 +251,16 @@ public class PlaceHero : MonoBehaviour
         if (enemyId != -13)
         {
             PhotonView enemy = PhotonView.Find(enemyId);
-            StartCoroutine(Ability1(enemy.gameObject));
+            StartCoroutine(Ability1(enemy.gameObject, evade, p));
         }
         else
         {
-            StartCoroutine(Ability1(null));
+            StartCoroutine(Ability1(null, evade, p));
         }
     }
 
     [PunRPC]
-    void Ability2RPC(int heroId, int enemyId)
+    void Ability2RPC(int heroId, int enemyId, bool evade)
     {
         PhotonView hero = PhotonView.Find(heroId);
         heroSelected = hero.gameObject;
@@ -253,23 +268,16 @@ public class PlaceHero : MonoBehaviour
         if (enemyId != -13)
         {
             PhotonView enemy = PhotonView.Find(enemyId);
-            StartCoroutine(Ability2(enemy.gameObject));
+            StartCoroutine(Ability2(enemy.gameObject, evade));
         }
         else
         {
-            StartCoroutine(Ability2(null));
+            StartCoroutine(Ability2(null, evade));
         }
     }
 
-    IEnumerator MainAttack(GameObject enemy)
+    IEnumerator MainAttack(GameObject enemy, bool evade, int a, int p)
     {
-        bool evade = false;
-        if (enemy.GetComponent<Hero>().evasiveness)
-        {
-            int e = Random.Range(0, 2);
-            if (e == 1)
-                evade = true;
-        }
         if (heroSelected.name == "TommyApe(Clone)")
         {
             heroSelected.GetComponent<Hero>().mainAttackAudio.Play();
@@ -300,7 +308,6 @@ public class PlaceHero : MonoBehaviour
                 case "Poison":
                     if (!evade)
                     {
-                        int p = Random.Range(1, 5);
                         if (!enemy.GetComponent<Hero>().poisoned && p == 1)
                         {
                             enemy.GetComponent<Hero>().poisoned = true;
@@ -312,7 +319,6 @@ public class PlaceHero : MonoBehaviour
                 case "Entangle":
                     if (!evade)
                     {
-                        int a = Random.Range(1, 6);
                         if (!enemy.GetComponent<Hero>().stun && a == 1)
                         {
                             enemy.GetComponent<Hero>().stun = true;
@@ -335,16 +341,8 @@ public class PlaceHero : MonoBehaviour
         heroIsSelected = false;
     }
 
-    IEnumerator Ability1(GameObject enemy)
+    IEnumerator Ability1(GameObject enemy, bool evade, int p)
     {
-        bool evade = false;
-        if(enemy != null)
-            if (enemy.GetComponent<Hero>().evasiveness)
-            {
-                int e = Random.Range(0, 2);
-                if (e == 1)
-                    evade = true;
-            }
         bool skipstun = false;
         if (heroSelected.GetComponent<Hero>().ability1Name == "Gas bomb")
             yield return new WaitForSeconds(1.5f);
@@ -387,14 +385,7 @@ public class PlaceHero : MonoBehaviour
                         {
                             if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
                                 continue;
-                            bool ev = false;
-                            if (enemies[j].GetComponent<Hero>().evasiveness)
-                            {
-                                int e = Random.Range(0, 2);
-                                if (e == 1)
-                                    ev = true;
-                            }
-                            if (!ev)
+                            if (!enemies[j].GetComponent<Hero>().evasiveness)
                             {
                                 for (int k = 0; k < heroSelected.GetComponent<Hero>().ability1Effects.Length; k++)
                                     if (heroSelected.GetComponent<Hero>().ability1Effects[k] == "Stun")
@@ -412,7 +403,6 @@ public class PlaceHero : MonoBehaviour
                                 for (int k = 0; k < heroSelected.GetComponent<Hero>().ability1Effects.Length; k++)
                                     if (heroSelected.GetComponent<Hero>().ability1Effects[k] == "Poison")
                                     {
-                                        int p = Random.Range(1, 5);
                                         if (!enemies[j].GetComponent<Hero>().poisoned && p == 1)
                                         {
                                             enemies[j].GetComponent<Hero>().poisoned = true;
@@ -529,16 +519,8 @@ public class PlaceHero : MonoBehaviour
         heroIsSelected = false;
     }
 
-    IEnumerator Ability2(GameObject enemy)
+    IEnumerator Ability2(GameObject enemy, bool evade)
     {
-        bool evade = false;
-        if (enemy != null)
-            if (enemy.GetComponent<Hero>().evasiveness)
-            {
-                int e = Random.Range(0, 2);
-                if (e == 1)
-                    evade = true;
-            }
         yield return new WaitForSeconds(0.5f);
         heroSelected.GetComponent<Hero>().ability2Audio.Play();
         if (heroSelected.GetComponent<Hero>().ability2Particles != null)
@@ -550,7 +532,6 @@ public class PlaceHero : MonoBehaviour
         {
             switch (heroSelected.GetComponent<Hero>().ability2Effects[i])
             {
-
                 case "Area":
                     GameObject[] enemies;
                     if (MoveHero.player1Move)
@@ -562,14 +543,7 @@ public class PlaceHero : MonoBehaviour
                         {
                             if (heroSelected.GetComponent<MoveHero>().GetX() == enemies[j].GetComponent<MoveHero>().GetX() && heroSelected.GetComponent<MoveHero>().GetZ() == enemies[j].GetComponent<MoveHero>().GetZ())
                                 continue;
-                            bool ev = false;
-                            if (enemies[j].GetComponent<Hero>().evasiveness)
-                            {
-                                int e = Random.Range(0, 2);
-                                if (e == 1)
-                                    ev = true;
-                            }
-                            if (!ev)
+                            if (!enemies[j].GetComponent<Hero>().evasiveness)
                             {
                                 for (int k = 0; k < heroSelected.GetComponent<Hero>().ability2Effects.Length; k++)
                                     if (heroSelected.GetComponent<Hero>().ability2Effects[k] == "Slow")
